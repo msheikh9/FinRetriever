@@ -1,0 +1,25 @@
+# Validation pairs v4 (bge_base_ft_v3), the final validation set: validation_pairs_v3 (the 16 original questions and
+# val_pilot_v2e batch 1), carried, and val_pilot_v2f up to position 234, where its generation was stopped
+# (plans/validation.val_pilot_v2f.stopped.json; no further Groq requests).
+#
+# Built offline by:
+#   python3 scripts/02_generate_queries.py build-validation --config configs/train/data_prep_v3.yaml \
+#       --validation configs/train/validation_v4.yaml
+# Written once to data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v4/. A question is included only
+# if its AI review accepted it and it passes every check again: provenance, the candidate validator, a positive only
+# validation uses, evidence no train or blocked passage holds (exactly or possibly), and no overlap with an evaluation
+# or training question. The decisions are an AI review: not human-validated, not gold labels, never training or
+# evaluation data. Audits: docs/validation_plan_v2f_batch{1,2,3,4}_audit.md,
+# docs/validation_plan_v2f_positions_144_147_audit.md and docs/validation_plan_v2f_positions_196_234_audit.md.
+
+version: validation_pairs_v4
+data_prep_config: configs/train/data_prep_v3.yaml
+plan: val_pilot_v2f
+plan_positions: 234               # the stop position
+decisions:                        # one file per recording; no question is decided twice
+  - data/validation_review/val_pilot_v2f_positions1-147_quality_decisions.jsonl
+  - data/validation_review/val_pilot_v2f_positions148-234_quality_decisions.jsonl
+carry_over:
+  - data_prep_config: configs/train/data_prep_v3.yaml
+    version: validation_pairs_v3
+training_candidates: [train_candidates_v2]   # the 66 training candidates

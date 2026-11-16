@@ -1,0 +1,5 @@
+{"query_id": "q_supply_chain_risk", "text": "Apple component supplier sourcing concentration", "source": "demo", "metadata": {}}
+{"query_id": "q_credit_loan_losses", "text": "JPMorgan credit risk loan losses", "source": "demo", "metadata": {}}
+{"query_id": "q_manufacturing_capacity", "text": "Tesla manufacturing capacity gigafactory", "source": "demo", "metadata": {}}
+{"query_id": "q_aws_cloud_demand", "text": "Amazon AWS cloud infrastructure demand", "source": "demo", "metadata": {}}
+{"query_id": "q_oil_price_risk", "text": "Exxon crude oil commodity price risk", "source": "demo", "metadata": {}}

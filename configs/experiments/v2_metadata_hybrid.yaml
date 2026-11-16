@@ -1,0 +1,114 @@
+# FinRetriever v2: metadata-aware hybrid retrieval, controlled experiments
+# (scripts/11_v2_experiments.py; docs/retrieval_v2_metadata_hybrid.md).
+#
+# Every experiment is identified by its id; its full settings, the config's SHA-256, the input hashes, the
+# checkpoint digests, the embedding-cache keys and the library versions are written to the output manifest.
+#
+# Roles, fixed BEFORE any v2 result was computed:
+#   baseline     E1: the existing A1 dense retriever, unchanged (v1 "global" mode).
+#   primary      E2-E8: one change at a time, then the pre-registered combination (E7). Their settings were
+#                chosen in advance: RRF k=60 with equal weights (the value of the original RRF paper), the
+#                year-window policy chosen on the 771 training and validation questions (never the 100
+#                human-written ones), min_eligible 20.
+#   reference    BM25 alone, and the "oracle scope" runs that use a question set's annotated companies/years
+#                instead of the parser (v1 "company" mode is oracle-company): they bound what a perfect parser
+#                could give and are never a system.
+#   exploratory  sensitivity settings (RRF k, weights, year windows, boost vs filter, cells, enriched BM25,
+#                256-token windows). Reported in full; none is selected or presented as a result.
+#
+# Evaluation sets (never presented as independent human relevance evaluation):
+#   validation   93 synthetic questions, validation_pairs_v4 (these selected the A1 checkpoints; the year window
+#                was also chosen using their filing years): MRR@10, Recall@10, nDCG@10, Recall@100.
+#   development  10 questions with AI-written provisional labels (dev_pilot_v3); pools were built without the v2
+#                systems, so unjudged passages count as non-relevant (judged@10 and judged-only scores reported).
+#   real         the 100 frozen human-written questions (gold set v1 export v2): metadata alignment and parser
+#                accuracy against the authors' declared scope only; no relevance label exists or is read.
+
+name: v2_metadata_hybrid
+version: 1
+corpus_path: data/processed/corpus_v1.jsonl
+corpus_sha256: ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004
+embedding_cache_dir: data/cache/embeddings
+device: cpu            # every dense encoding on CPU, like the cached v1 embeddings
+top_k: 100             # ranked depth for validation and development (Recall@100); real questions use the top 10
+
+inputs:
+  trainer_config: configs/train/biencoder_bge_base_ft_v3_a1.yaml   # validation_pairs_v4, its equivalence guard
+  validation_manifest: [data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v4/manifest.json,
+                        40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e]
+  dev_queries: data/eval/dev_ai/pilot_v3/dev_queries.jsonl
+  dev_qrels: data/eval/dev_ai/pilot_v3/dev_qrels.jsonl
+  real_questions: [data/eval/gold_v1/questions_frozen_v2.jsonl,
+                   fbcf2f5a124a17895ae465fb79f671372d5a2033a869ab4ab214e8676e270202]
+
+parser:
+  aliases_from: configs/train/data_prep_v3.yaml   # generation.company_aliases (the training-data alias list)
+
+seeds:
+  a1_seed42:
+    checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055
+    selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/selection.json
+  a1_seed1337:
+    checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/checkpoint-step-000040
+    selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/selection.json
+  a1_seed2026:
+    checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/checkpoint-step-000040
+    selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/selection.json
+
+# Scorers. "a1*" components are built for every seed; bm25 components are seed-independent.
+components:
+  bm25:          {type: bm25, tokenizer: word, backend: python}
+  bm25_enriched: {type: bm25, tokenizer: word, backend: python, passage_view: header_v1}
+  a1:            {type: a1, passage_view: text}
+  a1_enriched:   {type: a1, passage_view: header_v1}
+  a1_tail:       {type: a1_windows, windows: {kind: tail, size: 510, overlap: 64}}
+  a1_sliding256: {type: a1_windows, windows: {kind: sliding, size: 256, overlap: 64}, seeds: [a1_seed42]}
+
+# fusion: {method: single|rrf, k, weights, depth}; scope: {company: none|filter, year: none|filter|boost,
+# after, before_explicit, before_implicit, min_eligible, cells: "off"|interleave (quoted: YAML reads off as false), source: parsed|oracle}
+defaults:
+  fusion: {method: single, k: 60, weights: {}, depth: 100}
+  scope: {company: none, year: none, after: 2, before_explicit: 0, before_implicit: 1, min_eligible: 20,
+          cells: "off", source: parsed}
+  metadata_weight: 1.0
+
+experiments:
+  # --- baseline and references ------------------------------------------------------------------------------
+  - {id: E1_a1, role: baseline, components: [a1]}
+  - {id: R_bm25, role: reference, components: [bm25]}
+  - {id: R_a1_oracle_company, role: reference, components: [a1], scope: {company: filter, source: oracle}}
+  - {id: R_a1_oracle_company_year, role: reference, components: [a1],
+     scope: {company: filter, year: filter, source: oracle}}
+  # --- primary: one change at a time ------------------------------------------------------------------------
+  - {id: E2_a1_company, role: primary, components: [a1], scope: {company: filter}}
+  - {id: E3_a1_year, role: primary, components: [a1], scope: {year: filter}}
+  - {id: E3b_a1_company_year, role: primary, components: [a1], scope: {company: filter, year: filter}}
+  - {id: E4_hybrid_rrf, role: primary, components: [bm25, a1], fusion: {method: rrf}}
+  - {id: E5_hybrid_rrf_meta, role: primary, components: [bm25, a1], fusion: {method: rrf},
+     scope: {company: filter, year: boost}}
+  - {id: E6_a1_enriched, role: primary, components: [a1_enriched]}
+  - {id: E7_combined, role: primary, components: [bm25, a1_enriched], fusion: {method: rrf},
+     scope: {company: filter, year: filter, cells: interleave}}
+  - {id: E8_a1_tail_windows, role: primary, components: [a1_tail]}
+  # --- exploratory sensitivity (reported, never selected) ----------------------------------------------------
+  - {id: X_rrf_k10, role: exploratory, components: [bm25, a1], fusion: {method: rrf, k: 10}}
+  - {id: X_rrf_k100, role: exploratory, components: [bm25, a1], fusion: {method: rrf, k: 100}}
+  - {id: X_rrf_dense2, role: exploratory, components: [bm25, a1], fusion: {method: rrf, weights: {a1: 2.0}}}
+  - {id: X_rrf_bm25x2, role: exploratory, components: [bm25, a1], fusion: {method: rrf, weights: {bm25: 2.0}}}
+  - {id: X_hybrid_company_year_filter, role: exploratory, components: [bm25, a1], fusion: {method: rrf},
+     scope: {company: filter, year: filter}}
+  - {id: X_a1_company_year_exact, role: exploratory, components: [a1],
+     scope: {company: filter, year: filter, after: 0, before_implicit: 0}}
+  - {id: X_a1_company_year_boost, role: exploratory, components: [a1], scope: {company: filter, year: boost}}
+  - {id: X_bm25_enriched, role: exploratory, components: [bm25_enriched]}
+  - {id: X_hybrid_enriched_both, role: exploratory, components: [bm25_enriched, a1_enriched],
+     fusion: {method: rrf}}
+  - {id: X_combined_boost, role: exploratory, components: [bm25, a1_enriched], fusion: {method: rrf},
+     scope: {company: filter, year: boost, cells: interleave}}
+  - {id: X_combined_no_cells, role: exploratory, components: [bm25, a1_enriched], fusion: {method: rrf},
+     scope: {company: filter, year: filter}}
+  - {id: X_combined_plain_a1, role: exploratory, components: [bm25, a1], fusion: {method: rrf},
+     scope: {company: filter, year: filter, cells: interleave}}
+  - {id: X_combined_tail, role: exploratory, components: [bm25, a1_tail], fusion: {method: rrf},
+     scope: {company: filter, year: filter, cells: interleave}}
+  - {id: X_a1_sliding256, role: exploratory, components: [a1_sliding256]}

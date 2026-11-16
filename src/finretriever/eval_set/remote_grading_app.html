@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<title>Gold set grading __PACKAGE_ID__</title>
+<style>
+  :root { --ink: #1d232b; --muted: #5b6573; --line: #d5dae1; --paper: #ffffff; --bg: #f3f5f8; --accent: #1f5fae;
+          --ok: #1d7a46; --warn: #a3560b; --bad: #b42318; --chip: #e8eef7; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         color: var(--ink); background: var(--bg); }
+  header { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+           padding: 10px 16px; background: var(--paper); border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 16px; margin: 0; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  main { max-width: 1180px; margin: 0 auto; padding: 16px; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+  #start { max-width: 720px; margin: 24px auto; }
+  #start label { display: block; margin: 12px 0 4px; font-weight: 600; }
+  input[type=text] { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; width: 140px; }
+  textarea { font: inherit; width: 100%; min-height: 64px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; }
+  button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper);
+           color: var(--ink); cursor: pointer; }
+  button:hover:not(:disabled) { border-color: var(--accent); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  #work { display: grid; grid-template-columns: 230px 1fr; gap: 16px; }
+  #qlist { list-style: none; margin: 0; padding: 0; }
+  #qlist li { padding: 6px 8px; border-radius: 6px; cursor: pointer; font-size: 13px; display: flex; justify-content: space-between; gap: 6px; }
+  #qlist li.on { background: var(--chip); font-weight: 600; }
+  #qlist .st { color: var(--muted); }
+  #qlist .st.fin { color: var(--ok); font-weight: 600; }
+  .question { font-size: 17px; font-weight: 600; margin: 4px 0 0; }
+  .qid { color: var(--muted); font-size: 13px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+  .bar .pos { font-weight: 600; margin-right: 8px; }
+  dl.ctx { display: grid; grid-template-columns: 90px 1fr; gap: 2px 10px; margin: 0 0 10px; font-size: 13px; }
+  dl.ctx dt { color: var(--muted); } dl.ctx dd { margin: 0; }
+  #text { white-space: pre-wrap; background: #fbfcfd; border: 1px solid var(--line); border-radius: 6px; padding: 12px;
+          max-height: 46vh; overflow: auto; font-size: 14px; }
+  .grades { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
+  .grades button { min-width: 150px; text-align: left; }
+  .grades button.sel { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .marks { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 6px 0 10px; font-size: 14px; }
+  .marks label { display: flex; gap: 6px; align-items: flex-start; }
+  #need { min-height: 1.5em; font-size: 14px; }
+  #need.bad { color: var(--bad); } #need.ok { color: var(--ok); }
+  footer { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0 40px; }
+  #saveState { color: var(--muted); font-size: 13px; }
+  .banner { padding: 8px 12px; border-radius: 6px; margin: 0 0 12px; font-size: 14px; }
+  .banner.warn { background: #fff4e5; color: var(--warn); border: 1px solid #f3d3a8; }
+  .banner.info { background: #eaf2fd; color: var(--accent); border: 1px solid #c6dbf7; }
+  #help { margin-top: 16px; }
+  #help h2 { font-size: 16px; } #help h3 { font-size: 15px; margin-bottom: 4px; }
+  #help table { border-collapse: collapse; font-size: 14px; } #help td, #help th { border: 1px solid var(--line); padding: 4px 8px; vertical-align: top; text-align: left; }
+  kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; font-size: 12px; background: #fff; }
+  [hidden] { display: none !important; }
+  @media (max-width: 760px) { #work { grid-template-columns: 1fr; } .grades button { min-width: 0; flex: 1 1 45%; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gold set relevance grading</h1>
+  <span class="meta">Package <b id="hPkg"></b> · issued to <b id="hWho"></b></span>
+  <span class="meta" id="hProg"></span>
+  <span class="meta" style="margin-left:auto"><button id="helpBtn" type="button">Rubric and instructions</button></span>
+</header>
+<main>
+  <div id="notice" class="banner warn" hidden></div>
+
+  <section id="start" class="card">
+    <h2 style="margin-top:0">Before you start</h2>
+    <p>This file works offline in your browser. It needs no installation and never connects to the internet. Your work
+      is kept in this browser as you go; also save a progress file regularly (button at the bottom).</p>
+    <p id="resumeMsg" class="banner info" hidden></p>
+    <label for="initials">Your initials</label>
+    <input id="initials" type="text" autocomplete="off" maxlength="12">
+    <span class="meta" id="initialsHint"></span>
+    <label><input id="declare" type="checkbox"> <span id="declText"></span></label>
+    <p><button id="begin" class="primary" type="button" disabled>Start grading</button>
+       <button id="resumeBtn" type="button">Resume from a progress file…</button></p>
+  </section>
+
+  <section id="work" hidden>
+    <aside class="card"><div class="qid" style="margin-bottom:6px">Questions</div><ul id="qlist"></ul></aside>
+    <div class="card">
+      <div class="qid" id="qid"></div>
+      <p class="question" id="qtext"></p>
+      <div class="bar">
+        <span class="pos" id="pos"></span>
+        <button id="prev" type="button" title="Previous (p or ←)">← Previous</button>
+        <button id="next" type="button" title="Next (n or →)">Next →</button>
+        <button id="nextOpen" type="button" title="Next ungraded (u)">Next ungraded</button>
+      </div>
+      <dl class="ctx">
+        <dt>Filing</dt><dd id="filing"></dd>
+        <dt>Section</dt><dd id="section"></dd>
+        <dt>Candidate</dt><dd id="cid"></dd>
+      </dl>
+      <div id="text"></div>
+      <div class="grades">
+        <button class="grade" data-g="2" type="button"><kbd>2</kbd> Directly relevant</button>
+        <button class="grade" data-g="1" type="button"><kbd>1</kbd> Partially relevant</button>
+        <button class="grade" data-g="0" type="button"><kbd>0</kbd> Not relevant</button>
+        <button class="grade" data-g="s" type="button"><kbd>s</kbd> Skip: cannot decide</button>
+      </div>
+      <div class="marks">
+        <label><input id="p3" type="checkbox"> <span>P3 comparative: a later 10-K states the requested figure for the requested period</span></label>
+        <label><input id="p4" type="checkbox"> <span>P4: graded 0 because it is another filing year's copy of the disclosure</span></label>
+        <label><input id="assisted" type="checkbox"> <span>Assistance was used for this grade (describe it in the note)</span></label>
+      </div>
+      <label for="note" class="qid">Note (required for every 1, every skip, every P3 or P4 mark and any assistance)</label>
+      <textarea id="note" placeholder="e.g. only the FY2021 figure"></textarea>
+      <div id="need"></div>
+      <div class="bar">
+        <button id="done" class="primary" type="button" disabled>Mark this question done</button>
+        <span id="doneState" class="meta"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <button id="saveFile" type="button">Save progress file</button>
+    <button id="loadFile" type="button">Load progress file…</button>
+    <button id="finalFile" class="primary" type="button" disabled>Download completed grades</button>
+    <span id="saveState"></span>
+    <input id="fileInput" type="file" accept=".json,application/json" hidden>
+  </footer>
+
+  <section id="help" class="card" hidden>
+    <h2>Rubric v1.1 (P1–P6) and how to grade</h2>
+    <p>Grade each passage for the question as written, using the passage text alone. The filing and section shown help
+      you locate it. Judge relevance, not truth.</p>
+    <table>
+      <tr><th>Grade</th><th>Meaning</th><th>In a filing</th></tr>
+      <tr><td><b>2</b> directly relevant</td><td>The passage answers the question, or the part of it the passage could answer for a multi-passage question.</td><td>States the requested figure for the requested period and company (including as a prior-year comparative column), or explains the asked-about risk, policy or driver specifically.</td></tr>
+      <tr><td><b>1</b> partially relevant</td><td>Useful but incomplete: right company, period and topic, only part of the answer.</td><td>A summary sentence without the requested figure; a table with the line item but not the requested breakdown; context needed to interpret the answer.</td></tr>
+      <tr><td><b>0</b> not relevant</td><td>Does not help answer the question.</td><td>Same keywords in another context; a different company; boilerplate.</td></tr>
+      <tr><td><b>s</b> skip</td><td>You looked but cannot decide. A skip is never a 0.</td><td>Ambiguous scope, needs knowledge you lack, or the passage is cut mid-table. A note is required.</td></tr>
+    </table>
+    <h3>Rules</h3>
+    <ul>
+      <li>A skip is not a 0: use it whenever you would otherwise guess.</li>
+      <li>A cross-reference stub ("see Note 7") is 0 unless the question asks where the information is.</li>
+      <li>Repeated text is not assumed relevant: the same paragraph in another year's 10-K is 0 unless the question makes other years relevant.</li>
+      <li>Another filing can still hold the requested period, for example a later 10-K's prior-year column: grade it on that content.</li>
+      <li>Information about other years is 0, unless the question asks about a change or comparison it helps answer.</li>
+      <li>Multi-passage and cross-year questions: 2 if the passage supplies a required part (for example one requested year's figure), 1 if it only supports or interprets, 0 otherwise.</li>
+    </ul>
+    <h3>Clarifications P1–P6</h3>
+    <ul>
+      <li><b>P1, open questions</b> (a set of risks, reasons, offerings…): a passage that explicitly states one element of the answer, for the requested company and period, is 2; it is 1 if it only names the topic, is cut off, or needs outside information.</li>
+      <li><b>P2, passage-alone evidence</b>: for a figure, the requested period and basis must be identifiable from the passage itself (text, table headers, footnotes inside it). If the period or basis is defined only outside it, grade 1.</li>
+      <li><b>P3, comparatives</b>: a later 10-K stating the requested figure for the requested period is graded on content: 2 if complete under P2, 1 if partial. Tick P3 and add a note.</li>
+      <li><b>P4, repeated text from another filing year</b>: when the question names a report or year, another filing year's copy of a qualitative disclosure is 0, even verbatim. Tick P4 and add a note.</li>
+      <li><b>P5, closed multi-part questions</b>: decide by the evidence. If no single filing can hold the whole answer, a passage with a complete required unit (the requested figures for at least one requested period) may be 2; if the full answer is normally in one table, a passage with only some of its elements is 1.</li>
+      <li><b>P6, notes and assistance</b>: a note for every 1, every P4 0, every comparative and every skip. Record any help (an AI tool, a colleague) in the note, and tick "assistance".</li>
+    </ul>
+    <h3>Keys</h3>
+    <p><kbd>2</kbd> <kbd>1</kbd> <kbd>0</kbd> grade · <kbd>s</kbd> skip · <kbd>3</kbd> P3 mark · <kbd>4</kbd> P4 mark · <kbd>a</kbd> assistance mark · <kbd>n</kbd>/<kbd>→</kbd> next · <kbd>p</kbd>/<kbd>←</kbd> previous · <kbd>u</kbd> next ungraded.</p>
+    <p>A grade that needs nothing more moves you to the next ungraded candidate. If it needs a note, the note box opens: type it, then press <kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>Enter</kbd> to continue (<kbd>Esc</kbd> leaves the box). To mark P3 or P4, press <kbd>3</kbd> or <kbd>4</kbd> (or tick the box) before or after grading; keys are ignored while you type in the note box.</p>
+    <h3>Saving, resuming and returning</h3>
+    <ul>
+      <li>Every change is kept in this browser automatically. Reopen this same file in the same browser to continue.</li>
+      <li>Also press <b>Save progress file</b> regularly and keep the files: they let you resume on another computer or browser (<b>Load progress file</b>).</li>
+      <li>When every candidate of a question is graded (with the notes it needs), press <b>Mark this question done</b>.</li>
+      <li>When every question is done, press <b>Download completed grades</b> and send that file back unchanged.</li>
+      <li>Grade alone: no AI tools, no search summaries, no one else's grades.</li>
+    </ul>
+  </section>
+</main>
+
+<script type="application/json" id="payload">__PAYLOAD_JSON__</script>
+<script>
+"use strict";
+const PAYLOAD_SHA256 = "__PAYLOAD_SHA256__";
+const APP_VERSION = "1";
+/* CORE-START */
+const CORE = (() => {
+  const GRADES = ["0", "1", "2", "s"];
+  const MIN_NOTE = 3;
+  function blank(qid) {
+    return { query_id: qid, grade: null, p3: false, p4: false, assisted: false, note: "", at: null, history: [] };
+  }
+  function noteRequired(r) {
+    return r.grade === "1" || r.grade === "s" || r.p3 === true || (r.grade === "0" && r.p4 === true) || r.assisted === true;
+  }
+  function problems(r) {
+    if (!GRADES.includes(r.grade)) return ["no grade yet"];
+    const out = [];
+    if (r.p4 && r.grade !== "0") out.push("P4 applies only to a 0");
+    if (r.grade === "s" && (r.p3 || r.p4)) out.push("a skip takes no P3 or P4 mark");
+    if (noteRequired(r) && String(r.note || "").trim().length < MIN_NOTE) out.push("a note is required for this grade");
+    return out;
+  }
+  function complete(r) { return problems(r).length === 0; }
+  function newState(payload, now) {
+    const questions = {}, records = {};
+    for (const q of payload.questions) {
+      questions[q.query_id] = { done_at: null };
+      for (const c of q.candidates) records[c.id] = blank(q.query_id);
+    }
+    return { annotator: "", declaration: { accepted: false, text: "", accepted_at: null }, started_at: now,
+             saved_at: null, questions, records };
+  }
+  function view(r) { return { grade: r.grade, p3: r.p3, p4: r.p4, assisted: r.assisted, note: r.note }; }
+  function same(a, b) {
+    return a.grade === b.grade && a.p3 === b.p3 && a.p4 === b.p4 && a.assisted === b.assisted && a.note === b.note;
+  }
+  // Apply a change to one candidate. A graded state that differs from the last recorded one is appended to its
+  // history with a timestamp; nothing earlier is ever removed. Any change reopens a question marked done.
+  function update(state, cid, changes, now) {
+    const r = state.records[cid];
+    if (!r) throw new Error("unknown candidate " + cid);
+    const next = Object.assign(view(r), changes);
+    next.note = String(next.note || "");
+    if (next.grade === "s") { next.p3 = false; next.p4 = false; }
+    if (next.grade === "1" || next.grade === "2") next.p4 = false;
+    if (same(view(r), next)) return r;
+    Object.assign(r, next);
+    const last = r.history.length ? r.history[r.history.length - 1] : null;
+    if (r.grade !== null && (!last || !same(last, next))) {
+      r.at = now;
+      r.history.push(Object.assign({}, next, { at: now }));
+    }
+    const q = state.questions[r.query_id];
+    if (q.done_at) q.done_at = null;
+    return r;
+  }
+  function questionOpen(state, payload, qid) {
+    const q = payload.questions.find(x => x.query_id === qid);
+    return q.candidates.filter(c => !complete(state.records[c.id])).length;
+  }
+  function markDone(state, payload, qid, now) {
+    const left = questionOpen(state, payload, qid);
+    if (left) throw new Error(left + " candidate(s) still need a grade or a note");
+    state.questions[qid].done_at = now;
+  }
+  function allDone(state) { return Object.values(state.questions).every(q => !!q.done_at); }
+  function results(state, payload, sha, now) {
+    state.saved_at = now;
+    return { format: "goldset_remote_grades", format_version: 1, package_id: payload.package_id,
+             payload_sha256: sha, app_version: APP_VERSION, annotator: state.annotator, declaration: state.declaration,
+             started_at: state.started_at, saved_at: now, complete: allDone(state), questions: state.questions,
+             records: state.records };
+  }
+  function restore(obj, payload, sha) {
+    if (!obj || obj.format !== "goldset_remote_grades") throw new Error("this is not a progress file of this tool");
+    if (obj.package_id !== payload.package_id || obj.payload_sha256 !== sha) throw new Error("this file belongs to another package");
+    const fresh = newState(payload, obj.started_at || null);
+    const ids = Object.keys(fresh.records), got = Object.keys(obj.records || {});
+    if (ids.length !== got.length || ids.some(id => !(id in obj.records))) throw new Error("the file's candidates do not match this package");
+    for (const id of ids) {
+      const r = obj.records[id], f = fresh.records[id];
+      if (r.query_id !== f.query_id) throw new Error("candidate " + id + " belongs to another question");
+      Object.assign(f, { grade: GRADES.includes(r.grade) ? r.grade : null, p3: r.p3 === true, p4: r.p4 === true,
+                         assisted: r.assisted === true, note: String(r.note || ""), at: r.at || null,
+                         history: Array.isArray(r.history) ? r.history : [] });
+    }
+    for (const qid of Object.keys(fresh.questions)) fresh.questions[qid].done_at = (obj.questions && obj.questions[qid] && obj.questions[qid].done_at) || null;
+    fresh.annotator = String(obj.annotator || "");
+    fresh.declaration = obj.declaration || fresh.declaration;
+    fresh.saved_at = obj.saved_at || null;
+    return fresh;
+  }
+  return { GRADES, MIN_NOTE, noteRequired, problems, complete, newState, update, questionOpen, markDone, allDone, results, restore };
+})();
+/* CORE-END */
+
+(() => {
+  const payload = JSON.parse(document.getElementById("payload").textContent);
+  const KEY = "goldset-grades:" + payload.package_id + ":" + PAYLOAD_SHA256.slice(0, 16);
+  const DECLARATION = "I grade these passages myself, following the guide and rubric v1.1, without AI tools, search " +
+    "summaries or anyone else's grades. Where any help was used, I tick \"assistance\" and describe it in the note.";
+  const $ = id => document.getElementById(id);
+  const now = () => new Date().toISOString();
+  let state = null, qi = 0, ci = 0, changes = 0, stored = true;
+
+  function persist() {
+    try { localStorage.setItem(KEY, JSON.stringify(CORE.results(state, payload, PAYLOAD_SHA256, now()))); stored = true; }
+    catch (e) { stored = false; }
+    $("saveState").textContent = stored ? "Saved in this browser at " + new Date().toLocaleTimeString()
+      : "This browser could not keep your work: press Save progress file now and regularly.";
+  }
+  function loadStored() {
+    try { const raw = localStorage.getItem(KEY); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
+  }
+  function download(name, obj) {
+    const blob = new Blob([JSON.stringify(obj, null, 1)], { type: "application/json" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+  }
+  function stamp() { return now().replace(/[-:]/g, "").replace("T", "-").slice(0, 13); }
+  function notice(text) { const n = $("notice"); n.textContent = text; n.hidden = !text; }
+
+  const Q = () => payload.questions[qi];
+  const C = () => Q().candidates[ci];
+  const R = () => state.records[C().id];
+
+  function counts() {
+    let done = 0, total = 0;
+    for (const id in state.records) { total++; if (CORE.complete(state.records[id])) done++; }
+    const qd = Object.values(state.questions).filter(q => q.done_at).length;
+    return { done, total, qd, qt: payload.questions.length };
+  }
+  function renderHeader() {
+    $("hPkg").textContent = payload.package_id;
+    $("hWho").textContent = payload.annotator;
+    if (!state) return;
+    const k = counts();
+    $("hProg").textContent = k.done + " of " + k.total + " graded · " + k.qd + " of " + k.qt + " questions done";
+    $("finalFile").disabled = !CORE.allDone(state);
+  }
+  function renderList() {
+    const ul = $("qlist"); ul.textContent = "";
+    payload.questions.forEach((q, i) => {
+      const li = document.createElement("li");
+      const left = CORE.questionOpen(state, payload, q.query_id);
+      const a = document.createElement("span"); a.textContent = q.query_id;
+      const b = document.createElement("span");
+      b.className = "st" + (state.questions[q.query_id].done_at ? " fin" : "");
+      b.textContent = state.questions[q.query_id].done_at ? "done" : (q.candidates.length - left) + "/" + q.candidates.length;
+      li.append(a, b);
+      if (i === qi) li.className = "on";
+      li.onclick = () => { commitNote(); qi = i; ci = Math.max(0, openFrom(0)); render(); };
+      ul.appendChild(li);
+    });
+  }
+  function render() {
+    renderHeader(); renderList();
+    const q = Q(), c = C(), r = R();
+    $("qid").textContent = q.query_id;
+    $("qtext").textContent = q.text;
+    $("pos").textContent = "Candidate " + (ci + 1) + " of " + q.candidates.length;
+    $("filing").textContent = c.filing;
+    $("section").textContent = c.section;
+    $("cid").textContent = c.id;
+    $("text").textContent = c.text;
+    $("text").scrollTop = 0;
+    document.querySelectorAll(".grade").forEach(b => b.classList.toggle("sel", b.dataset.g === r.grade));
+    $("p3").checked = r.p3; $("p4").checked = r.p4; $("assisted").checked = r.assisted;
+    $("p3").disabled = r.grade === "s"; $("p4").disabled = r.grade === "1" || r.grade === "2" || r.grade === "s";
+    $("note").value = r.note;
+    renderNeed();
+    $("prev").disabled = ci === 0; $("next").disabled = ci === q.candidates.length - 1;
+    const left = CORE.questionOpen(state, payload, q.query_id);
+    const fin = state.questions[q.query_id].done_at;
+    $("done").disabled = left > 0 || !!fin;
+    $("doneState").textContent = fin ? "Marked done " + new Date(fin).toLocaleString()
+      : left ? left + " candidate(s) of this question still need a grade or a note" : "Every candidate is graded: mark the question done.";
+  }
+  function renderNeed() {
+    const r = R(), p = CORE.problems(r), el = $("need");
+    if (r.grade === null) { el.className = ""; el.textContent = "Choose a grade."; return; }
+    el.className = p.length ? "bad" : "ok";
+    el.textContent = p.length ? "Needed: " + p.join("; ") + "." : (CORE.noteRequired(r) ? "Graded, with the required note." : "Graded.");
+  }
+  function apply(changes_) {
+    CORE.update(state, C().id, changes_, now());
+    changes++; persist();
+    if (changes % 40 === 0) notice("Reminder: press \"Save progress file\" now and then, and keep the files.");
+    render();
+  }
+  function commitNote() {
+    if (!state || $("work").hidden) return;
+    const v = $("note").value;
+    if (v !== R().note) apply({ note: v });
+  }
+  function go(delta) { commitNote(); ci = Math.max(0, Math.min(Q().candidates.length - 1, ci + delta)); render(); }
+  function openFrom(start) {
+    const n = Q().candidates.length;
+    for (let k = 0; k < n; k++) {
+      const j = (start + k) % n;
+      if (!CORE.complete(state.records[Q().candidates[j].id])) return j;
+    }
+    return -1;
+  }
+  function nextOpen() {
+    commitNote();
+    const j = openFrom(ci + 1);
+    if (j >= 0) ci = j;
+    render();
+  }
+  function grade(g) {
+    apply({ grade: g, note: $("note").value });
+    if (CORE.complete(R())) nextOpen();
+    else $("note").focus();
+  }
+  function toggle(mark) {
+    const box = $(mark);
+    if (box.disabled) return;
+    apply({ [mark]: !box.checked, note: $("note").value });
+  }
+  function begin() {
+    const ini = $("initials").value.trim();
+    if (ini.toUpperCase() !== String(payload.annotator).toUpperCase()) { $("initialsHint").textContent = "This package was issued to " + payload.annotator + "."; return; }
+    if (!state) state = CORE.newState(payload, now());
+    state.annotator = payload.annotator;
+    if (!state.declaration.accepted) state.declaration = { accepted: true, text: DECLARATION, accepted_at: now() };
+    persist();
+    $("start").hidden = true; $("work").hidden = false;
+    const firstOpen = payload.questions.findIndex(q => !state.questions[q.query_id].done_at);
+    qi = firstOpen < 0 ? 0 : firstOpen;
+    ci = Math.max(0, openFrom(0));
+    render();
+  }
+  function startScreen() {
+    $("declText").textContent = DECLARATION;
+    $("initialsHint").textContent = "This package was issued to " + payload.annotator + ".";
+    const check = () => { $("begin").disabled = !($("declare").checked && $("initials").value.trim()); };
+    $("declare").onchange = check; $("initials").oninput = check;
+    if (state && state.declaration && state.declaration.accepted) {
+      $("declare").checked = true; $("initials").value = state.annotator;
+      const k = counts();
+      const m = $("resumeMsg"); m.hidden = false;
+      m.textContent = "Your saved work in this browser was found: " + k.done + " of " + k.total + " candidates graded. Press Start grading to continue.";
+    }
+    check();
+  }
+  function loadFile(file) {
+    const fr = new FileReader();
+    fr.onload = () => {
+      try {
+        const restored = CORE.restore(JSON.parse(fr.result), payload, PAYLOAD_SHA256);
+        let graded = 0; for (const id in restored.records) if (restored.records[id].grade !== null) graded++;
+        if (state && !confirm("Replace the work in this browser with the file's (" + graded + " candidates graded)?")) return;
+        state = restored; persist(); notice("");
+        if ($("work").hidden) { startScreen(); } else { render(); }
+      } catch (e) { notice("Could not load that file: " + e.message); }
+    };
+    fr.readAsText(file);
+  }
+
+  document.querySelectorAll(".grade").forEach(b => b.onclick = () => grade(b.dataset.g));
+  $("p3").onchange = e => apply({ p3: e.target.checked, note: $("note").value });
+  $("p4").onchange = e => apply({ p4: e.target.checked, note: $("note").value });
+  $("assisted").onchange = e => apply({ assisted: e.target.checked, note: $("note").value });
+  $("note").onchange = commitNote;
+  $("note").oninput = () => { const r = Object.assign({}, R(), { note: $("note").value }); const p = CORE.problems(r);
+    $("need").className = r.grade === null ? "" : (p.length ? "bad" : "ok");
+    $("need").textContent = r.grade === null ? "Choose a grade." : (p.length ? "Needed: " + p.join("; ") + "." : "Graded."); };
+  $("prev").onclick = () => go(-1); $("next").onclick = () => go(1); $("nextOpen").onclick = nextOpen;
+  $("done").onclick = () => {
+    commitNote();
+    try { CORE.markDone(state, payload, Q().query_id, now()); persist(); notice(""); render(); }
+    catch (e) { notice(e.message); }
+  };
+  $("begin").onclick = begin;
+  $("helpBtn").onclick = () => { const h = $("help"); h.hidden = !h.hidden; if (!h.hidden) h.scrollIntoView(); };
+  $("saveFile").onclick = () => { if (!state) return; commitNote();
+    download("gold_v1_" + payload.package_id + "_" + payload.annotator + "_progress_" + stamp() + ".json",
+             CORE.results(state, payload, PAYLOAD_SHA256, now())); persist(); };
+  $("finalFile").onclick = () => { commitNote(); if (!CORE.allDone(state)) return;
+    download("gold_v1_" + payload.package_id + "_" + payload.annotator + "_grades_COMPLETE.json",
+             CORE.results(state, payload, PAYLOAD_SHA256, now())); persist();
+    notice("Downloaded. Send that file back unchanged. Keep this page's work until the reviewer confirms receipt."); };
+  $("loadFile").onclick = () => $("fileInput").click();
+  $("resumeBtn").onclick = () => $("fileInput").click();
+  $("fileInput").onchange = e => { if (e.target.files[0]) loadFile(e.target.files[0]); e.target.value = ""; };
+  $("note").addEventListener("keydown", e => {
+    if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); commitNote(); $("note").blur(); if (CORE.complete(R())) nextOpen(); }
+    else if (e.key === "Escape") { commitNote(); $("note").blur(); }
+  });
+  document.addEventListener("keydown", e => {
+    if ($("work").hidden || e.metaKey || e.ctrlKey || e.altKey) return;
+    const t = e.target.tagName;
+    if (t === "TEXTAREA" || t === "INPUT") return;
+    const k = e.key;
+    if (k === "0" || k === "1" || k === "2") grade(k);
+    else if (k === "s" || k === "S") grade("s");
+    else if (k === "3") toggle("p3");
+    else if (k === "4") toggle("p4");
+    else if (k === "a" || k === "A") toggle("assisted");
+    else if (k === "n" || k === "ArrowRight") go(1);
+    else if (k === "p" || k === "ArrowLeft") go(-1);
+    else if (k === "u") nextOpen();
+    else return;
+    e.preventDefault();
+  });
+  window.addEventListener("beforeunload", () => { commitNote(); });
+
+  const saved = loadStored();
+  if (saved) { try { state = CORE.restore(saved, payload, PAYLOAD_SHA256); } catch (e) { state = null; } }
+  renderHeader();
+  startScreen();
+})();
+</script>
+</body>
+</html>

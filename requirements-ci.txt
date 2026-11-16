@@ -1,0 +1,10 @@
+# GitHub Actions CI: the development requirements with CPU-only PyTorch.
+#
+# CI installs requirements/lock-linux-x86_64-cpu.txt, the fully pinned form of this file (every transitive
+# dependency at the version of the analysis environment). This file is the readable source of that lock:
+#   uv pip compile requirements-ci.txt --python-version 3.11 --python-platform x86_64-manylinux_2_28 \
+#     --index-strategy unsafe-best-match --emit-index-url -c <analysis environment freeze> \
+#     -o requirements/lock-linux-x86_64-cpu.txt
+# (see docs/environment.md). The tests use tiny local models and never download from the Hugging Face Hub.
+--extra-index-url https://download.pytorch.org/whl/cpu
+-r requirements-dev.txt

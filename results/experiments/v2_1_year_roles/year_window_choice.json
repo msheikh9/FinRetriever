@@ -1,0 +1,32 @@
+{
+ "policies": {
+  "1 earlier filing for every year": {
+   "after": 2,
+   "before_explicit": 1,
+   "before_implicit": 1,
+   "filing_year_kept": 690,
+   "kept_share": 0.9942363112391931,
+   "mean_years_allowed_share": 0.4853849320708098,
+   "questions_with_a_year": 694
+  },
+  "chosen: also 1 earlier filing for years read from dates or plain numbers": {
+   "after": 2,
+   "before_explicit": 0,
+   "before_implicit": 1,
+   "filing_year_kept": 689,
+   "kept_share": 0.9927953890489913,
+   "mean_years_allowed_share": 0.43186496500617455,
+   "questions_with_a_year": 694
+  },
+  "exact year + 2 later filings": {
+   "after": 2,
+   "before_explicit": 0,
+   "before_implicit": 0,
+   "filing_year_kept": 681,
+   "kept_share": 0.9812680115273775,
+   "mean_years_allowed_share": 0.3682585426101232,
+   "questions_with_a_year": 694
+  }
+ },
+ "questions": 771
+}

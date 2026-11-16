@@ -1,0 +1,25 @@
+# Expanded development pool pilot_v3: the pilot_v2 pool deepened with the top 10 of the six stored
+# zero-shot runs (methodology §7, pool deepening).
+# Derive with:  python3 scripts/03_annotate_gold_set.py expand-pool --spec configs/eval/dev_pool_pilot_v3.yaml
+# Retrievers are not run again: the stored rankings are read with their SHA-256 checked. Adding a passage
+# to the pool is not a judgment; new entries stay unjudged until a label set grades them.
+# This is a development pool only; the gold annotation workspace takes no candidates from these runs.
+
+pool_version: pilot_v3
+annotation_version: dev_pilot_v3
+description: >-
+  The pilot_v2 pool (579 judged passages for q_0001-q_0010) plus every passage ranked in the top 10 by
+  BM25, BGE-base or E5-base (zero-shot) in global or company mode in the dev_pilot_v2 runs.
+
+base_labels_dir: data/eval/dev_ai/pilot_v2              # its labelled passages are kept, never re-graded
+base_pool_path: data/eval/annotation/pool.jsonl         # original candidate sources (read only)
+runs_dir: results/dev/pilot_v2                          # the six stored runs (read only)
+runs:
+  - {run: bm25, mode: global}
+  - {run: bm25, mode: company}
+  - {run: bge_zero_shot, mode: global}
+  - {run: bge_zero_shot, mode: company}
+  - {run: e5_zero_shot, mode: global}
+  - {run: e5_zero_shot, mode: company}
+depth: 10
+output_dir: data/eval/dev_ai/pilot_v3/pool

@@ -1,0 +1,661 @@
+{
+  "status": "provisional_development",
+  "notice": "PROVISIONAL DEVELOPMENT METRICS. Labels are AI-generated development labels (see the label provenance), checked only by an AI-assisted audit; these numbers are not benchmark results.",
+  "eval_set": "dev_pilot_v3",
+  "run": "e5_zero_shot",
+  "mode": "global",
+  "mode_definition": "Each question ranks every passage in the corpus; no company restriction.",
+  "annotation_version": "dev_pilot_v3",
+  "label_version": "pilot_v3",
+  "corpus": {
+    "path": "data/processed/corpus_v1.jsonl",
+    "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+    "version": "corpus_v1@1.2",
+    "passages": 10137
+  },
+  "inputs": {
+    "queries": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_queries.jsonl",
+      "sha256": "62cd64a2030dd954cfff080a66268dd713400caf79997d99f8e78faacb17af16"
+    },
+    "qrels": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_qrels.jsonl",
+      "sha256": "32bdde22de08a23e4b4ce75d46c44cbabfe398c3ea7c726071b487a8c0232758"
+    },
+    "metadata": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_eval.metadata.json",
+      "sha256": "0b245d47df28c1426cde02b37c74aa530c22efa54946e70b1dac0c7a5461ac86"
+    },
+    "report": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_eval.report.json",
+      "sha256": "ef3a643b06813acee841aa5b98b722acf703e7cc04ebde9cd7d199dc46822004"
+    },
+    "candidate_pool": {
+      "path": "data/eval/dev_ai/pilot_v3/pool/pool.jsonl",
+      "sha256": "bfa9c38715bab6b53567ba7731805dc307bf78457e13927951f99fe8c762141a"
+    }
+  },
+  "labels": {
+    "description": "pilot_v2 (579 labels for q_0001-q_0010) carried over unchanged, plus claude-opus-5-5 proposals under rubric v1.1 for the 117 passages the expanded pool pilot_v3 added from the top 10 of the six stored zero-shot runs.",
+    "summary": {
+      "qrels": 696,
+      "grades": {
+        "0": 596,
+        "1": 65,
+        "2": 35
+      },
+      "by_source": {
+        "ai_proposal": 692,
+        "human_judgment": 4
+      },
+      "ai_generated": 692,
+      "assistance": {
+        "not_applicable": 692,
+        "not_recorded": 4
+      },
+      "changed_by_rule": {
+        "P2": 3
+      },
+      "open_flags_by_rule": {
+        "P1": 11,
+        "P2": 2,
+        "P3": 1,
+        "P5": 2,
+        "low_confidence": 8
+      },
+      "by_introduced_in": {
+        "pilot_v2": 579,
+        "pilot_v3": 117
+      }
+    },
+    "audit_independence": "ai_assisted",
+    "exceptions": {
+      "no_positive": [],
+      "no_grade_2": []
+    }
+  },
+  "retriever": {
+    "name": "e5_zero_shot",
+    "type": "dense",
+    "model_name": "intfloat/e5-base-v2",
+    "model_revision": "f52bf8ec8c7124536f0efb74aca902b2995e5bcd",
+    "query_prefix": "query: ",
+    "passage_prefix": "passage: ",
+    "format_source": "E5 model card: every input needs a prefix, 'query: ' for queries and 'passage: ' for passages in asymmetric retrieval; performance degrades without them.",
+    "embedding_dim": 768,
+    "normalization": "L2 to unit length after the model's own modules (float32)",
+    "similarity": "dot product of unit vectors (cosine), computed in float64",
+    "query_encoding": "one query per forward pass",
+    "batch_size": 32,
+    "device": "cpu",
+    "max_seq_length": 512,
+    "model": {
+      "modules": [
+        "Transformer",
+        "Pooling",
+        "Normalize"
+      ],
+      "pooling": "mean",
+      "model_normalize_module": true,
+      "similarity_fn": "cosine",
+      "model_prompts_not_applied": {
+        "query": "",
+        "document": ""
+      },
+      "tokenizer": {
+        "class": "BertTokenizer",
+        "do_lower_case": true,
+        "model_max_length": 512,
+        "vocab_size": 30522,
+        "truncation_side": "right"
+      },
+      "torch_threads": 4,
+      "libraries": {
+        "sentence-transformers": "5.2.3",
+        "transformers": "5.3.0",
+        "torch": "2.10.0",
+        "tokenizers": "0.22.2",
+        "huggingface-hub": "1.7.1",
+        "numpy": "1.26.4"
+      }
+    },
+    "passage_truncation": {
+      "max_seq_length": 512,
+      "texts": 10137,
+      "truncated": 9208,
+      "truncated_share": 0.9084,
+      "tokens_median": 685,
+      "tokens_mean": 681.1,
+      "tokens_max": 1168,
+      "tokens_beyond_limit_share": 0.2774
+    },
+    "query_truncation": {
+      "max_seq_length": 512,
+      "texts": 10,
+      "truncated": 0,
+      "truncated_share": 0.0,
+      "tokens_median": 28.5,
+      "tokens_mean": 29.1,
+      "tokens_max": 36,
+      "tokens_beyond_limit_share": 0.0
+    },
+    "embeddings_sha256": "73cf951ea6c09a038e8d4062a8ba4c56fd4c7d238c2ee71f5132fea0f69d3d25",
+    "cache": {
+      "dir": "data/cache/embeddings/intfloat__e5-base-v2/5ac696a9075b5dfc",
+      "key": {
+        "format_version": 1,
+        "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+        "model_name": "intfloat/e5-base-v2",
+        "model_revision": "f52bf8ec8c7124536f0efb74aca902b2995e5bcd",
+        "encoding": {
+          "batch_size": 32,
+          "device_type": "cpu",
+          "dtype": "float32",
+          "encoded_field": "passage.text",
+          "libraries": {
+            "sentence-transformers": "5.2.3",
+            "transformers": "5.3.0",
+            "torch": "2.10.0"
+          },
+          "max_seq_length": 512,
+          "normalization": "l2",
+          "passage_prefix": "passage: ",
+          "pooling": "mean"
+        }
+      },
+      "key_sha256": "5ac696a9075b5dfc9def29e5d8623aade9d591cee0dd65f43cb9603de2a08852"
+    }
+  },
+  "diagnostic": false,
+  "settings": {
+    "benchmark_config": "configs/eval/benchmark.yaml",
+    "benchmark_config_sha256": "a582750aee69552a15b8c0c3f9015e7811b29e0158a2ca0d22aa08a33ad1310a",
+    "metrics": [
+      "ndcg@10",
+      "mrr@10",
+      "recall@100"
+    ],
+    "top_k": 100,
+    "judged_k": 10,
+    "coverage_thresholds": {
+      "min_positives": 1,
+      "min_judged_at_10": 0.7
+    },
+    "retrieval_modes": [
+      "global",
+      "company"
+    ],
+    "embedding_cache_dir": "data/cache/embeddings",
+    "runs_from": "results/dev/pilot_v2"
+  },
+  "metric_definitions": {
+    "ndcg@10": "Graded nDCG over the top 10: gain 2^grade - 1, discount log2(rank + 1), ideal ranking from the query's judged grades. Unjudged passages earn gain 0.",
+    "mrr@10": "1 / rank of the first passage judged relevant (grade >= 1) in the top 10, else 0. Unjudged passages count as not relevant.",
+    "recall@100": "Judged-relevant passages (grade >= 1) in the top 100 / all judged-relevant passages of the query. The denominator counts known positives only: recall against the pooled judgments, not the corpus.",
+    "judged@10": "Share of the top 10 that carries a judgment of any grade (0, 1 or 2).",
+    "ndcg@10_judged_only": "nDCG@10 after removing unjudged passages from the ranking (condensed list). Sensitivity check: the score if every unjudged passage were set aside instead of counted as non-relevant.",
+    "mrr@10_judged_only": "MRR@10 on the same condensed ranking."
+  },
+  "unjudged_assumption": "Qrels hold judged passages only (grades 0, 1, 2). An unjudged passage is not a confirmed negative: the standard metrics count it as non-relevant (an assumption), so each query reports how much of its top 10 is judged, how much is a confirmed negative, and how much is unjudged, split into passages from the companies the question asks about (in scope) and from other companies (out of scope).",
+  "candidate_pools": {
+    "disclosure": "Only passages in a question's candidate pool were judged. The original pools were built mainly with BM25, plus seeded random and per-filing samples and a few passages found by hand. This set's pools add every passage the stored runs company/bge_zero_shot, company/bm25, company/e5_zero_shot, global/bge_zero_shot, global/bm25, global/e5_zero_shot ranked in their top 10, labelled by AI proposals, so the top 10 of those runs is judged. Below rank 10, passages BM25 did not pool are still unjudged and count as non-relevant, so Recall@100 still favours BM25-like rankings.",
+    "composition": {
+      "judged": 696,
+      "judged_proposed_by_bm25": 523,
+      "positives": 100,
+      "positives_proposed_by_bm25": 80,
+      "judged_by_source": {
+        "bge_zero_shot": 44,
+        "bge_zero_shot+bm25": 31,
+        "bge_zero_shot+bm25+e5_zero_shot": 24,
+        "bge_zero_shot+e5_zero_shot": 11,
+        "bge_zero_shot+e5_zero_shot+manual": 1,
+        "bm25": 442,
+        "bm25+e5_zero_shot": 25,
+        "bm25+stratified": 1,
+        "e5_zero_shot": 50,
+        "e5_zero_shot+manual": 1,
+        "e5_zero_shot+random": 1,
+        "manual": 3,
+        "random": 49,
+        "stratified": 13
+      },
+      "positives_by_source": {
+        "bge_zero_shot": 6,
+        "bge_zero_shot+bm25": 4,
+        "bge_zero_shot+bm25+e5_zero_shot": 12,
+        "bge_zero_shot+e5_zero_shot": 2,
+        "bge_zero_shot+e5_zero_shot+manual": 1,
+        "bm25": 57,
+        "bm25+e5_zero_shot": 7,
+        "e5_zero_shot": 7,
+        "e5_zero_shot+manual": 1,
+        "manual": 3
+      },
+      "sources": [
+        "bge_zero_shot",
+        "bm25",
+        "e5_zero_shot",
+        "manual",
+        "random",
+        "stratified"
+      ],
+      "run_sources": [
+        "company/bge_zero_shot",
+        "company/bm25",
+        "company/e5_zero_shot",
+        "global/bge_zero_shot",
+        "global/bm25",
+        "global/e5_zero_shot"
+      ],
+      "run_depth": 10
+    }
+  },
+  "comparison_caution": "Do not conclude that one retriever is better from these numbers. Labels are AI-generated development labels on 10 questions, the judged pools come mostly from BM25, and unjudged passages count as non-relevant. Read every score with its judged@10 and unjudged counts; a comparison needs pools that include the dense retrievers' results and human-judged labels.",
+  "aggregate": {
+    "ndcg@10": 0.36071775387042215,
+    "mrr@10": 0.6003968253968253,
+    "recall@100": 0.6663586956521739,
+    "ndcg@10_judged_only": 0.36071775387042215,
+    "mrr@10_judged_only": 0.6003968253968253,
+    "judged@10": 1.0,
+    "queries": 10,
+    "top10_unjudged_total": 0,
+    "top10_unjudged_in_scope_total": 0,
+    "top10_unjudged_out_of_scope_total": 0,
+    "top10_confirmed_negatives_total": 71,
+    "top10_relevant_total": 29,
+    "positives_total": 100,
+    "queries_with_insufficient_coverage": []
+  },
+  "per_query": [
+    {
+      "query_id": "q_0001",
+      "text": "What risks does Apple's fiscal 2024 annual report associate with having most of its hardware built by a few third-party manufacturers abroad?",
+      "tickers": [
+        "AAPL"
+      ],
+      "metrics": {
+        "ndcg@10": 0.19676000841063562,
+        "mrr@10": 0.25,
+        "recall@100": 0.5,
+        "ndcg@10_judged_only": 0.19676000841063562,
+        "mrr@10_judged_only": 0.25
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 79,
+        "positives": 6,
+        "grade_2": 2,
+        "grade_1": 4,
+        "confirmed_negatives": 73
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 1,
+        "grade_1": 0,
+        "confirmed_negatives": 9,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 4,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0002",
+      "text": "Which offerings did Apple credit for the growth in its services revenue in fiscal 2021?",
+      "tickers": [
+        "AAPL"
+      ],
+      "metrics": {
+        "ndcg@10": 0.5562983930884396,
+        "mrr@10": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10_judged_only": 0.5562983930884396,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 55,
+        "positives": 3,
+        "grade_2": 2,
+        "grade_1": 1,
+        "confirmed_negatives": 52
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 1,
+        "grade_1": 0,
+        "confirmed_negatives": 9,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0003",
+      "text": "What reasons did Amazon give for the change in profit from its AWS cloud segment in 2023?",
+      "tickers": [
+        "AMZN"
+      ],
+      "metrics": {
+        "ndcg@10": 0.7366478990436529,
+        "mrr@10": 1.0,
+        "recall@100": 1.0,
+        "ndcg@10_judged_only": 0.7366478990436529,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 66,
+        "positives": 5,
+        "grade_2": 1,
+        "grade_1": 4,
+        "confirmed_negatives": 61
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 3,
+        "grade_2": 1,
+        "grade_1": 2,
+        "confirmed_negatives": 7,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0004",
+      "text": "What average liquidity coverage ratio did JPMorgan Chase report for the firm in the fourth quarter of 2021?",
+      "tickers": [
+        "JPM"
+      ],
+      "metrics": {
+        "ndcg@10": 0.046197971464518935,
+        "mrr@10": 0.14285714285714285,
+        "recall@100": 0.5,
+        "ndcg@10_judged_only": 0.046197971464518935,
+        "mrr@10_judged_only": 0.14285714285714285
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 64,
+        "positives": 8,
+        "grade_2": 2,
+        "grade_1": 6,
+        "confirmed_negatives": 56
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 0,
+        "grade_1": 1,
+        "confirmed_negatives": 9,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 7,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0005",
+      "text": "How much did weaker demand for Pfizer's COVID-19 vaccine and oral antiviral pill reduce its revenues in 2023 versus 2022?",
+      "tickers": [
+        "PFE"
+      ],
+      "metrics": {
+        "ndcg@10": 0.4245595093528095,
+        "mrr@10": 1.0,
+        "recall@100": 0.8125,
+        "ndcg@10_judged_only": 0.4245595093528095,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 75,
+        "positives": 16,
+        "grade_2": 3,
+        "grade_1": 13,
+        "confirmed_negatives": 59
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 5,
+        "grade_2": 1,
+        "grade_1": 4,
+        "confirmed_negatives": 5,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0006",
+      "text": "How much of Tesla's revolving credit facility was undrawn at the end of 2023?",
+      "tickers": [
+        "TSLA"
+      ],
+      "metrics": {
+        "ndcg@10": 0.0,
+        "mrr@10": 0.0,
+        "recall@100": 0.16666666666666666,
+        "ndcg@10_judged_only": 0.0,
+        "mrr@10_judged_only": 0.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 93,
+        "positives": 6,
+        "grade_2": 2,
+        "grade_1": 4,
+        "confirmed_negatives": 87
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 0,
+        "grade_2": 0,
+        "grade_1": 0,
+        "confirmed_negatives": 10,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 30,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0007",
+      "text": "How did Tesla's revenue from selling emissions credits to other automakers change each year from 2019 through 2023?",
+      "tickers": [
+        "TSLA"
+      ],
+      "metrics": {
+        "ndcg@10": 0.46640590392963865,
+        "mrr@10": 0.5,
+        "recall@100": 0.8260869565217391,
+        "ndcg@10_judged_only": 0.46640590392963865,
+        "mrr@10_judged_only": 0.5
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 59,
+        "positives": 23,
+        "grade_2": 16,
+        "grade_1": 7,
+        "confirmed_negatives": 36
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 6,
+        "grade_2": 5,
+        "grade_1": 1,
+        "confirmed_negatives": 4,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 2,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0008",
+      "text": "How were Walmart's net sales for the fiscal year ended January 31, 2024 split among its three reportable segments?",
+      "tickers": [
+        "WMT"
+      ],
+      "metrics": {
+        "ndcg@10": 0.3738189527824658,
+        "mrr@10": 1.0,
+        "recall@100": 0.8333333333333334,
+        "ndcg@10_judged_only": 0.3738189527824658,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 76,
+        "positives": 12,
+        "grade_2": 2,
+        "grade_1": 10,
+        "confirmed_negatives": 64
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 5,
+        "grade_2": 0,
+        "grade_1": 5,
+        "confirmed_negatives": 5,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0009",
+      "text": "How did ExxonMobil's 2022 capital spending break down by business segment and between U.S. and non-U.S. operations?",
+      "tickers": [
+        "XOM"
+      ],
+      "metrics": {
+        "ndcg@10": 0.6812392363893933,
+        "mrr@10": 1.0,
+        "recall@100": 0.625,
+        "ndcg@10_judged_only": 0.6812392363893933,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 67,
+        "positives": 16,
+        "grade_2": 2,
+        "grade_1": 14,
+        "confirmed_negatives": 51
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 6,
+        "grade_2": 2,
+        "grade_1": 4,
+        "confirmed_negatives": 4,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0010",
+      "text": "How does ExxonMobil's 2020 annual report say that output decisions by oil-producing nations, such as OPEC members, can affect its business?",
+      "tickers": [
+        "XOM"
+      ],
+      "metrics": {
+        "ndcg@10": 0.12524966424266723,
+        "mrr@10": 0.1111111111111111,
+        "recall@100": 0.4,
+        "ndcg@10_judged_only": 0.12524966424266723,
+        "mrr@10_judged_only": 0.1111111111111111
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 62,
+        "positives": 5,
+        "grade_2": 3,
+        "grade_1": 2,
+        "confirmed_negatives": 57
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 1,
+        "grade_1": 0,
+        "confirmed_negatives": 9,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 9,
+      "coverage_flags": []
+    }
+  ],
+  "run_file": {
+    "path": "run.jsonl",
+    "sha256": "99f6adf92261637fbbc819b3777ab41d18987f8cb97e2c1716a85961f2a075a1"
+  },
+  "skipped_retrievers": [],
+  "source_run": {
+    "run": "e5_zero_shot",
+    "mode": "global",
+    "run_file": "results/dev/pilot_v2/global/e5_zero_shot/run.jsonl",
+    "run_sha256": "6fd11654718d74c7f00aff867a66778d6cc6685fb7602dabd4946d05d8b1f27b",
+    "metrics_file": "results/dev/pilot_v2/global/e5_zero_shot/metrics.json",
+    "metrics_sha256": "7a170f1c44bd6aa7b41a7292fa5e4f9e6ee4c116eee622e1ee31cab40c4ea57f",
+    "eval_set": "dev_pilot_v2",
+    "label_version": "pilot_v2",
+    "top_k": 100
+  },
+  "compared_with": {
+    "eval_set": "dev_pilot_v2",
+    "label_version": "pilot_v2",
+    "metrics_file": "results/dev/pilot_v2/global/e5_zero_shot/metrics.json",
+    "metrics_sha256": "7a170f1c44bd6aa7b41a7292fa5e4f9e6ee4c116eee622e1ee31cab40c4ea57f",
+    "same_ranking": true,
+    "aggregate": {
+      "ndcg@10": 0.3142674084049385,
+      "mrr@10": 0.5503968253968253,
+      "recall@100": 0.6280632411067193,
+      "ndcg@10_judged_only": 0.45081080173996735,
+      "mrr@10_judged_only": 0.675,
+      "judged@10": 0.43,
+      "queries": 10,
+      "top10_unjudged_total": 57,
+      "top10_unjudged_in_scope_total": 44,
+      "top10_unjudged_out_of_scope_total": 13,
+      "top10_confirmed_negatives_total": 23,
+      "top10_relevant_total": 20,
+      "positives_total": 85,
+      "queries_with_insufficient_coverage": [
+        "q_0001",
+        "q_0003",
+        "q_0004",
+        "q_0005",
+        "q_0006",
+        "q_0008",
+        "q_0009",
+        "q_0010"
+      ]
+    }
+  }
+}

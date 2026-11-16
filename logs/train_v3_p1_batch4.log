@@ -1,0 +1,43 @@
+[02_generate_queries] rate limited (HTTP 429); next attempt in 31.0s
+[02_generate_queries] rate limited (HTTP 429); next attempt in 411.0s
+[02_generate_queries] plan train_v3_p1_batch4: 100 passages; companies: JPM 20, PFE 20, TSLA 20, WMT 20, XOM 20; fiscal years: 2019 10, 2020 13, 2021 15, 2022 15, 2023 15, 2024 15, 2025 15, 2026 2
+[02_generate_queries] train: 100 approved passages, 0 done, 0 failed; 100 to request from groq (qwen/qwen3.8-27b), about 100 min at 1 requests/min
+[02_generate_queries] requests: 100 if every reply is usable, at most 1000 with every retry; request budget 100
+[02_generate_queries] request settings: temperature 0.7, max_completion_tokens 768, json_mode True, reasoning_format parsed, reasoning_effort none, prompt sec-qgen-v2 (f42bdc5426c7)
+[02_generate_queries] pacing: 20 requests/min and 1000 output tokens/min, each request reserving 768; 1/min if every reply used it all, more with shorter replies; rate-limit waits up to 180s
+[02_generate_queries] requests sent: 19; tokens: {'completion_tokens': 4224, 'prompt_tokens': 20503, 'total_tokens': 24727}
+[02_generate_queries] HTTP 429 responses: 2; waited 651s for pacing and rate limits
+[02_generate_queries] rate limits after the last response: {'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '983', 'x-ratelimit-remaining-tokens': '8000', 'x-ratelimit-reset-requests': '24m28.8s', 'x-ratelimit-reset-tokens': '1ms'}
+[02_generate_queries] train: {'skipped_done': 0, 'skipped_failed': 0, 'done': 17, 'failed': 0, 'stopped_by_budget': 0, 'stopped_by_rate_limit': 1}
+[02_generate_queries] stopped by a rate limit (the API asks to wait 411s, longer than generation.max_rate_limit_wait_seconds (180s)); rerun later to resume (completed passages are skipped)
+[02_generate_queries] request failed (HTTP 503: {"error":{"message":"qwen/qwen3.8-27b is currently over capacity. Please try again and back off exponentially. Visit https://groqstatus.com to see if there is an active incident.","type":"internal_ser); retrying in 2.0s
+[02_generate_queries] rate limited (HTTP 429); next attempt in 516.0s
+[02_generate_queries] plan train_v3_p1_batch4: 100 passages; companies: JPM 20, PFE 20, TSLA 20, WMT 20, XOM 20; fiscal years: 2019 10, 2020 13, 2021 15, 2022 15, 2023 15, 2024 15, 2025 15, 2026 2
+[02_generate_queries] train: 100 approved passages, 17 done, 0 failed; 83 to request from groq (qwen/qwen3.8-27b), about 83 min at 1 requests/min
+[02_generate_queries] requests: 83 if every reply is usable, at most 830 with every retry; request budget 81
+[02_generate_queries] request settings: temperature 0.7, max_completion_tokens 768, json_mode True, reasoning_format parsed, reasoning_effort none, prompt sec-qgen-v2 (f42bdc5426c7)
+[02_generate_queries] pacing: 20 requests/min and 1000 output tokens/min, each request reserving 768; 1/min if every reply used it all, more with shorter replies; rate-limit waits up to 180s
+[02_generate_queries] requests sent: 18; tokens: {'completion_tokens': 3913, 'prompt_tokens': 18594, 'total_tokens': 22507}
+[02_generate_queries] HTTP 429 responses: 1; waited 557s for pacing and rate limits
+[02_generate_queries] rate limits after the last response: {'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '984', 'x-ratelimit-remaining-tokens': '8000', 'x-ratelimit-reset-requests': '23m2.4s', 'x-ratelimit-reset-tokens': '1ms'}
+[02_generate_queries] train: {'skipped_done': 17, 'skipped_failed': 0, 'done': 16, 'failed': 0, 'stopped_by_budget': 0, 'stopped_by_rate_limit': 1}
+[02_generate_queries] stopped by a rate limit (the API asks to wait 516s, longer than generation.max_rate_limit_wait_seconds (180s)); rerun later to resume (completed passages are skipped)
+[02_generate_queries] plan train_v3_p1_batch4: 100 passages; companies: JPM 20, PFE 20, TSLA 20, WMT 20, XOM 20; fiscal years: 2019 10, 2020 13, 2021 15, 2022 15, 2023 15, 2024 15, 2025 15, 2026 2
+[02_generate_queries] train: 100 approved passages, 33 done, 0 failed; 67 to request from groq (qwen/qwen3.8-27b), about 67 min at 1 requests/min
+[02_generate_queries] requests: 67 if every reply is usable, at most 670 with every retry; request budget 63
+[02_generate_queries] request settings: temperature 0.7, max_completion_tokens 768, json_mode True, reasoning_format parsed, reasoning_effort none, prompt sec-qgen-v2 (f42bdc5426c7)
+[02_generate_queries] pacing: 20 requests/min and 1000 output tokens/min, each request reserving 768; 1/min if every reply used it all, more with shorter replies; rate-limit waits up to 180s
+[02_generate_queries] requests sent: 63; tokens: {'completion_tokens': 15333, 'prompt_tokens': 76070, 'total_tokens': 91403}
+[02_generate_queries] HTTP 429 responses: 0; waited 2703s for pacing and rate limits
+[02_generate_queries] rate limits after the last response: {'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '949', 'x-ratelimit-remaining-tokens': '6621', 'x-ratelimit-reset-requests': '1h13m26.4s', 'x-ratelimit-reset-tokens': '10.342s'}
+[02_generate_queries] train: {'skipped_done': 33, 'skipped_failed': 0, 'done': 63, 'failed': 0, 'stopped_by_budget': 1, 'stopped_by_rate_limit': 0}
+[02_generate_queries] stopped at the request budget; rerun to resume (completed passages are skipped)
+[02_generate_queries] plan train_v3_p1_batch4: 100 passages; companies: JPM 20, PFE 20, TSLA 20, WMT 20, XOM 20; fiscal years: 2019 10, 2020 13, 2021 15, 2022 15, 2023 15, 2024 15, 2025 15, 2026 2
+[02_generate_queries] train: 100 approved passages, 96 done, 0 failed; 4 to request from groq (qwen/qwen3.8-27b), about 4 min at 1 requests/min
+[02_generate_queries] requests: 4 if every reply is usable, at most 40 with every retry; request budget 10
+[02_generate_queries] request settings: temperature 0.7, max_completion_tokens 768, json_mode True, reasoning_format parsed, reasoning_effort none, prompt sec-qgen-v2 (f42bdc5426c7)
+[02_generate_queries] pacing: 20 requests/min and 1000 output tokens/min, each request reserving 768; 1/min if every reply used it all, more with shorter replies; rate-limit waits up to 180s
+[02_generate_queries] requests sent: 4; tokens: {'completion_tokens': 1111, 'prompt_tokens': 5118, 'total_tokens': 6229}
+[02_generate_queries] HTTP 429 responses: 0; waited 124s for pacing and rate limits
+[02_generate_queries] rate limits after the last response: {'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '996', 'x-ratelimit-remaining-tokens': '6484', 'x-ratelimit-reset-requests': '5m45.6s', 'x-ratelimit-reset-tokens': '11.37s'}
+[02_generate_queries] train: {'skipped_done': 96, 'skipped_failed': 0, 'done': 4, 'failed': 0, 'stopped_by_budget': 0, 'stopped_by_rate_limit': 0}

@@ -1,0 +1,17 @@
+# First validation-pair set for the bge_base_ft_v2 preparation (finretriever.training.validation_set).
+#
+# Built offline by:
+#   python3 scripts/02_generate_queries.py build-validation --config configs/train/data_prep_v2.yaml \
+#       --validation configs/train/validation_v1.yaml
+# Written once to data/processed/train/bge_base_ft_v2/validation_sets/validation_pairs_v1/, apart from the training
+# pairs and candidates. A question is included only if its AI quality decision is "accept" and it passes every
+# check: provenance, candidate validator, a positive that only validation uses, evidence that no train or blocked
+# passage holds (exactly or possibly), and no overlap with an evaluation or training question.
+# The decisions are an AI review: the pairs are not human-validated and not gold labels. Report:
+# docs/validation_pilot_v1_quality_report.md.
+
+version: validation_pairs_v1
+data_prep_config: configs/train/data_prep_v2.yaml
+plan: val_pilot_v1                # 50 validation passages, generated with sec-qgen-v2 and checked by sec-qcheck-v3
+decisions: data/validation_review/val_pilot_v1_quality_decisions.jsonl
+training_candidates: [train_candidates_v1]  # the 66 training candidates it must share no passage or question with

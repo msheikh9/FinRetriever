@@ -1,0 +1,101 @@
+slot,tickers,topic,question_type,comparison,period,fiscal_years
+S001,AAPL,financial_statements,exact_fact,none,FY2020,2020
+S002,AAPL,debt_liquidity,exact_fact,none,FY2022,2022
+S003,AAPL,revenue_profitability,exact_fact,none,FY2023,2023
+S004,AAPL,other,exact_fact,none,FY2019,2019
+S005,AAPL,risk_factors,semantic,none,FY2024,2024
+S006,AAPL,risk_factors,semantic,none,FY2025,2025
+S007,AAPL,mdna,semantic,none,FY2021,2021
+S008,AAPL,mdna,semantic,none,FY2020,2020
+S009,AAPL,financial_statements,table,cross_year,FY2022 vs FY2024,2022;2024
+S010,AAPL,revenue_profitability,table,none,FY2022,2022
+S011,AAPL,debt_liquidity,table,none,FY2023,2023
+S012,AAPL,mdna,multi_passage,cross_year,FY2023 vs FY2025,2023;2025
+S013,AAPL,revenue_profitability,table,cross_year,FY2021 vs FY2023,2021;2023
+S014,AMZN,financial_statements,exact_fact,none,FY2022,2022
+S015,AMZN,debt_liquidity,exact_fact,none,FY2019,2019
+S016,AMZN,revenue_profitability,exact_fact,none,FY2023,2023
+S017,AMZN,other,exact_fact,none,FY2020,2020
+S018,AMZN,risk_factors,semantic,none,FY2024,2024
+S019,AMZN,risk_factors,semantic,none,FY2025,2025
+S020,AMZN,mdna,semantic,none,FY2021,2021
+S021,AMZN,mdna,semantic,none,FY2022,2022
+S022,AMZN,financial_statements,table,cross_year,FY2023 vs FY2025,2023;2025
+S023,AMZN,revenue_profitability,table,none,FY2019,2019
+S024,AMZN,debt_liquidity,table,none,FY2023,2023
+S025,AMZN,mdna,multi_passage,cross_year,FY2022 vs FY2024,2022;2024
+S026,AMZN,revenue_profitability,table,cross_year,FY2023 vs FY2025,2023;2025
+S027,JPM,financial_statements,exact_fact,none,FY2021,2021
+S028,JPM,debt_liquidity,exact_fact,none,FY2019,2019
+S029,JPM,revenue_profitability,exact_fact,none,FY2025,2025
+S030,JPM,other,exact_fact,none,FY2024,2024
+S031,JPM,risk_factors,semantic,none,FY2020,2020
+S032,JPM,risk_factors,semantic,none,FY2023,2023
+S033,JPM,mdna,semantic,none,FY2022,2022
+S034,JPM,mdna,semantic,none,FY2021,2021
+S035,JPM,financial_statements,table,cross_year,FY2022 vs FY2024,2022;2024
+S036,JPM,revenue_profitability,table,none,FY2019,2019
+S037,JPM,debt_liquidity,table,none,FY2025,2025
+S038,JPM,mdna,multi_passage,cross_year,FY2023 vs FY2025,2023;2025
+S039,JPM,financial_statements,multi_passage,cross_year,FY2021 vs FY2023,2021;2023
+S040,PFE,financial_statements,exact_fact,none,FY2021,2021
+S041,PFE,debt_liquidity,exact_fact,none,FY2022,2022
+S042,PFE,revenue_profitability,exact_fact,none,FY2020,2020
+S043,PFE,other,exact_fact,none,FY2019,2019
+S044,PFE,risk_factors,semantic,none,FY2023,2023
+S045,PFE,risk_factors,semantic,none,FY2025,2025
+S046,PFE,mdna,semantic,none,FY2024,2024
+S047,PFE,mdna,semantic,none,FY2021,2021
+S048,PFE,financial_statements,table,cross_year,FY2021 vs FY2023,2021;2023
+S049,PFE,revenue_profitability,table,none,FY2022,2022
+S050,PFE,debt_liquidity,table,none,FY2020,2020
+S051,PFE,mdna,multi_passage,cross_year,FY2019 vs FY2021,2019;2021
+S052,PFE,revenue_profitability,table,cross_year,FY2020 vs FY2022,2020;2022
+S053,TSLA,financial_statements,exact_fact,none,FY2023,2023
+S054,TSLA,debt_liquidity,exact_fact,none,FY2021,2021
+S055,TSLA,revenue_profitability,exact_fact,none,FY2025,2025
+S056,TSLA,other,exact_fact,none,FY2022,2022
+S057,TSLA,risk_factors,semantic,none,FY2020,2020
+S058,TSLA,risk_factors,semantic,none,FY2019,2019
+S059,TSLA,mdna,semantic,none,FY2024,2024
+S060,TSLA,mdna,semantic,none,FY2023,2023
+S061,TSLA,financial_statements,table,cross_year,FY2021 vs FY2023,2021;2023
+S062,TSLA,revenue_profitability,table,none,FY2021,2021
+S063,TSLA,debt_liquidity,table,none,FY2025,2025
+S064,TSLA,mdna,multi_passage,cross_year,FY2019 vs FY2021,2019;2021
+S065,TSLA,financial_statements,multi_passage,cross_year,FY2022 vs FY2024,2022;2024
+S066,WMT,financial_statements,exact_fact,none,FY2021,2021
+S067,WMT,debt_liquidity,exact_fact,none,FY2025,2025
+S068,WMT,revenue_profitability,exact_fact,none,FY2024,2024
+S069,WMT,other,exact_fact,none,FY2026,2026
+S070,WMT,risk_factors,semantic,none,FY2022,2022
+S071,WMT,risk_factors,semantic,none,FY2023,2023
+S072,WMT,mdna,semantic,none,FY2020,2020
+S073,WMT,mdna,semantic,none,FY2021,2021
+S074,WMT,financial_statements,table,cross_year,FY2020 vs FY2022,2020;2022
+S075,WMT,revenue_profitability,table,none,FY2025,2025
+S076,WMT,debt_liquidity,table,none,FY2024,2024
+S077,WMT,mdna,multi_passage,cross_year,FY2024 vs FY2026,2024;2026
+S078,WMT,revenue_profitability,table,cross_year,FY2020 vs FY2022,2020;2022
+S079,XOM,financial_statements,exact_fact,none,FY2023,2023
+S080,XOM,debt_liquidity,exact_fact,none,FY2024,2024
+S081,XOM,revenue_profitability,exact_fact,none,FY2019,2019
+S082,XOM,other,exact_fact,none,FY2022,2022
+S083,XOM,risk_factors,semantic,none,FY2020,2020
+S084,XOM,risk_factors,semantic,none,FY2025,2025
+S085,XOM,mdna,semantic,none,FY2021,2021
+S086,XOM,financial_statements,table,cross_year,FY2023 vs FY2025,2023;2025
+S087,XOM,revenue_profitability,table,none,FY2023,2023
+S088,XOM,debt_liquidity,table,none,FY2024,2024
+S089,XOM,mdna,multi_passage,cross_year,FY2019 vs FY2021,2019;2021
+S090,XOM,financial_statements,multi_passage,cross_year,FY2023 vs FY2025,2023;2025
+S091,"JPM,XOM",risk_factors,semantic,cross_company,FY2021,2021
+S092,"AMZN,PFE",risk_factors,semantic,cross_company,FY2020,2020
+S093,"WMT,XOM",risk_factors,semantic,cross_company,FY2025 (WMT: FY2026),2025;2026
+S094,"AAPL,XOM",risk_factors,semantic,cross_company,FY2023,2023
+S095,"AAPL,JPM",debt_liquidity,semantic,cross_company,FY2025,2025
+S096,"AMZN,WMT",debt_liquidity,multi_passage,cross_company,FY2020 (WMT: FY2021),2020;2021
+S097,"AAPL,AMZN",revenue_profitability,multi_passage,cross_company,FY2025,2025
+S098,"TSLA,WMT",revenue_profitability,multi_passage,cross_company,FY2024 (WMT: FY2025),2024;2025
+S099,"JPM,PFE",financial_statements,multi_passage,cross_company,FY2024,2024
+S100,"PFE,TSLA",financial_statements,multi_passage,cross_company,FY2021,2021

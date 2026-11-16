@@ -1,0 +1,72 @@
+# Fully pinned environment for FinRetriever: Linux x86_64, CPU-only PyTorch (what CI installs), Python 3.11.
+# Every package is at the version installed in the environment that produced the published results
+# ("-c analysis environment"); see docs/environment.md. Regenerate with:
+#   uv pip compile requirements-ci.txt --python-version 3.11.5 --python-platform x86_64-manylinux_2_28 --index-strategy unsafe-best-match --emit-index-url \
+#     -c <freeze of the analysis environment> --no-header --annotation-style line -o requirements/lock-linux-x86_64-cpu.txt
+# Install: python3.11 -m venv .venv && .venv/bin/pip install -r requirements/lock-linux-x86_64-cpu.txt && .venv/bin/pip install -e . --no-deps
+--index-url https://pypi.org/simple
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+annotated-doc==0.0.4      # via typer, -c analysis environment
+annotated-types==0.7.0    # via pydantic, -c analysis environment
+anyio==4.13.0             # via httpx, -c analysis environment
+beautifulsoup4==4.14.3    # via -c analysis environment, -r requirements.txt
+black==26.5.1             # via -c analysis environment, -r requirements-dev.txt
+certifi==2026.5.20        # via httpcore, httpx, requests, -c analysis environment
+charset-normalizer==3.4.6  # via requests, -c analysis environment
+click==8.3.1              # via black, typer, -c analysis environment
+coverage==7.13.5          # via pytest-cov, -c analysis environment
+filelock==3.25.2          # via huggingface-hub, torch, -c analysis environment
+fsspec==2024.6.1          # via huggingface-hub, torch, -c analysis environment
+h11==0.16.0               # via httpcore, -c analysis environment
+hf-xet==1.4.2             # via huggingface-hub, -c analysis environment
+httpcore==1.0.9           # via httpx, -c analysis environment
+httpx==0.27.2             # via huggingface-hub, -c analysis environment
+huggingface-hub==1.7.1    # via sentence-transformers, tokenizers, transformers, -c analysis environment, -r requirements.txt
+idna==3.11                # via anyio, httpx, requests, -c analysis environment
+iniconfig==2.3.0          # via pytest, -c analysis environment
+jinja2==3.1.6             # via torch, -c analysis environment
+joblib==1.5.3             # via scikit-learn, -c analysis environment
+librt==0.8.1              # via mypy, -c analysis environment
+lxml==6.0.2               # via -c analysis environment, -r requirements.txt
+markdown-it-py==4.0.0     # via rich, -c analysis environment
+markupsafe==3.0.3         # via jinja2, -c analysis environment
+mdurl==0.1.2              # via markdown-it-py, -c analysis environment
+mpmath==1.3.0             # via sympy, -c analysis environment
+mypy==1.19.1              # via -c analysis environment, -r requirements-dev.txt
+mypy-extensions==1.1.0    # via black, mypy, -c analysis environment
+networkx==3.6.1           # via torch, -c analysis environment
+numpy==1.26.4             # via rank-bm25, scikit-learn, scipy, sentence-transformers, transformers, -c analysis environment, -r requirements.txt
+packaging==26.0           # via black, huggingface-hub, pytest, transformers, -c analysis environment
+pathspec==1.0.4           # via black, mypy, -c analysis environment
+platformdirs==4.9.4       # via black, -c analysis environment
+pluggy==1.6.0             # via pytest, pytest-cov, -c analysis environment
+pydantic==2.12.5          # via -c analysis environment, -r requirements.txt
+pydantic-core==2.41.5     # via pydantic, -c analysis environment
+pygments==2.19.2          # via pytest, rich, -c analysis environment
+pytest==9.0.2             # via pytest-cov, -c analysis environment, -r requirements-dev.txt
+pytest-cov==7.0.0         # via -c analysis environment, -r requirements-dev.txt
+pytokens==0.4.1           # via black, -c analysis environment
+pyyaml==6.0.3             # via huggingface-hub, transformers, -c analysis environment, -r requirements.txt
+rank-bm25==0.2.2          # via -c analysis environment, -r requirements.txt
+regex==2026.2.28          # via transformers, -c analysis environment
+requests==2.32.3          # via -c analysis environment, -r requirements.txt
+rich==14.3.3              # via typer, -c analysis environment
+ruff==0.15.7              # via -c analysis environment, -r requirements-dev.txt
+safetensors==0.7.0        # via transformers, -c analysis environment, -r requirements.txt
+scikit-learn==1.3.2       # via sentence-transformers, -c analysis environment
+scipy==1.17.1             # via scikit-learn, sentence-transformers, -c analysis environment
+sentence-transformers==5.2.3  # via -c analysis environment, -r requirements.txt
+shellingham==1.5.4        # via typer, -c analysis environment
+sniffio==1.3.1            # via httpx, -c analysis environment
+soupsieve==2.8.3          # via beautifulsoup4, -c analysis environment
+sympy==1.14.0             # via torch, -c analysis environment
+threadpoolctl==3.6.0      # via scikit-learn, -c analysis environment
+tokenizers==0.22.2        # via transformers, -c analysis environment, -r requirements.txt
+torch==2.10.0+cpu         # via sentence-transformers, -c analysis environment, -r requirements.txt
+tqdm==4.67.3              # via huggingface-hub, sentence-transformers, transformers, -c analysis environment
+transformers==5.3.0       # via sentence-transformers, -c analysis environment, -r requirements.txt
+typer==0.24.1             # via huggingface-hub, transformers, -c analysis environment
+typing-extensions==4.15.0  # via anyio, beautifulsoup4, huggingface-hub, mypy, pydantic, pydantic-core, sentence-transformers, torch, typing-inspection, -c analysis environment
+typing-inspection==0.4.2  # via pydantic, -c analysis environment
+urllib3==2.6.3            # via requests, -c analysis environment

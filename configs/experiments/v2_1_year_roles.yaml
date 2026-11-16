@@ -1,0 +1,75 @@
+# FinRetriever v2.1: fiscal-year roles in query understanding (parser qu-v2), controlled re-run
+# (scripts/11_v2_experiments.py; docs/retrieval_v2_metadata_hybrid.md, "v2.1: year roles").
+#
+# The ONLY change from configs/experiments/v2_metadata_hybrid.yaml is the parser: qu-v2 reads each year's role
+# (fiscal, target, historical, maturity, incidental) and only fiscal years constrain retrieval. Every experiment
+# below has exactly the settings it has in the frozen v2 run (the runner refuses otherwise), and every run is
+# compared, question by question, with the same experiment and seed in that run (reference_results).
+#
+# Fixed BEFORE this run: the experiments are the v2 experiments whose year handling the parser can change, plus
+# the baseline. E5 (company filter + fiscal-year BOOST, no hard year filter) is the release default; the
+# hard-year-filter experiments (E3, E3b, E7) are re-run to measure whether year roles repair what the filter lost.
+#
+# Development history (stated so that no result below is read as independent): the qu-v2 rules were written
+# after qu-v1's errors were seen on the validation questions (val_pilot_v1:validation_000049, "by 2025 compared
+# to 2016") and were checked against the 678 training and 93 validation questions. The 100 human-written
+# questions were not used to write the rules, but their qu-v1 parse had been inspected before, so their parser
+# accuracy is not a blind test either.
+
+name: v2_1_year_roles
+version: 1
+corpus_path: data/processed/corpus_v1.jsonl
+corpus_sha256: ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004
+embedding_cache_dir: data/cache/embeddings
+device: cpu
+top_k: 100
+
+inputs:
+  trainer_config: configs/train/biencoder_bge_base_ft_v3_a1.yaml
+  validation_manifest: [data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v4/manifest.json,
+                        40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e]
+  dev_queries: data/eval/dev_ai/pilot_v3/dev_queries.jsonl
+  dev_qrels: data/eval/dev_ai/pilot_v3/dev_qrels.jsonl
+  real_questions: [data/eval/gold_v1/questions_frozen_v2.jsonl,
+                   fbcf2f5a124a17895ae465fb79f671372d5a2033a869ab4ab214e8676e270202]
+
+parser:
+  aliases_from: configs/train/data_prep_v3.yaml
+  version: qu-v2
+
+reference_results:   # the frozen v2 run (parser qu-v1), never overwritten
+  path: results/experiments/v2_metadata_hybrid
+  manifest_sha256: e8198b2ffad1d515503d89417bf23b52b2387daac2fc3a4f9ff322706fd294b9
+
+seeds:
+  a1_seed42:
+    checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055
+    selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/selection.json
+  a1_seed1337:
+    checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/checkpoint-step-000040
+    selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/selection.json
+  a1_seed2026:
+    checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/checkpoint-step-000040
+    selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/selection.json
+
+components:
+  bm25:        {type: bm25, tokenizer: word, backend: python}
+  a1:          {type: a1, passage_view: text}
+  a1_enriched: {type: a1, passage_view: header_v1}
+
+defaults:
+  fusion: {method: single, k: 60, weights: {}, depth: 100}
+  scope: {company: none, year: none, after: 2, before_explicit: 0, before_implicit: 1, min_eligible: 20,
+          cells: "off", source: parsed}
+  metadata_weight: 1.0
+
+experiments:
+  - {id: E1_a1, role: baseline, components: [a1]}
+  - {id: E3_a1_year, role: primary, components: [a1], scope: {year: filter}}
+  - {id: E3b_a1_company_year, role: primary, components: [a1], scope: {company: filter, year: filter}}
+  - {id: E5_hybrid_rrf_meta, role: primary, components: [bm25, a1], fusion: {method: rrf},
+     scope: {company: filter, year: boost}}
+  - {id: E7_combined, role: primary, components: [bm25, a1_enriched], fusion: {method: rrf},
+     scope: {company: filter, year: filter, cells: interleave}}
+  - {id: X_combined_boost, role: exploratory, components: [bm25, a1_enriched], fusion: {method: rrf},
+     scope: {company: filter, year: boost, cells: interleave}}

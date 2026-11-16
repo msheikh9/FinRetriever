@@ -1,0 +1,52 @@
+# The A0-versus-A1 experiment (approved 2026-11-09: docs/training_b1_b3_proposal.md K1-K4; implementation in
+# docs/training_a1_implementation_report.md). A0 is zero-shot BGE-base, which is step 0 of every run. A1 is BGE-base
+# fine-tuned on train_candidates_v3 with in-batch negatives: three seeds, GradCache, balanced batching, and
+# checkpoints chosen only on validation_pairs_v4 by the fixed rule (finretriever.training.checkpoint_selection).
+# Every planned evaluation is recorded; those after the rule's stop are never selectable. The decision rule
+# (finretriever.training.decision_rule, scripts/07_decide_a1_vs_a0.py) reads only the three selection records.
+#
+# The training and validation questions are synthetic and accepted by an AI review: not human-validated, not gold
+# labels. No development or evaluation data is read by training, selection or the decision.
+#
+# Dry run (verifies inputs, the validation set's isolation and each seed's schedule; loads no model, writes nothing):
+#   python scripts/05_train_biencoder.py --config configs/train/biencoder_bge_base_ft_v3_a1.yaml
+# The GPU rehearsal (no optimizer step) and training each need explicit approval (docs/kaggle_training.md). All three
+# seeds must run on the same GPU type and software stack: the decision rule refuses otherwise.
+
+name: bge_base_ft_v3_a1
+
+base_model:
+  name: BAAI/bge-base-en-v1.5
+  revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a   # the zero-shot baseline's pinned commit
+  query_prefix: "Represent this sentence for searching relevant passages: "   # as in evaluation
+  passage_prefix: ""
+  pooling: cls                                          # BGE's pooling (its model card), then L2 normalisation
+
+data:
+  data_prep_config: configs/train/data_prep_v3.yaml
+  candidates: train_candidates_v3   # configs/train/candidates_v3.yaml: 678 candidates (the 66 and 612 from P1)
+
+training:
+  seeds: [42, 1337, 2026]           # one run per seed (--seed), each in models/bge_base_ft_v3_a1/<name>-seed<seed>
+  batch_size: 64                    # at most 64 pairs per batch; balanced batching gives 61-62 (60-61 negatives)
+  batching: balanced                # equal-size conflict-free batches: every pair in every epoch, none dropped
+  mini_batch_size: 16               # GradCache: texts per forward pass (memory, not negatives)
+  gradient_accumulation_steps: 1    # accumulation would not add in-batch negatives
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1                 # 6 of the 55 steps
+  epochs: 5                         # 55 optimizer steps per seed (11 batches per epoch)
+  temperature: 0.02                 # BGE's published fine-tuning setting (scale 50)
+  query_max_length: 128             # the longest instruction + query is far shorter; longer is an error
+  passage_max_length: 512           # the preparation's visible-text limit (checked)
+  max_grad_norm: 1.0
+  fp16: true                        # T4 has no bf16; a non-finite gradient stops the run (no silent scaler change)
+  gradient_checkpointing: false     # GradCache bounds memory by the mini-batch
+  device: cuda
+
+checkpoints:
+  output_dir: models/bge_base_ft_v3_a1   # gitignored; one directory per seed, never written over
+
+validation:
+  version: validation_pairs_v4      # 93 AI-reviewed synthetic questions (not gold); checkpoint selection only
+  batch_size: 64                    # texts per forward pass when the corpus is encoded for validation

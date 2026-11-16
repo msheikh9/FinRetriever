@@ -1,0 +1,55 @@
+# Mechanics rehearsal of the full fine-tuning setup on one T4 (docs/training_full_v1.md): bge_base_ft_v3, GradCache,
+# three seeds and checkpoint selection on validation_pairs_v4, over the 66 existing training candidates.
+#
+# NOT the experiment. 66 pairs are far too few to measure domain adaptation: the run checks the mechanics at the real
+# settings (memory and time with GradCache at batch 64, a full-corpus validation pass per evaluation, selection,
+# resumption). No retrieval result may be read from it. The experiment's config is written once train_candidates_v3
+# (the 66 and the P1 batches) exists. Training needs explicit approval.
+#
+# The training and validation questions are synthetic and accepted by an AI review: not human-validated, not gold
+# labels. The validation set chooses among one run's checkpoints, by the fixed rule of
+# finretriever.training.checkpoint_selection (whole-corpus MRR@10 at step 0 and every 5 steps, ties to the earlier
+# step, early stop after 3 evaluations without improvement); nothing else reads it, and no evaluation data is read.
+#
+# Dry run (verifies inputs, the validation set's isolation and each seed's schedule; loads no model, writes nothing):
+#   python scripts/05_train_biencoder.py --config configs/train/biencoder_bge_base_ft_v3_rehearsal.yaml
+# Train one seed (on the T4, after approval; docs/kaggle_training.md):
+#   python scripts/05_train_biencoder.py --config configs/train/biencoder_bge_base_ft_v3_rehearsal.yaml --seed 42 \
+#       --confirm-training
+
+name: bge_base_ft_v3_rehearsal
+
+base_model:
+  name: BAAI/bge-base-en-v1.5
+  revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a   # the zero-shot baseline's pinned commit
+  query_prefix: "Represent this sentence for searching relevant passages: "   # as in evaluation
+  passage_prefix: ""
+  pooling: cls                                          # BGE's pooling (its model card), then L2 normalisation
+
+data:
+  data_prep_config: configs/train/data_prep_v3.yaml
+  candidates: train_candidates_v2   # configs/train/candidates_v2.yaml: the 66 candidates, re-checked in bge_base_ft_v3
+
+training:
+  seeds: [42, 1337, 2026]           # one run per seed (--seed), each in models/bge_base_ft_v3_rehearsal/<name>-seed<seed>
+  batch_size: 64                    # 63 in-batch negatives per query
+  mini_batch_size: 16               # GradCache: texts per forward pass (the smoke run measured 5.0 GiB at 16 pairs)
+  gradient_accumulation_steps: 1    # accumulation would not add in-batch negatives
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  epochs: 5                         # an upper bound; early stopping may end the run sooner
+  temperature: 0.02                 # BGE's published fine-tuning setting (scale 50)
+  query_max_length: 128             # the longest instruction + query is far shorter; longer is an error
+  passage_max_length: 512           # the preparation's visible-text limit (checked)
+  max_grad_norm: 1.0
+  fp16: true                        # T4 has no bf16
+  gradient_checkpointing: false     # GradCache bounds memory by the mini-batch
+  device: cuda
+
+checkpoints:
+  output_dir: models/bge_base_ft_v3_rehearsal   # gitignored; one directory per seed, never written over
+
+validation:
+  version: validation_pairs_v4      # 93 AI-reviewed synthetic questions (not gold); checkpoint selection only
+  batch_size: 64                    # texts per forward pass when the corpus is encoded for validation

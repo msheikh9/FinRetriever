@@ -1,0 +1,209 @@
+{
+  "environment": {
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "device_type": "cuda",
+    "gpu_capability": "7.5",
+    "gpu_memory_gib": 14.56,
+    "gpu_name": "Tesla T4",
+    "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+    "python": "3.13.16",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.11.0+cu130",
+    "transformers": "5.3.0"
+  },
+  "format_version": 1,
+  "inputs": [
+    {
+      "path": "dist/kaggle_a1_seed42_results/kaggle_a1_seed42_outputs/run/bge_base_ft_v3_a1-seed42/selection.json",
+      "run": "bge_base_ft_v3_a1-seed42",
+      "seed": 42,
+      "sha256": "19cca1cbaebe15ed8ea78950a2e9e1415424b89da42b7b9ea222df8599fd3556"
+    },
+    {
+      "path": "dist/kaggle_a1_seed1337_results/kaggle_a1_seed1337_outputs/run/bge_base_ft_v3_a1-seed1337/selection.json",
+      "run": "bge_base_ft_v3_a1-seed1337",
+      "seed": 1337,
+      "sha256": "165064f5ecbb97dfafdc31ac24ff7137ce81bb5d7a38d44f0f246ec87ea5bd25"
+    },
+    {
+      "path": "dist/kaggle_a1_seed2026_results/kaggle_a1_seed2026_outputs/run/bge_base_ft_v3_a1-seed2026/selection.json",
+      "run": "bge_base_ft_v3_a1-seed2026",
+      "seed": 2026,
+      "sha256": "2afbdae2f797fcffead66fa5e8cb49de104d76a83a507f7f9b9149204cc37892"
+    }
+  ],
+  "kind": "finretriever_a1_vs_a0_decision",
+  "method": {
+    "alpha": 0.05,
+    "bootstrap": {
+      "interval": "percentile 95%",
+      "resamples": 10000,
+      "rng": "numpy PCG64(20261110)"
+    },
+    "consistency": "every seed selects a checkpoint after step 0",
+    "decision": "A1 beats A0 on the validation set if and only if p <= alpha and the consistency condition holds",
+    "flips": 10000,
+    "null": "sign flips of each question's differences from step 0, jointly across every evaluation and seed, with the fixed selection rule re-applied to every flipped curve over all recorded evaluations",
+    "p_value": "one-sided, (1 + #{T* >= T - 1e-12}) / (flips + 1)",
+    "rng": "numpy PCG64(20261109); columns in sorted pair-ID order",
+    "selection_rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "statistic": "mean over seeds of (whole-corpus MRR@10 at the selected checkpoint - at step 0)"
+  },
+  "notice": "A selection-aware comparison on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), the same questions that chose each run's checkpoint. It covers that question distribution, given these runs. It is not a retrieval result on real questions or the benchmark, and no development or evaluation data was read.",
+  "questions_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+  "reported_metrics": {
+    "note": "means over seeds; reported, never deciding. Development diagnostics are separate (the benchmark).",
+    "selected": {
+      "company": {
+        "mrr@10": 0.730676,
+        "ndcg@10": 0.770873,
+        "recall@100": 0.998976
+      },
+      "global": {
+        "mrr@10": 0.664771,
+        "ndcg@10": 0.711135,
+        "recall@100": 0.998976
+      }
+    },
+    "step_0": {
+      "company": {
+        "mrr@10": 0.282433,
+        "ndcg@10": 0.329531,
+        "recall@100": 0.869176
+      },
+      "global": {
+        "mrr@10": 0.265886,
+        "ndcg@10": 0.305881,
+        "recall@100": 0.836918
+      }
+    }
+  },
+  "result": {
+    "a1_beats_a0": true,
+    "alpha": 0.05,
+    "conclusion": "A1 beats A0 on the validation set",
+    "every_seed_selected_after_step_0": true,
+    "flips": 10000,
+    "intervals": {
+      "last_step_minus_step_0": [
+        0.318161,
+        0.474404
+      ],
+      "note": "question bootstrap, conditional on these runs; not selection-adjusted",
+      "selected_minus_step_0": [
+        0.321532,
+        0.478024
+      ]
+    },
+    "null_mean": 0.033945,
+    "p_value": 0.0001,
+    "questions": 93,
+    "reason": "p = 0.0001 <= 0.05 and every seed selected a checkpoint after step 0",
+    "seed_minimum": {
+      "p_value": 0.0001,
+      "statistic": 0.392115
+    },
+    "seeds": {
+      "1337": {
+        "evaluated_steps": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55
+        ],
+        "gain_over_step_0": 0.401387,
+        "last_step": 55,
+        "last_value": 0.660719,
+        "rule_stop_step": 55,
+        "rule_stop_value": 0.660719,
+        "selected_step": 40,
+        "selected_value": 0.667273
+      },
+      "2026": {
+        "evaluated_steps": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55
+        ],
+        "gain_over_step_0": 0.392115,
+        "last_step": 55,
+        "last_value": 0.65521,
+        "rule_stop_step": 55,
+        "rule_stop_value": 0.65521,
+        "selected_step": 40,
+        "selected_value": 0.658001
+      },
+      "42": {
+        "evaluated_steps": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25,
+          30,
+          35,
+          40,
+          45,
+          50,
+          55
+        ],
+        "gain_over_step_0": 0.403153,
+        "last_step": 55,
+        "last_value": 0.669039,
+        "rule_stop_step": null,
+        "rule_stop_value": null,
+        "selected_step": 55,
+        "selected_value": 0.669039
+      }
+    },
+    "selection_adjusted_estimate": 0.36494,
+    "statistic": 0.398885,
+    "step_0_value": 0.265886
+  },
+  "validation": {
+    "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+    "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+    "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+    "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+    "pairs": 93,
+    "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "use": "checkpoint selection only",
+    "version": "validation_pairs_v4"
+  }
+}

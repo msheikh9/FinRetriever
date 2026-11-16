@@ -1,0 +1,69 @@
+# Development labels pilot_v3: pilot_v2 carried over unchanged, plus AI proposals for the passages the
+# expanded pool pilot_v3 added from the stored zero-shot runs (configs/eval/dev_pool_pilot_v3.yaml).
+# Derive with:  python3 scripts/03_annotate_gold_set.py dev-labels --spec configs/eval/dev_labels_pilot_v3.yaml
+# The output is AI-generated development data, never gold. See docs/eval_methodology.md §11.
+
+label_version: pilot_v3
+annotation_version: dev_pilot_v3
+description: >-
+  pilot_v2 (579 labels for q_0001-q_0010) carried over unchanged, plus claude-opus-5-5 proposals under rubric v1.1
+  for the 117 passages the expanded pool pilot_v3 added from the top 10 of the six stored zero-shot runs.
+
+base_labels_dir: data/eval/dev_ai/pilot_v2               # immutable; labels, changes, flags kept as they are
+pool_dir: data/eval/dev_ai/pilot_v3/pool                 # its SHA-256 is recorded and re-checked
+proposals_dir: data/eval/dev_ai/pilot_v3/proposals       # AI proposals for the new entries only
+output_dir: data/eval/dev_ai/pilot_v3
+
+rubric:
+  version: v1.1
+  adopted: "2026-10-28"
+  decisions:
+    P1: accepted
+    P2: accepted
+    P3: accepted
+    P4: "A: repeated qualitative text from another filing year is 0 when the question names a report or year"
+    P5: "A: a complete required evidence unit in a genuinely multi-passage question may be 2"
+    P6: accepted
+
+# The same P2 checks and P1 open questions as pilot_v2, applied to the new labels only.
+p2_basis:
+  - query_id: q_0004
+    requires_any: ["three months ended December 31", "fourth quarter"]
+    why: the question asks for the fourth-quarter 2021 average, so the quarterly basis must be stated
+  - query_id: q_0005
+    requires_any: ['\b2023\b']
+    why: the question asks about 2023 revenue
+  - query_id: q_0006
+    requires_any: ["December 31, 2023"]
+    why: the question asks about the end of 2023
+  - query_id: q_0007
+    requires_any: ['\b20(19|20|21|22|23)\b']
+    why: the question asks about 2019 through 2023
+  - query_id: q_0008
+    requires_any: ["January 31, 2024", "fiscal 2024"]
+    why: the question asks about the fiscal year ended January 31, 2024
+  - query_id: q_0009
+    requires_any: ['\b2022\b']
+    why: the question asks about 2022 capital spending
+p1_open_questions: [q_0001, q_0002, q_0003, q_0010]
+
+# New AI labels given with these confidence levels are flagged for a reader; grades stay as they are.
+review_confidence: [low]
+
+# Curated flags on new labels: borderline cases a reader should decide. Grades stay as they are.
+flags:
+  - query_id: q_0005
+    passage_id: passage_filing_pfe_10-k_cde2c92bc62c_000016_1896f574a50d
+    rule: P5
+    candidate_grade: 2
+    reason: >-
+      P5: the passage gives the whole vaccine part of the answer (Comirnaty $11,220M in 2023 vs $37,806M in 2022,
+      down 70%, with the demand drivers) but not Paxlovid. Whether one product's complete figures are a complete
+      evidence unit (2) or part of an answer normally reported in one bridge table (1) needs a reader.
+  - query_id: q_0008
+    passage_id: passage_filing_wmt_10-k_40ceee83bdf8_000051_f16971f6d09a
+    rule: P3
+    reason: >-
+      P3: the only new grade-2 label. It comes from the comparative columns of the FY2026 report, where the third
+      segment is named Sam's Club U.S.; a reader should confirm the fiscal 2024 columns are the requested segments
+      and that the grade-2 comparative is right.

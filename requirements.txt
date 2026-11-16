@@ -1,0 +1,33 @@
+# FinRetriever runtime dependencies: the direct dependencies, pinned to the versions that produced the published
+# results (Python 3.11.5, macOS arm64; see docs/environment.md). For a fully pinned environment, including every
+# transitive dependency, install a lock file instead:
+#   requirements/lock-macos-arm64.txt         (the analysis environment)
+#   requirements/lock-linux-x86_64-cpu.txt    (CPU PyTorch; what CI installs)
+#
+# On Linux, `pip install -r requirements.txt` installs PyPI's default (CUDA) build of torch. For CPU only, add
+#   --extra-index-url https://download.pytorch.org/whl/cpu
+# For a GPU, install the CUDA build of torch 2.10.0 that matches your driver (https://pytorch.org) first.
+
+# Data: SEC download, HTML parsing, configs, validation
+numpy==1.26.4
+pydantic==2.12.5
+PyYAML==6.0.3
+requests==2.32.3
+beautifulsoup4==4.14.3
+lxml==6.0.2
+
+# Lexical retrieval
+rank-bm25==0.2.2
+
+# Dense retrieval, fine-tuning and checkpoint verification
+torch==2.10.0
+transformers==5.3.0
+sentence-transformers==5.2.3
+tokenizers==0.22.2
+safetensors==0.7.0
+huggingface-hub==1.7.1
+
+# Not needed, not pinned:
+# - orjson: optional faster JSON (finretriever.utils.io falls back to the standard library with the same output);
+#   the published results were produced without it.
+# - pytrec_eval: never used; finretriever.evaluation.metrics computes every metric itself.

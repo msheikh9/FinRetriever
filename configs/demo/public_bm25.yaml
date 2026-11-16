@@ -1,0 +1,30 @@
+# Search demo WITHOUT the fine-tuned checkpoints (scripts/12_search_demo.py --config configs/demo/public_bm25.yaml).
+#
+# Needs only the public corpus (rebuild it from SEC EDGAR with configs/data/corpus_v1_pinned.yaml; docs/demo.md).
+# BM25 with the same metadata-aware scope as the release default: query understanding (parser qu-v2), a company
+# filter and a fiscal-year boost. This setting is for demonstration only: it was never evaluated, so no metric is
+# claimed for it. The evaluated release default (BM25 + fine-tuned A1, E5_hybrid_rrf_meta) is in
+# configs/experiments/v2_1_year_roles.yaml and needs the A1 checkpoints.
+
+name: public_bm25_demo
+version: 1
+corpus_path: data/processed/corpus_v1.jsonl
+corpus_sha256: ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004
+
+parser:
+  aliases_from: configs/train/data_prep_v3.yaml   # generation.company_aliases
+  version: qu-v2
+
+seeds: {}            # no fine-tuned model
+
+components:
+  bm25: {type: bm25, tokenizer: word, backend: python}
+
+defaults:
+  fusion: {method: single, k: 60, weights: {}, depth: 100}
+  scope: {company: none, year: none, after: 2, before_explicit: 0, before_implicit: 1, min_eligible: 20,
+          cells: "off", source: parsed}
+  metadata_weight: 1.0
+
+experiments:
+  - {id: D_bm25_company_year_boost, role: demo, components: [bm25], scope: {company: filter, year: boost}}

@@ -1,0 +1,185 @@
+{
+  "checks": [
+    {
+      "data": {
+        "by_role": {
+          "code": 46,
+          "config": 3,
+          "corpus": 2,
+          "generation_records": 5,
+          "instructions": 2,
+          "preparation": 7,
+          "quality_decisions": 2,
+          "script": 3,
+          "source_pairs": 6,
+          "training_candidates": 4
+        },
+        "files": 80,
+        "manifest_sha256": "a433257bcec1af4b1d537cdef3cc94649b9271464b2a1fc8114694a4d80b47ab"
+      },
+      "detail": "80 files match their SHA-256; nothing unlisted",
+      "name": "bundle",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "sha256": "d8cfc4a00437e567369b5ccf3b3c367e84f51ec757663f15997cabfeb551095d"
+      },
+      "detail": "configs/train/biencoder_bge_base_smoke.yaml is unchanged (run bge_base_ft_v2_smoke-seed42)",
+      "name": "config",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "corpus": {
+          "passages": 10137,
+          "path": "data/processed/corpus_v1.jsonl",
+          "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+          "version": "corpus_v1@1.2"
+        },
+        "passages": 10137,
+        "preparation": {
+          "evidence_index_digest": "d3321b40fc8f8995e9675af9335bd9adceca8dc2f4596c1169a51d3802bc5977",
+          "manifest_sha256": "c9b8998e1bf77865f9b76b312d6c988dae9b8ef5a56e0daf57dde8b1e4937e15",
+          "version": "bge_base_ft_v2"
+        }
+      },
+      "detail": "corpus corpus_v1@1.2 (10137 passages, sha256 ff9dadf37bb9) and preparation bge_base_ft_v2 verify; evidence index rebuilt and matches its digest",
+      "name": "corpus_and_preparation",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "manifest_sha256": "6fb3aa72bbe6fb388a1bb19f41cc83838b9fda7893bab49fb0bb212357ed07c4",
+        "verified": 66,
+        "version": "train_candidates_v1"
+      },
+      "detail": "all 66 training candidates re-verified (contract, validator, evidence leakage, equivalents)",
+      "name": "candidates",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "by_source": {
+          "pilot_v2": 15,
+          "pilot_v3": 51
+        },
+        "candidates": 66
+      },
+      "detail": "66 candidates traced to their source pairs, accepting decisions and generation records {'pilot_v2': 15, 'pilot_v3': 51}",
+      "name": "provenance",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "pair_ids_sha256": "8e9e2a03dbc7dc9644b5e4788ddd3bc904253e855d7927537f11af5a30836c9a",
+        "pairs": 48
+      },
+      "detail": "48 of 66 candidates selected (subset seed 13), as expected",
+      "name": "smoke_subset",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "batches_per_epoch": [
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "dropped_single_pair_batches": 1,
+        "sha256": "5a5a5cacb52ba9d291447fe7eb19a78969356dc683c7ab4798b4511c596dbca7",
+        "steps": 15,
+        "warmup_steps": 2
+      },
+      "detail": "15 optimizer steps; every batch holds only allowed negatives",
+      "name": "schedule",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "evaluation_sources_named_by_config": 8,
+        "files_opened": 27,
+        "opened": [],
+        "present": []
+      },
+      "detail": "data/eval and all 8 evaluation sources named by the data-preparation config are absent; none of the 27 files read is one",
+      "name": "evaluation_isolation",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "longest_query_tokens": 55,
+        "model": {
+          "class": "BertModel",
+          "hidden_size": 768,
+          "parameters": 109482240,
+          "pooling": "cls"
+        },
+        "name": "BAAI/bge-base-en-v1.5",
+        "preparation_tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb",
+        "query_max_length": 128,
+        "resolved_commit": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+        "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+        "tokenizer_sha256": "9114256b104cca80e04367526f03f46aa3c443c2ed174904142a73bbf13b9fbb"
+      },
+      "detail": "BAAI/bge-base-en-v1.5 at a5beb1e3e68b; tokenizer matches the preparation; longest query 55 tokens; weights load (109,482,240 parameters, hidden 768)",
+      "name": "model_and_tokenizer",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "autocast_dtype": "torch.float16",
+        "bf16_supported": true,
+        "capability": "7.5",
+        "device": "Tesla T4",
+        "fp16_gradients_finite": true,
+        "free_gib": 14.46,
+        "torch_cuda": "12.8",
+        "total_gib": 14.56
+      },
+      "detail": "Tesla T4 (compute 7.5): fp16 autocast and loss scaling work",
+      "name": "cuda_fp16",
+      "status": "pass"
+    },
+    {
+      "data": {
+        "estimate_gib (not measured)": {
+          "activations_gib": 5.98,
+          "overhead_gib": 1.0,
+          "total_gib": 8.61,
+          "weights_gradients_optimizer_gib": 1.63
+        },
+        "estimate_with_gradient_checkpointing_gib": {
+          "activations_gib": 0.67,
+          "overhead_gib": 1.0,
+          "total_gib": 3.3,
+          "weights_gradients_optimizer_gib": 1.63
+        },
+        "free_gib (measured now)": 14.46
+      },
+      "detail": "14.5 GiB free (measured) against an ESTIMATED 8.61 GiB peak",
+      "name": "gpu_memory",
+      "status": "pass"
+    }
+  ],
+  "config": "configs/train/biencoder_bge_base_smoke.yaml",
+  "environment": {
+    "huggingface-hub": "1.7.1",
+    "numpy": "2.1.3",
+    "pydantic": "2.13.5",
+    "python": "3.13.15",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.3.0"
+  },
+  "failed": [],
+  "kind": "finretriever_smoke_preflight",
+  "model_weights_written": false,
+  "ready_for_training": true,
+  "seconds": 50.7,
+  "skipped": [],
+  "trained": false
+}

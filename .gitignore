@@ -1,0 +1,47 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets
+.env
+
+# Data (raw + interim are always ignored)
+data/raw/
+data/interim/
+# Everything generated in data/processed/ (corpus JSONL, .manifest.json files,
+# temp files from interrupted atomic writes) stays untracked; keep the marker.
+data/processed/*
+!data/processed/.gitkeep
+
+# Embedding caches (large, rebuildable) and models
+data/cache/
+models/
+wandb/
+mlruns/
+
+# Explicit un-ignores: gold eval set and committed results MUST be tracked.
+!data/eval/gold_queries.jsonl
+!data/eval/gold_qrels.jsonl
+!results/*.json
+!results/*.md

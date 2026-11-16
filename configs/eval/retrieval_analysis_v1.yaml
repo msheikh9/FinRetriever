@@ -1,0 +1,94 @@
+# Retrieval Performance Analysis v1 (docs/retrieval_analysis_v1.md).
+#
+# A separate configuration: configs/eval/benchmark.yaml and the gold-set decision code are frozen and unchanged.
+# The seven systems below are copied from benchmark.yaml's gold_v1 entries (same model revisions, prefixes,
+# sequence limits and checkpoint paths). No result from this file is a benchmark result:
+# - the 93 validation questions are synthetic (LLM-written, AI-reviewed) and chose each A1 checkpoint;
+# - the 10 development questions have AI-written, provisional labels;
+# - the 100 frozen human-written questions have no relevance labels (gold set v1 is closed, incomplete);
+#   they are used only for a metadata alignment diagnostic (company and fiscal year), never for relevance metrics.
+
+name: retrieval_analysis_v1
+corpus_path: data/processed/corpus_v1.jsonl
+
+metrics:
+  - ndcg@10
+  - mrr@10
+  - recall@10
+  - recall@100
+top_k: 100
+retrieval_modes: [global, company]
+embedding_cache_dir: data/cache/embeddings
+judged_k: 10
+coverage_thresholds:
+  min_positives: 1
+  min_judged_at_10: 0.7
+
+# The zero-shot references, exactly as in benchmark.yaml (the stored dev rankings were made with these).
+baselines:
+  - name: bm25
+    type: bm25
+    tokenizer: word
+    backend: python
+  - name: bge_zero_shot
+    type: dense
+    model_name: BAAI/bge-base-en-v1.5
+    model_revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+    query_prefix: "Represent this sentence for searching relevant passages: "
+    embedding_dim: 768
+    max_seq_length: 512
+    batch_size: 32
+    device: auto
+  - name: e5_zero_shot
+    type: dense
+    model_name: intfloat/e5-base-v2
+    model_revision: f52bf8ec8c7124536f0efb74aca902b2995e5bcd
+    query_prefix: "query: "
+    passage_prefix: "passage: "
+    embedding_dim: 768
+    max_seq_length: 512
+    batch_size: 32
+    device: auto
+
+evaluation_sets:
+  # The 10 AI-labelled development questions (labels pilot_v3), scored for A0 and the three A1 seeds. BM25, BGE and
+  # E5 are the stored dev_pilot_v2 rankings, re-scored with the same labels (never re-run). The judged pools hold the
+  # zero-shot runs' top 10s, not A0's or A1's, so their unjudged passages count as non-relevant (biased against them).
+  dev_pilot_v3_a1:
+    status: provisional_development
+    queries_path: data/eval/dev_ai/pilot_v3/dev_queries.jsonl
+    qrels_path: data/eval/dev_ai/pilot_v3/dev_qrels.jsonl
+    metadata_path: data/eval/dev_ai/pilot_v3/dev_eval.metadata.json
+    report_path: data/eval/dev_ai/pilot_v3/dev_eval.report.json
+    candidate_pool_path: data/eval/dev_ai/pilot_v3/pool/pool.jsonl
+    reference_runs_from: results/dev/pilot_v2
+    paired_reference: bge_zero_shot
+    retrievers:
+      - name: a0_step0
+        type: dense_checkpoint
+        role: diagnostic
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000000
+        batch_size: 32
+        device: auto
+      - name: a1_seed42
+        type: dense_checkpoint
+        role: final
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055
+        selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/selection.json
+        batch_size: 32
+        device: auto
+      - name: a1_seed1337
+        type: dense_checkpoint
+        role: final
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/checkpoint-step-000040
+        selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/selection.json
+        batch_size: 32
+        device: auto
+      - name: a1_seed2026
+        type: dense_checkpoint
+        role: final
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/checkpoint-step-000040
+        selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/selection.json
+        batch_size: 32
+        device: auto
+    output_dir: results/dev/pilot_v3_a1

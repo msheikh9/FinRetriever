@@ -1,0 +1,48 @@
+# Smoke test of the bi-encoder trainer on one T4 (finretriever.training.biencoder_trainer).
+#
+# It checks mechanics only: the candidates load and verify, batches hold no known false negative,
+# the loss is computed and falls or not, checkpoints are written and resume. About 48 pairs are far too few to
+# measure domain adaptation: no retrieval result may be read from this run, and no checkpoint is selected by
+# any metric (pilot_v3 development metrics included). The training data are synthetic queries accepted by an
+# AI quality review: not human-validated, not gold labels.
+#
+# Dry run (verifies inputs and schedule, prints an ESTIMATE of GPU memory; loads no model, writes nothing):
+#   python scripts/05_train_biencoder.py --config configs/train/biencoder_bge_base_smoke.yaml
+# Train (on the T4):
+#   python scripts/05_train_biencoder.py --config configs/train/biencoder_bge_base_smoke.yaml --confirm-training
+
+name: bge_base_ft_v2_smoke
+
+base_model:
+  name: BAAI/bge-base-en-v1.5
+  revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a   # the zero-shot baseline's pinned commit
+  query_prefix: "Represent this sentence for searching relevant passages: "   # as in evaluation
+  passage_prefix: ""
+  pooling: cls                                          # BGE's pooling (its model card), then L2 normalisation
+
+data:
+  data_prep_config: configs/train/data_prep_v2.yaml
+  candidates: train_candidates_v1   # configs/train/candidates_v1.yaml: 66 accepted, re-checked pairs
+  max_pairs: 48                     # a seeded subset: a smoke test, not an experiment
+  subset_seed: 13
+
+training:
+  seed: 42
+  batch_size: 16                    # 15 in-batch negatives per query; small so conflict-free batches fill
+  gradient_accumulation_steps: 1    # accumulation would not add in-batch negatives
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  epochs: 8                         # an upper bound; max_steps ends the run
+  max_steps: 15
+  temperature: 0.02                 # BGE's published fine-tuning setting (scale 50)
+  query_max_length: 128             # the longest instruction + query is far shorter; longer is an error
+  passage_max_length: 512           # the preparation's visible-text limit (checked)
+  max_grad_norm: 1.0
+  fp16: true                        # T4 has no bf16
+  gradient_checkpointing: false     # ESTIMATED ~8 GiB at batch 16 without it (see docs/training_trainer_v1.md)
+  device: cuda
+
+checkpoints:
+  output_dir: models/bge_base_ft_v2_smoke   # gitignored; one directory per name and seed, never written over
+  save_every_steps: 5                       # steps 5, 10 and 15; fixed steps, never chosen by a metric

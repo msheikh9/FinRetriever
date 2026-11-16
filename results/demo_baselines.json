@@ -1,0 +1,472 @@
+{
+  "run_name": "bm25",
+  "metrics": {
+    "ndcg@10": 0.9593415161981014,
+    "mrr@10": 1.0,
+    "recall@100": 1.0
+  },
+  "hits": [
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_aapl_components",
+      "rank": 1,
+      "score": 3.899737934557717,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_aapl_supply_chain",
+      "rank": 2,
+      "score": 3.778860448763308,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_jpm_credit_risk",
+      "rank": 3,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "JPM",
+        "form_type": "10-K",
+        "filing_date": "2023-02-21",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_tsla_manufacturing",
+      "rank": 4,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "TSLA",
+        "form_type": "10-K",
+        "filing_date": "2024-01-26",
+        "section_title": "Item 1 - Business"
+      }
+    },
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_pfe_regulatory",
+      "rank": 5,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "PFE",
+        "form_type": "10-K",
+        "filing_date": "2024-02-22",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_amzn_aws",
+      "rank": 6,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AMZN",
+        "form_type": "10-K",
+        "filing_date": "2024-02-02",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_supply_chain_risk",
+      "passage_id": "p_xom_commodity",
+      "rank": 7,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "XOM",
+        "form_type": "10-K",
+        "filing_date": "2024-02-28",
+        "section_title": "Item 7A - Quantitative Disclosures"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_jpm_credit_risk",
+      "rank": 1,
+      "score": 8.637852778994604,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "JPM",
+        "form_type": "10-K",
+        "filing_date": "2023-02-21",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_pfe_regulatory",
+      "rank": 2,
+      "score": 0.5992401183698609,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "PFE",
+        "form_type": "10-K",
+        "filing_date": "2024-02-22",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_xom_commodity",
+      "rank": 3,
+      "score": 0.5520735423362512,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "XOM",
+        "form_type": "10-K",
+        "filing_date": "2024-02-28",
+        "section_title": "Item 7A - Quantitative Disclosures"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_aapl_supply_chain",
+      "rank": 4,
+      "score": 0.5435174210159107,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_aapl_components",
+      "rank": 5,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_tsla_manufacturing",
+      "rank": 6,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "TSLA",
+        "form_type": "10-K",
+        "filing_date": "2024-01-26",
+        "section_title": "Item 1 - Business"
+      }
+    },
+    {
+      "query_id": "q_credit_loan_losses",
+      "passage_id": "p_amzn_aws",
+      "rank": 7,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AMZN",
+        "form_type": "10-K",
+        "filing_date": "2024-02-02",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_tsla_manufacturing",
+      "rank": 1,
+      "score": 7.969223196243177,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "TSLA",
+        "form_type": "10-K",
+        "filing_date": "2024-01-26",
+        "section_title": "Item 1 - Business"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_aapl_supply_chain",
+      "rank": 2,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_aapl_components",
+      "rank": 3,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_jpm_credit_risk",
+      "rank": 4,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "JPM",
+        "form_type": "10-K",
+        "filing_date": "2023-02-21",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_pfe_regulatory",
+      "rank": 5,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "PFE",
+        "form_type": "10-K",
+        "filing_date": "2024-02-22",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_amzn_aws",
+      "rank": 6,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AMZN",
+        "form_type": "10-K",
+        "filing_date": "2024-02-02",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_manufacturing_capacity",
+      "passage_id": "p_xom_commodity",
+      "rank": 7,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "XOM",
+        "form_type": "10-K",
+        "filing_date": "2024-02-28",
+        "section_title": "Item 7A - Quantitative Disclosures"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_amzn_aws",
+      "rank": 1,
+      "score": 8.47480402395807,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AMZN",
+        "form_type": "10-K",
+        "filing_date": "2024-02-02",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_tsla_manufacturing",
+      "rank": 2,
+      "score": 1.1910664292410174,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "TSLA",
+        "form_type": "10-K",
+        "filing_date": "2024-01-26",
+        "section_title": "Item 1 - Business"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_aapl_supply_chain",
+      "rank": 3,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_aapl_components",
+      "rank": 4,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_jpm_credit_risk",
+      "rank": 5,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "JPM",
+        "form_type": "10-K",
+        "filing_date": "2023-02-21",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_pfe_regulatory",
+      "rank": 6,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "PFE",
+        "form_type": "10-K",
+        "filing_date": "2024-02-22",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_aws_cloud_demand",
+      "passage_id": "p_xom_commodity",
+      "rank": 7,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "XOM",
+        "form_type": "10-K",
+        "filing_date": "2024-02-28",
+        "section_title": "Item 7A - Quantitative Disclosures"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_xom_commodity",
+      "rank": 1,
+      "score": 8.583144887807537,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "XOM",
+        "form_type": "10-K",
+        "filing_date": "2024-02-28",
+        "section_title": "Item 7A - Quantitative Disclosures"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_pfe_regulatory",
+      "rank": 2,
+      "score": 0.5992401183698609,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "PFE",
+        "form_type": "10-K",
+        "filing_date": "2024-02-22",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_jpm_credit_risk",
+      "rank": 3,
+      "score": 0.5700202054772129,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "JPM",
+        "form_type": "10-K",
+        "filing_date": "2023-02-21",
+        "section_title": "Item 7 - MD&A"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_aapl_supply_chain",
+      "rank": 4,
+      "score": 0.5435174210159107,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_aapl_components",
+      "rank": 5,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AAPL",
+        "form_type": "10-K",
+        "filing_date": "2023-11-03",
+        "section_title": "Item 1A - Risk Factors"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_tsla_manufacturing",
+      "rank": 6,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "TSLA",
+        "form_type": "10-K",
+        "filing_date": "2024-01-26",
+        "section_title": "Item 1 - Business"
+      }
+    },
+    {
+      "query_id": "q_oil_price_risk",
+      "passage_id": "p_amzn_aws",
+      "rank": 7,
+      "score": 0.0,
+      "retriever": "bm25",
+      "metadata": {
+        "ticker": "AMZN",
+        "form_type": "10-K",
+        "filing_date": "2024-02-02",
+        "section_title": "Item 7 - MD&A"
+      }
+    }
+  ],
+  "metadata": {
+    "corpus_size": 7,
+    "query_count": 5,
+    "qrel_count": 6,
+    "top_k": 100,
+    "retriever": "bm25"
+  }
+}

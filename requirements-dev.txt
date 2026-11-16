@@ -1,0 +1,8 @@
+# Development dependencies (tests, lint, formatting, type checks), pinned to the tested versions.
+-r requirements.txt
+
+pytest==9.0.2
+pytest-cov==7.0.0
+ruff==0.15.7
+black==26.5.1
+mypy==1.19.1

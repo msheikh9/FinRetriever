@@ -1,0 +1,61 @@
+GOLD SET V1 - RELEVANCE GRADING - PACKAGE __PACKAGE_ID__
+Issued to: __ANNOTATOR__        Questions: __QUESTIONS__        Passages to grade: __CANDIDATES__
+
+WHAT YOU RECEIVED
+  __APP_FILE__    the grading page (it holds the questions and passages)
+  INSTRUCTIONS.txt               this file
+
+  Nothing to install. The page opens in any current browser (Chrome, Edge, Firefox or Safari), works offline,
+  and is not able to connect to the internet.
+
+1. START
+  - Unzip the package into a folder you will keep (for example Documents/gold_grading).
+  - Double-click __APP_FILE__. Use the same browser every time.
+  - Type your initials (__ANNOTATOR__), read the declaration, tick it, and press "Start grading".
+
+2. GRADE EACH PASSAGE
+  For each passage the page shows the question, the filing, the section and the passage text. Grade it for the
+  question as written, from the passage alone, using the rubric you already know (v1.1, P1-P6; the page's
+  "Rubric and instructions" button shows a summary).
+
+    2   directly relevant
+    1   partially relevant                       (a note is required)
+    0   not relevant
+    s   skip: you looked but cannot decide       (a note is required; a skip is never a 0)
+
+  Marks (tick the box, or press the key):
+    3   P3 comparative: a later 10-K states the requested figure for the requested period   (note required)
+    4   P4: a 0 because it is another filing year's copy of the disclosure                  (note required)
+    a   assistance was used for this grade - describe it                                     (note required)
+
+  A grade that needs nothing more moves you on to the next ungraded passage. If a note is needed, the note box
+  opens: type the note, then press Ctrl+Enter (Cmd+Enter on a Mac) to continue.
+  Other keys: n / right arrow = next, p / left arrow = previous, u = next ungraded.
+  To change a grade, go back to the passage and choose again; every change is kept with its time.
+
+3. FINISH A QUESTION
+  When every passage of a question is graded (with the notes it needs), press "Mark this question done".
+  Changing a passage afterwards reopens the question; mark it done again.
+
+4. SAVE AND RESUME
+  - Your work is kept automatically in this browser. Close the page any time; reopen the same file in the same
+    browser and press "Start grading" to continue where you stopped.
+  - Also press "Save progress file" at the end of every session (and now and then during it), and keep those
+    files. If the browser loses its data, or you switch computer, open the page and press "Load progress file".
+
+5. RETURN YOUR GRADES
+  - When every question is done, press "Download completed grades". This saves
+    __RETURN_FILE__
+  - Email that file back to the reviewer as an attachment, unchanged (do not open it in Excel or edit it).
+  - Keep the page and your progress files until the reviewer confirms the grades were received and accepted.
+
+RULES (as in the guide)
+  - Grade alone: no AI tools or chatbots, no search summaries, no one else's grades. If any help was used,
+    tick "assistance" for that grade and describe it in the note.
+  - Do not discuss the questions or passages with anyone else who grades this set.
+  - The page shows only what you need to grade; the order of passages is shuffled and means nothing.
+  - Do not forward this package to anyone.
+
+FAMILIARIZATION
+  If this is your first package, it holds a single question. Grade it, download the completed grades, send them
+  back, and wait for the reviewer's confirmation before expecting the next package. Note anything that was unclear.

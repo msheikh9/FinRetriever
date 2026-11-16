@@ -1,0 +1,1658 @@
+{
+ "baseline_preservation": {
+  "E1_a1 [a1_seed1337] vs v1 a1_seed1337/global": "93/93 first-relevant ranks identical",
+  "E1_a1 [a1_seed2026] vs v1 a1_seed2026/global": "93/93 first-relevant ranks identical",
+  "E1_a1 [a1_seed42] vs v1 a1_seed42/global": "93/93 first-relevant ranks identical"
+ },
+ "components": {
+  "a1_seed1337:a1": {
+   "batch_size": 32,
+   "cache": {
+    "dir": "data/cache/embeddings/local_bge_base_ft_v3_a1-seed1337__checkpoint-step-000040/c631ef862652e148",
+    "key": {
+     "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+     "encoding": {
+      "batch_size": 32,
+      "device_type": "cpu",
+      "dtype": "float32",
+      "encoded_field": "passage.text",
+      "libraries": {
+       "sentence-transformers": "5.2.3",
+       "torch": "2.10.0",
+       "transformers": "5.3.0"
+      },
+      "max_seq_length": 512,
+      "normalization": "l2",
+      "passage_prefix": "",
+      "pooling": "cls"
+     },
+     "format_version": 1,
+     "model_name": "local:bge_base_ft_v3_a1-seed1337/checkpoint-step-000040",
+     "model_revision": "sha256:8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675"
+    },
+    "key_sha256": "c631ef862652e1484dce7c1d126006fbdfd5f732e32b796f77c25902f2d140a3"
+   },
+   "checkpoint": {
+    "base_model": {
+     "name": "BAAI/bge-base-en-v1.5",
+     "passage_prefix": "",
+     "pooling": "cls",
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675",
+    "encoding": {
+     "longest_passage_tokens": 1044,
+     "longest_query_tokens": 58,
+     "normalize": true,
+     "passage_max_length": 512,
+     "passage_prefix": "",
+     "passages_truncated_to_visible_length": 425,
+     "pooling": "cls",
+     "positive_passages": 473,
+     "query_max_length": 128,
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "truncation_keeps_visible_text": true
+    },
+    "epoch": 3,
+    "files": {
+     "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+     "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+     "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+     "metadata.json": "ae094c80f50347c0a789aa91e23f8819955da79704609c2d82bc2efbeba8e7c8",
+     "model.safetensors": "6d9952c3574ea3a6873ef7397e542bce96c074cf5da8b01f68427040dac84284",
+     "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+     "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+     "tokenizer.json": "2fc687b11de0bc1b3d8348f92e3b49ef1089a621506c7661fbf3248fcd54947e",
+     "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de"
+    },
+    "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Evaluated by the trainer on the synthetic validation set only to choose among this run's checkpoints; no development or evaluation metric was computed, and no retrieval improvement is claimed.",
+    "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/checkpoint-step-000040",
+    "run": "bge_base_ft_v3_a1-seed1337",
+    "run_record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/run.json",
+     "sha256": "46dd8e34f120f20df846e0692cf9b8de1edc7d325ddd2a1dead8d634a478a0b0"
+    },
+    "schedule_sha256": "795095dc8898db3193f9334e1007b7d449c5e6155552dc535b28a60b5d87bb45",
+    "selection": "a candidate of the fixed validation rule (evaluated at step 40); which checkpoint the rule selects is recorded in ../selection.json when the run ends",
+    "step": 40,
+    "total_steps": 55,
+    "trained_on": {
+     "candidates": {
+      "available": 678,
+      "equivalence_method": "evidence-reuse-v2",
+      "manifest_sha256": "0586c7ca6982fbc1d9a15a952d483fbecb9f4589779d86bbb99bfba62b065284",
+      "validator_version": "sec-qcheck-v3",
+      "version": "train_candidates_v3"
+     },
+     "corpus": {
+      "passages": 10137,
+      "path": "data/processed/corpus_v1.jsonl",
+      "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+      "version": "corpus_v1@1.2"
+     },
+     "pairs": {
+      "count": 678,
+      "pair_ids_sha256": "58df5d9db8340bd1eca094b04049d596da73fb992c03a36334fc823de3eb1d35",
+      "subset": {
+       "max_pairs": null,
+       "seed": 0
+      }
+     },
+     "preparation": {
+      "data_prep_config": {
+       "path": "configs/train/data_prep_v3.yaml",
+       "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+      },
+      "manifest_sha256": "21c2293a42d0429a8ecbb82b4e96464788a0e20b3b51a059edfa09b9fa91b02c",
+      "version": "bge_base_ft_v3"
+     }
+    },
+    "trainer_environment": {
+     "device": "cuda",
+     "python": "3.13.16",
+     "safetensors": "0.7.0",
+     "tokenizers": "0.22.2",
+     "torch": "2.11.0+cu130",
+     "transformers": "5.3.0"
+    },
+    "trainer_state_present_not_loaded": false
+   },
+   "device": "cpu",
+   "embedding_dim": 768,
+   "embeddings_sha256": "791ba55c9576bfa16bb968498be50afff268135ecaaced9539c90c5e9453832a",
+   "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+   "max_seq_length": 512,
+   "model": {
+    "libraries": {
+     "huggingface-hub": "1.7.1",
+     "numpy": "1.26.4",
+     "sentence-transformers": "5.2.3",
+     "tokenizers": "0.22.2",
+     "torch": "2.10.0",
+     "transformers": "5.3.0"
+    },
+    "model_normalize_module": true,
+    "model_prompts_not_applied": {
+     "document": "",
+     "query": ""
+    },
+    "modules": [
+     "Transformer",
+     "Pooling",
+     "Normalize"
+    ],
+    "pooling": "cls",
+    "similarity_fn": "cosine",
+    "tokenizer": {
+     "class": "BertTokenizer",
+     "do_lower_case": true,
+     "model_max_length": 512,
+     "truncation_side": "right",
+     "vocab_size": 30522
+    },
+    "torch_threads": 4
+   },
+   "model_name": "local:bge_base_ft_v3_a1-seed1337/checkpoint-step-000040",
+   "model_revision": "sha256:8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675",
+   "name": "a1_seed1337:a1",
+   "normalization": "L2 to unit length after the model's own modules (float32)",
+   "passage_prefix": "",
+   "passage_truncation": {
+    "max_seq_length": 512,
+    "texts": 10137,
+    "tokens_beyond_limit_share": 0.2755,
+    "tokens_max": 1166,
+    "tokens_mean": 679.1,
+    "tokens_median": 683,
+    "truncated": 9204,
+    "truncated_share": 0.908
+   },
+   "passage_view": "text",
+   "query_encoding": "one query per forward pass",
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "query_truncation": null,
+   "role": "final",
+   "similarity": "dot product of unit vectors (cosine), computed in float64",
+   "source": "local_checkpoint",
+   "type": "dense",
+   "validation_selection": {
+    "base_model": false,
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675",
+    "notice": "Chosen by the fixed rule on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), only among this run's checkpoints. No development or evaluation metric was computed or consulted.",
+    "record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/selection.json",
+     "sha256": "165064f5ecbb97dfafdc31ac24ff7137ce81bb5d7a38d44f0f246ec87ea5bd25"
+    },
+    "rule": {
+     "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+     "candidates": "step 0 (the base model) and every 5 optimizer steps",
+     "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+     "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+     "metric": "mrr@10",
+     "mode": "global",
+     "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "run": "bge_base_ft_v3_a1-seed1337",
+    "seed": 1337,
+    "seeds": [
+     42,
+     1337,
+     2026
+    ],
+    "selected_step": 40,
+    "stopped": {
+     "at_step": 55,
+     "early": true,
+     "planned_steps": 55
+    },
+    "validation": {
+     "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+     "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+     "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+     "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+     "pairs": 93,
+     "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+     },
+     "use": "checkpoint selection only",
+     "version": "validation_pairs_v4"
+    },
+    "value": 0.6672725721112818
+   }
+  },
+  "a1_seed1337:a1_enriched": {
+   "batch_size": 32,
+   "cache": {
+    "dir": "data/cache/embeddings/local_bge_base_ft_v3_a1-seed1337__checkpoint-step-000040/2e711453183a9293",
+    "key": {
+     "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+     "encoding": {
+      "batch_size": 32,
+      "device_type": "cpu",
+      "dtype": "float32",
+      "encoded_field": "header_v1+passage.text",
+      "libraries": {
+       "sentence-transformers": "5.2.3",
+       "torch": "2.10.0",
+       "transformers": "5.3.0"
+      },
+      "max_seq_length": 512,
+      "normalization": "l2",
+      "passage_prefix": "",
+      "pooling": "cls"
+     },
+     "format_version": 1,
+     "model_name": "local:bge_base_ft_v3_a1-seed1337/checkpoint-step-000040",
+     "model_revision": "sha256:8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675"
+    },
+    "key_sha256": "2e711453183a929340892aab29fbc320a04d4e6c019e1c040559e7f3d1323850"
+   },
+   "checkpoint": {
+    "base_model": {
+     "name": "BAAI/bge-base-en-v1.5",
+     "passage_prefix": "",
+     "pooling": "cls",
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675",
+    "encoding": {
+     "longest_passage_tokens": 1044,
+     "longest_query_tokens": 58,
+     "normalize": true,
+     "passage_max_length": 512,
+     "passage_prefix": "",
+     "passages_truncated_to_visible_length": 425,
+     "pooling": "cls",
+     "positive_passages": 473,
+     "query_max_length": 128,
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "truncation_keeps_visible_text": true
+    },
+    "epoch": 3,
+    "files": {
+     "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+     "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+     "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+     "metadata.json": "ae094c80f50347c0a789aa91e23f8819955da79704609c2d82bc2efbeba8e7c8",
+     "model.safetensors": "6d9952c3574ea3a6873ef7397e542bce96c074cf5da8b01f68427040dac84284",
+     "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+     "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+     "tokenizer.json": "2fc687b11de0bc1b3d8348f92e3b49ef1089a621506c7661fbf3248fcd54947e",
+     "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de"
+    },
+    "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Evaluated by the trainer on the synthetic validation set only to choose among this run's checkpoints; no development or evaluation metric was computed, and no retrieval improvement is claimed.",
+    "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/checkpoint-step-000040",
+    "run": "bge_base_ft_v3_a1-seed1337",
+    "run_record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/run.json",
+     "sha256": "46dd8e34f120f20df846e0692cf9b8de1edc7d325ddd2a1dead8d634a478a0b0"
+    },
+    "schedule_sha256": "795095dc8898db3193f9334e1007b7d449c5e6155552dc535b28a60b5d87bb45",
+    "selection": "a candidate of the fixed validation rule (evaluated at step 40); which checkpoint the rule selects is recorded in ../selection.json when the run ends",
+    "step": 40,
+    "total_steps": 55,
+    "trained_on": {
+     "candidates": {
+      "available": 678,
+      "equivalence_method": "evidence-reuse-v2",
+      "manifest_sha256": "0586c7ca6982fbc1d9a15a952d483fbecb9f4589779d86bbb99bfba62b065284",
+      "validator_version": "sec-qcheck-v3",
+      "version": "train_candidates_v3"
+     },
+     "corpus": {
+      "passages": 10137,
+      "path": "data/processed/corpus_v1.jsonl",
+      "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+      "version": "corpus_v1@1.2"
+     },
+     "pairs": {
+      "count": 678,
+      "pair_ids_sha256": "58df5d9db8340bd1eca094b04049d596da73fb992c03a36334fc823de3eb1d35",
+      "subset": {
+       "max_pairs": null,
+       "seed": 0
+      }
+     },
+     "preparation": {
+      "data_prep_config": {
+       "path": "configs/train/data_prep_v3.yaml",
+       "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+      },
+      "manifest_sha256": "21c2293a42d0429a8ecbb82b4e96464788a0e20b3b51a059edfa09b9fa91b02c",
+      "version": "bge_base_ft_v3"
+     }
+    },
+    "trainer_environment": {
+     "device": "cuda",
+     "python": "3.13.16",
+     "safetensors": "0.7.0",
+     "tokenizers": "0.22.2",
+     "torch": "2.11.0+cu130",
+     "transformers": "5.3.0"
+    },
+    "trainer_state_present_not_loaded": false
+   },
+   "device": "cpu",
+   "embedding_dim": 768,
+   "embeddings_sha256": "600585363b43b351abda280a687d7495f1a935758e29f62a15221a82f19f11e7",
+   "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+   "max_seq_length": 512,
+   "model": {
+    "libraries": {
+     "huggingface-hub": "1.7.1",
+     "numpy": "1.26.4",
+     "sentence-transformers": "5.2.3",
+     "tokenizers": "0.22.2",
+     "torch": "2.10.0",
+     "transformers": "5.3.0"
+    },
+    "model_normalize_module": true,
+    "model_prompts_not_applied": {
+     "document": "",
+     "query": ""
+    },
+    "modules": [
+     "Transformer",
+     "Pooling",
+     "Normalize"
+    ],
+    "pooling": "cls",
+    "similarity_fn": "cosine",
+    "tokenizer": {
+     "class": "BertTokenizer",
+     "do_lower_case": true,
+     "model_max_length": 512,
+     "truncation_side": "right",
+     "vocab_size": 30522
+    },
+    "torch_threads": 4
+   },
+   "model_name": "local:bge_base_ft_v3_a1-seed1337/checkpoint-step-000040",
+   "model_revision": "sha256:8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675",
+   "name": "a1_seed1337:a1_enriched",
+   "normalization": "L2 to unit length after the model's own modules (float32)",
+   "passage_prefix": "",
+   "passage_truncation": {
+    "max_seq_length": 512,
+    "texts": 10137,
+    "tokens_beyond_limit_share": 0.3047,
+    "tokens_max": 1198,
+    "tokens_mean": 711.8,
+    "tokens_median": 715,
+    "truncated": 9271,
+    "truncated_share": 0.9146
+   },
+   "passage_view": "header_v1",
+   "query_encoding": "one query per forward pass",
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "query_truncation": null,
+   "role": "final",
+   "similarity": "dot product of unit vectors (cosine), computed in float64",
+   "source": "local_checkpoint",
+   "type": "dense",
+   "validation_selection": {
+    "base_model": false,
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "8237ec0b82a12830c5e41653f3597fb82516475203b8e61b262462a40597b675",
+    "notice": "Chosen by the fixed rule on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), only among this run's checkpoints. No development or evaluation metric was computed or consulted.",
+    "record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/selection.json",
+     "sha256": "165064f5ecbb97dfafdc31ac24ff7137ce81bb5d7a38d44f0f246ec87ea5bd25"
+    },
+    "rule": {
+     "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+     "candidates": "step 0 (the base model) and every 5 optimizer steps",
+     "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+     "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+     "metric": "mrr@10",
+     "mode": "global",
+     "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "run": "bge_base_ft_v3_a1-seed1337",
+    "seed": 1337,
+    "seeds": [
+     42,
+     1337,
+     2026
+    ],
+    "selected_step": 40,
+    "stopped": {
+     "at_step": 55,
+     "early": true,
+     "planned_steps": 55
+    },
+    "validation": {
+     "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+     "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+     "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+     "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+     "pairs": 93,
+     "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+     },
+     "use": "checkpoint selection only",
+     "version": "validation_pairs_v4"
+    },
+    "value": 0.6672725721112818
+   }
+  },
+  "a1_seed2026:a1": {
+   "batch_size": 32,
+   "cache": {
+    "dir": "data/cache/embeddings/local_bge_base_ft_v3_a1-seed2026__checkpoint-step-000040/966cb3d2df33a04c",
+    "key": {
+     "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+     "encoding": {
+      "batch_size": 32,
+      "device_type": "cpu",
+      "dtype": "float32",
+      "encoded_field": "passage.text",
+      "libraries": {
+       "sentence-transformers": "5.2.3",
+       "torch": "2.10.0",
+       "transformers": "5.3.0"
+      },
+      "max_seq_length": 512,
+      "normalization": "l2",
+      "passage_prefix": "",
+      "pooling": "cls"
+     },
+     "format_version": 1,
+     "model_name": "local:bge_base_ft_v3_a1-seed2026/checkpoint-step-000040",
+     "model_revision": "sha256:cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c"
+    },
+    "key_sha256": "966cb3d2df33a04c1b10f02881dc88b0632cc985e93602f27c4c6cb17c7fbb86"
+   },
+   "checkpoint": {
+    "base_model": {
+     "name": "BAAI/bge-base-en-v1.5",
+     "passage_prefix": "",
+     "pooling": "cls",
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c",
+    "encoding": {
+     "longest_passage_tokens": 1044,
+     "longest_query_tokens": 58,
+     "normalize": true,
+     "passage_max_length": 512,
+     "passage_prefix": "",
+     "passages_truncated_to_visible_length": 425,
+     "pooling": "cls",
+     "positive_passages": 473,
+     "query_max_length": 128,
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "truncation_keeps_visible_text": true
+    },
+    "epoch": 3,
+    "files": {
+     "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+     "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+     "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+     "metadata.json": "02becedac22a1786cf586638b6f7c7e2061ab82f6dfac31b237149554dd98483",
+     "model.safetensors": "8f9dbd383b01074f5e56c03b9420155d29a758396a65d1b515e8ac95251a927b",
+     "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+     "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+     "tokenizer.json": "2fc687b11de0bc1b3d8348f92e3b49ef1089a621506c7661fbf3248fcd54947e",
+     "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de"
+    },
+    "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Evaluated by the trainer on the synthetic validation set only to choose among this run's checkpoints; no development or evaluation metric was computed, and no retrieval improvement is claimed.",
+    "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/checkpoint-step-000040",
+    "run": "bge_base_ft_v3_a1-seed2026",
+    "run_record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/run.json",
+     "sha256": "ea1d1d2ff39c16bf37ddf0a6efb6320aa8cd5cbe102a60aceba0fb7c9dd22c99"
+    },
+    "schedule_sha256": "49b2b15328d978904c017bb699979a1ed62e20a937e8c5ecde5b152f1b4ccede",
+    "selection": "a candidate of the fixed validation rule (evaluated at step 40); which checkpoint the rule selects is recorded in ../selection.json when the run ends",
+    "step": 40,
+    "total_steps": 55,
+    "trained_on": {
+     "candidates": {
+      "available": 678,
+      "equivalence_method": "evidence-reuse-v2",
+      "manifest_sha256": "0586c7ca6982fbc1d9a15a952d483fbecb9f4589779d86bbb99bfba62b065284",
+      "validator_version": "sec-qcheck-v3",
+      "version": "train_candidates_v3"
+     },
+     "corpus": {
+      "passages": 10137,
+      "path": "data/processed/corpus_v1.jsonl",
+      "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+      "version": "corpus_v1@1.2"
+     },
+     "pairs": {
+      "count": 678,
+      "pair_ids_sha256": "58df5d9db8340bd1eca094b04049d596da73fb992c03a36334fc823de3eb1d35",
+      "subset": {
+       "max_pairs": null,
+       "seed": 0
+      }
+     },
+     "preparation": {
+      "data_prep_config": {
+       "path": "configs/train/data_prep_v3.yaml",
+       "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+      },
+      "manifest_sha256": "21c2293a42d0429a8ecbb82b4e96464788a0e20b3b51a059edfa09b9fa91b02c",
+      "version": "bge_base_ft_v3"
+     }
+    },
+    "trainer_environment": {
+     "device": "cuda",
+     "python": "3.13.16",
+     "safetensors": "0.7.0",
+     "tokenizers": "0.22.2",
+     "torch": "2.11.0+cu130",
+     "transformers": "5.3.0"
+    },
+    "trainer_state_present_not_loaded": false
+   },
+   "device": "cpu",
+   "embedding_dim": 768,
+   "embeddings_sha256": "6d4886a67458404964f2a03e5d50120288ffffa4d29fb7fd37293149d1b6ca05",
+   "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+   "max_seq_length": 512,
+   "model": {
+    "libraries": {
+     "huggingface-hub": "1.7.1",
+     "numpy": "1.26.4",
+     "sentence-transformers": "5.2.3",
+     "tokenizers": "0.22.2",
+     "torch": "2.10.0",
+     "transformers": "5.3.0"
+    },
+    "model_normalize_module": true,
+    "model_prompts_not_applied": {
+     "document": "",
+     "query": ""
+    },
+    "modules": [
+     "Transformer",
+     "Pooling",
+     "Normalize"
+    ],
+    "pooling": "cls",
+    "similarity_fn": "cosine",
+    "tokenizer": {
+     "class": "BertTokenizer",
+     "do_lower_case": true,
+     "model_max_length": 512,
+     "truncation_side": "right",
+     "vocab_size": 30522
+    },
+    "torch_threads": 4
+   },
+   "model_name": "local:bge_base_ft_v3_a1-seed2026/checkpoint-step-000040",
+   "model_revision": "sha256:cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c",
+   "name": "a1_seed2026:a1",
+   "normalization": "L2 to unit length after the model's own modules (float32)",
+   "passage_prefix": "",
+   "passage_truncation": {
+    "max_seq_length": 512,
+    "texts": 10137,
+    "tokens_beyond_limit_share": 0.2755,
+    "tokens_max": 1166,
+    "tokens_mean": 679.1,
+    "tokens_median": 683,
+    "truncated": 9204,
+    "truncated_share": 0.908
+   },
+   "passage_view": "text",
+   "query_encoding": "one query per forward pass",
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "query_truncation": null,
+   "role": "final",
+   "similarity": "dot product of unit vectors (cosine), computed in float64",
+   "source": "local_checkpoint",
+   "type": "dense",
+   "validation_selection": {
+    "base_model": false,
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c",
+    "notice": "Chosen by the fixed rule on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), only among this run's checkpoints. No development or evaluation metric was computed or consulted.",
+    "record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/selection.json",
+     "sha256": "2afbdae2f797fcffead66fa5e8cb49de104d76a83a507f7f9b9149204cc37892"
+    },
+    "rule": {
+     "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+     "candidates": "step 0 (the base model) and every 5 optimizer steps",
+     "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+     "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+     "metric": "mrr@10",
+     "mode": "global",
+     "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "run": "bge_base_ft_v3_a1-seed2026",
+    "seed": 2026,
+    "seeds": [
+     42,
+     1337,
+     2026
+    ],
+    "selected_step": 40,
+    "stopped": {
+     "at_step": 55,
+     "early": true,
+     "planned_steps": 55
+    },
+    "validation": {
+     "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+     "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+     "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+     "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+     "pairs": 93,
+     "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+     },
+     "use": "checkpoint selection only",
+     "version": "validation_pairs_v4"
+    },
+    "value": 0.6580005120327701
+   }
+  },
+  "a1_seed2026:a1_enriched": {
+   "batch_size": 32,
+   "cache": {
+    "dir": "data/cache/embeddings/local_bge_base_ft_v3_a1-seed2026__checkpoint-step-000040/4bd74635eeeca430",
+    "key": {
+     "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+     "encoding": {
+      "batch_size": 32,
+      "device_type": "cpu",
+      "dtype": "float32",
+      "encoded_field": "header_v1+passage.text",
+      "libraries": {
+       "sentence-transformers": "5.2.3",
+       "torch": "2.10.0",
+       "transformers": "5.3.0"
+      },
+      "max_seq_length": 512,
+      "normalization": "l2",
+      "passage_prefix": "",
+      "pooling": "cls"
+     },
+     "format_version": 1,
+     "model_name": "local:bge_base_ft_v3_a1-seed2026/checkpoint-step-000040",
+     "model_revision": "sha256:cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c"
+    },
+    "key_sha256": "4bd74635eeeca430864b6d726b0fac250683714ac00fc837109956b5cd3d50b8"
+   },
+   "checkpoint": {
+    "base_model": {
+     "name": "BAAI/bge-base-en-v1.5",
+     "passage_prefix": "",
+     "pooling": "cls",
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c",
+    "encoding": {
+     "longest_passage_tokens": 1044,
+     "longest_query_tokens": 58,
+     "normalize": true,
+     "passage_max_length": 512,
+     "passage_prefix": "",
+     "passages_truncated_to_visible_length": 425,
+     "pooling": "cls",
+     "positive_passages": 473,
+     "query_max_length": 128,
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "truncation_keeps_visible_text": true
+    },
+    "epoch": 3,
+    "files": {
+     "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+     "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+     "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+     "metadata.json": "02becedac22a1786cf586638b6f7c7e2061ab82f6dfac31b237149554dd98483",
+     "model.safetensors": "8f9dbd383b01074f5e56c03b9420155d29a758396a65d1b515e8ac95251a927b",
+     "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+     "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+     "tokenizer.json": "2fc687b11de0bc1b3d8348f92e3b49ef1089a621506c7661fbf3248fcd54947e",
+     "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de"
+    },
+    "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Evaluated by the trainer on the synthetic validation set only to choose among this run's checkpoints; no development or evaluation metric was computed, and no retrieval improvement is claimed.",
+    "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/checkpoint-step-000040",
+    "run": "bge_base_ft_v3_a1-seed2026",
+    "run_record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/run.json",
+     "sha256": "ea1d1d2ff39c16bf37ddf0a6efb6320aa8cd5cbe102a60aceba0fb7c9dd22c99"
+    },
+    "schedule_sha256": "49b2b15328d978904c017bb699979a1ed62e20a937e8c5ecde5b152f1b4ccede",
+    "selection": "a candidate of the fixed validation rule (evaluated at step 40); which checkpoint the rule selects is recorded in ../selection.json when the run ends",
+    "step": 40,
+    "total_steps": 55,
+    "trained_on": {
+     "candidates": {
+      "available": 678,
+      "equivalence_method": "evidence-reuse-v2",
+      "manifest_sha256": "0586c7ca6982fbc1d9a15a952d483fbecb9f4589779d86bbb99bfba62b065284",
+      "validator_version": "sec-qcheck-v3",
+      "version": "train_candidates_v3"
+     },
+     "corpus": {
+      "passages": 10137,
+      "path": "data/processed/corpus_v1.jsonl",
+      "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+      "version": "corpus_v1@1.2"
+     },
+     "pairs": {
+      "count": 678,
+      "pair_ids_sha256": "58df5d9db8340bd1eca094b04049d596da73fb992c03a36334fc823de3eb1d35",
+      "subset": {
+       "max_pairs": null,
+       "seed": 0
+      }
+     },
+     "preparation": {
+      "data_prep_config": {
+       "path": "configs/train/data_prep_v3.yaml",
+       "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+      },
+      "manifest_sha256": "21c2293a42d0429a8ecbb82b4e96464788a0e20b3b51a059edfa09b9fa91b02c",
+      "version": "bge_base_ft_v3"
+     }
+    },
+    "trainer_environment": {
+     "device": "cuda",
+     "python": "3.13.16",
+     "safetensors": "0.7.0",
+     "tokenizers": "0.22.2",
+     "torch": "2.11.0+cu130",
+     "transformers": "5.3.0"
+    },
+    "trainer_state_present_not_loaded": false
+   },
+   "device": "cpu",
+   "embedding_dim": 768,
+   "embeddings_sha256": "c298d1063c6a45ac024555d9fec6e1daf1f050549627a015e42b453778b257d6",
+   "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+   "max_seq_length": 512,
+   "model": {
+    "libraries": {
+     "huggingface-hub": "1.7.1",
+     "numpy": "1.26.4",
+     "sentence-transformers": "5.2.3",
+     "tokenizers": "0.22.2",
+     "torch": "2.10.0",
+     "transformers": "5.3.0"
+    },
+    "model_normalize_module": true,
+    "model_prompts_not_applied": {
+     "document": "",
+     "query": ""
+    },
+    "modules": [
+     "Transformer",
+     "Pooling",
+     "Normalize"
+    ],
+    "pooling": "cls",
+    "similarity_fn": "cosine",
+    "tokenizer": {
+     "class": "BertTokenizer",
+     "do_lower_case": true,
+     "model_max_length": 512,
+     "truncation_side": "right",
+     "vocab_size": 30522
+    },
+    "torch_threads": 4
+   },
+   "model_name": "local:bge_base_ft_v3_a1-seed2026/checkpoint-step-000040",
+   "model_revision": "sha256:cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c",
+   "name": "a1_seed2026:a1_enriched",
+   "normalization": "L2 to unit length after the model's own modules (float32)",
+   "passage_prefix": "",
+   "passage_truncation": {
+    "max_seq_length": 512,
+    "texts": 10137,
+    "tokens_beyond_limit_share": 0.3047,
+    "tokens_max": 1198,
+    "tokens_mean": 711.8,
+    "tokens_median": 715,
+    "truncated": 9271,
+    "truncated_share": 0.9146
+   },
+   "passage_view": "header_v1",
+   "query_encoding": "one query per forward pass",
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "query_truncation": null,
+   "role": "final",
+   "similarity": "dot product of unit vectors (cosine), computed in float64",
+   "source": "local_checkpoint",
+   "type": "dense",
+   "validation_selection": {
+    "base_model": false,
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "cba9110b7f744b0c47c3a8d428b61f3fd44224ef8aea779a5ce8b54e83c54d6c",
+    "notice": "Chosen by the fixed rule on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), only among this run's checkpoints. No development or evaluation metric was computed or consulted.",
+    "record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/selection.json",
+     "sha256": "2afbdae2f797fcffead66fa5e8cb49de104d76a83a507f7f9b9149204cc37892"
+    },
+    "rule": {
+     "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+     "candidates": "step 0 (the base model) and every 5 optimizer steps",
+     "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+     "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+     "metric": "mrr@10",
+     "mode": "global",
+     "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "run": "bge_base_ft_v3_a1-seed2026",
+    "seed": 2026,
+    "seeds": [
+     42,
+     1337,
+     2026
+    ],
+    "selected_step": 40,
+    "stopped": {
+     "at_step": 55,
+     "early": true,
+     "planned_steps": 55
+    },
+    "validation": {
+     "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+     "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+     "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+     "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+     "pairs": 93,
+     "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+     },
+     "use": "checkpoint selection only",
+     "version": "validation_pairs_v4"
+    },
+    "value": 0.6580005120327701
+   }
+  },
+  "a1_seed42:a1": {
+   "batch_size": 32,
+   "cache": {
+    "dir": "data/cache/embeddings/local_bge_base_ft_v3_a1-seed42__checkpoint-step-000055/7d6f16da40c01401",
+    "key": {
+     "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+     "encoding": {
+      "batch_size": 32,
+      "device_type": "cpu",
+      "dtype": "float32",
+      "encoded_field": "passage.text",
+      "libraries": {
+       "sentence-transformers": "5.2.3",
+       "torch": "2.10.0",
+       "transformers": "5.3.0"
+      },
+      "max_seq_length": 512,
+      "normalization": "l2",
+      "passage_prefix": "",
+      "pooling": "cls"
+     },
+     "format_version": 1,
+     "model_name": "local:bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+     "model_revision": "sha256:24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9"
+    },
+    "key_sha256": "7d6f16da40c01401d1c8492756276b76fe5b7d5f1b3a3a912e4fbb83b68a7a7b"
+   },
+   "checkpoint": {
+    "base_model": {
+     "name": "BAAI/bge-base-en-v1.5",
+     "passage_prefix": "",
+     "pooling": "cls",
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9",
+    "encoding": {
+     "longest_passage_tokens": 1044,
+     "longest_query_tokens": 58,
+     "normalize": true,
+     "passage_max_length": 512,
+     "passage_prefix": "",
+     "passages_truncated_to_visible_length": 425,
+     "pooling": "cls",
+     "positive_passages": 473,
+     "query_max_length": 128,
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "truncation_keeps_visible_text": true
+    },
+    "epoch": 4,
+    "files": {
+     "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+     "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+     "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+     "metadata.json": "f3ef5d0141d167c94a2c3a8a7fba7bbfffd23ff0c1899fdd2d4dc84598251ce4",
+     "model.safetensors": "3dfbfa924b4d004a322ba7858899e92701b8acc0470bddd0c404b40429aa27ff",
+     "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+     "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+     "tokenizer.json": "2fc687b11de0bc1b3d8348f92e3b49ef1089a621506c7661fbf3248fcd54947e",
+     "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de"
+    },
+    "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Evaluated by the trainer on the synthetic validation set only to choose among this run's checkpoints; no development or evaluation metric was computed, and no retrieval improvement is claimed.",
+    "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+    "run": "bge_base_ft_v3_a1-seed42",
+    "run_record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/run.json",
+     "sha256": "c24838432b4914976be46f35e160f96b041d1221fc2ef5a08f1f2e8485f862b2"
+    },
+    "schedule_sha256": "44b0ed7cd298b859fd1fc088b1ab8bdaf5d5d69a47436a1a078e8ac57b2bd306",
+    "selection": "a candidate of the fixed validation rule (evaluated at step 55); which checkpoint the rule selects is recorded in ../selection.json when the run ends",
+    "step": 55,
+    "total_steps": 55,
+    "trained_on": {
+     "candidates": {
+      "available": 678,
+      "equivalence_method": "evidence-reuse-v2",
+      "manifest_sha256": "0586c7ca6982fbc1d9a15a952d483fbecb9f4589779d86bbb99bfba62b065284",
+      "validator_version": "sec-qcheck-v3",
+      "version": "train_candidates_v3"
+     },
+     "corpus": {
+      "passages": 10137,
+      "path": "data/processed/corpus_v1.jsonl",
+      "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+      "version": "corpus_v1@1.2"
+     },
+     "pairs": {
+      "count": 678,
+      "pair_ids_sha256": "58df5d9db8340bd1eca094b04049d596da73fb992c03a36334fc823de3eb1d35",
+      "subset": {
+       "max_pairs": null,
+       "seed": 0
+      }
+     },
+     "preparation": {
+      "data_prep_config": {
+       "path": "configs/train/data_prep_v3.yaml",
+       "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+      },
+      "manifest_sha256": "21c2293a42d0429a8ecbb82b4e96464788a0e20b3b51a059edfa09b9fa91b02c",
+      "version": "bge_base_ft_v3"
+     }
+    },
+    "trainer_environment": {
+     "device": "cuda",
+     "python": "3.13.16",
+     "safetensors": "0.7.0",
+     "tokenizers": "0.22.2",
+     "torch": "2.11.0+cu130",
+     "transformers": "5.3.0"
+    },
+    "trainer_state_present_not_loaded": false
+   },
+   "device": "cpu",
+   "embedding_dim": 768,
+   "embeddings_sha256": "1f3ee0b701bbec89fc1b0ad96bb6a916e03d34ce0a9b14e3df444d5dbe3fd3ff",
+   "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+   "max_seq_length": 512,
+   "model": {
+    "libraries": {
+     "huggingface-hub": "1.7.1",
+     "numpy": "1.26.4",
+     "sentence-transformers": "5.2.3",
+     "tokenizers": "0.22.2",
+     "torch": "2.10.0",
+     "transformers": "5.3.0"
+    },
+    "model_normalize_module": true,
+    "model_prompts_not_applied": {
+     "document": "",
+     "query": ""
+    },
+    "modules": [
+     "Transformer",
+     "Pooling",
+     "Normalize"
+    ],
+    "pooling": "cls",
+    "similarity_fn": "cosine",
+    "tokenizer": {
+     "class": "BertTokenizer",
+     "do_lower_case": true,
+     "model_max_length": 512,
+     "truncation_side": "right",
+     "vocab_size": 30522
+    },
+    "torch_threads": 4
+   },
+   "model_name": "local:bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+   "model_revision": "sha256:24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9",
+   "name": "a1_seed42:a1",
+   "normalization": "L2 to unit length after the model's own modules (float32)",
+   "passage_prefix": "",
+   "passage_truncation": {
+    "max_seq_length": 512,
+    "texts": 10137,
+    "tokens_beyond_limit_share": 0.2755,
+    "tokens_max": 1166,
+    "tokens_mean": 679.1,
+    "tokens_median": 683,
+    "truncated": 9204,
+    "truncated_share": 0.908
+   },
+   "passage_view": "text",
+   "query_encoding": "one query per forward pass",
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "query_truncation": null,
+   "role": "final",
+   "similarity": "dot product of unit vectors (cosine), computed in float64",
+   "source": "local_checkpoint",
+   "type": "dense",
+   "validation_selection": {
+    "base_model": false,
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9",
+    "notice": "Chosen by the fixed rule on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), only among this run's checkpoints. No development or evaluation metric was computed or consulted.",
+    "record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/selection.json",
+     "sha256": "19cca1cbaebe15ed8ea78950a2e9e1415424b89da42b7b9ea222df8599fd3556"
+    },
+    "rule": {
+     "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+     "candidates": "step 0 (the base model) and every 5 optimizer steps",
+     "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+     "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+     "metric": "mrr@10",
+     "mode": "global",
+     "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "run": "bge_base_ft_v3_a1-seed42",
+    "seed": 42,
+    "seeds": [
+     42,
+     1337,
+     2026
+    ],
+    "selected_step": 55,
+    "stopped": {
+     "at_step": 55,
+     "early": false,
+     "planned_steps": 55
+    },
+    "validation": {
+     "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+     "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+     "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+     "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+     "pairs": 93,
+     "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+     },
+     "use": "checkpoint selection only",
+     "version": "validation_pairs_v4"
+    },
+    "value": 0.6690390851681174
+   }
+  },
+  "a1_seed42:a1_enriched": {
+   "batch_size": 32,
+   "cache": {
+    "dir": "data/cache/embeddings/local_bge_base_ft_v3_a1-seed42__checkpoint-step-000055/cd5a5171dc220ba9",
+    "key": {
+     "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+     "encoding": {
+      "batch_size": 32,
+      "device_type": "cpu",
+      "dtype": "float32",
+      "encoded_field": "header_v1+passage.text",
+      "libraries": {
+       "sentence-transformers": "5.2.3",
+       "torch": "2.10.0",
+       "transformers": "5.3.0"
+      },
+      "max_seq_length": 512,
+      "normalization": "l2",
+      "passage_prefix": "",
+      "pooling": "cls"
+     },
+     "format_version": 1,
+     "model_name": "local:bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+     "model_revision": "sha256:24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9"
+    },
+    "key_sha256": "cd5a5171dc220ba91190de26a12b57b4ec38933a92bbc7d640dfb68ccde2c607"
+   },
+   "checkpoint": {
+    "base_model": {
+     "name": "BAAI/bge-base-en-v1.5",
+     "passage_prefix": "",
+     "pooling": "cls",
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+    },
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9",
+    "encoding": {
+     "longest_passage_tokens": 1044,
+     "longest_query_tokens": 58,
+     "normalize": true,
+     "passage_max_length": 512,
+     "passage_prefix": "",
+     "passages_truncated_to_visible_length": 425,
+     "pooling": "cls",
+     "positive_passages": 473,
+     "query_max_length": 128,
+     "query_prefix": "Represent this sentence for searching relevant passages: ",
+     "truncation_keeps_visible_text": true
+    },
+    "epoch": 4,
+    "files": {
+     "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+     "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+     "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+     "metadata.json": "f3ef5d0141d167c94a2c3a8a7fba7bbfffd23ff0c1899fdd2d4dc84598251ce4",
+     "model.safetensors": "3dfbfa924b4d004a322ba7858899e92701b8acc0470bddd0c404b40429aa27ff",
+     "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+     "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+     "tokenizer.json": "2fc687b11de0bc1b3d8348f92e3b49ef1089a621506c7661fbf3248fcd54947e",
+     "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de"
+    },
+    "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Evaluated by the trainer on the synthetic validation set only to choose among this run's checkpoints; no development or evaluation metric was computed, and no retrieval improvement is claimed.",
+    "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+    "run": "bge_base_ft_v3_a1-seed42",
+    "run_record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/run.json",
+     "sha256": "c24838432b4914976be46f35e160f96b041d1221fc2ef5a08f1f2e8485f862b2"
+    },
+    "schedule_sha256": "44b0ed7cd298b859fd1fc088b1ab8bdaf5d5d69a47436a1a078e8ac57b2bd306",
+    "selection": "a candidate of the fixed validation rule (evaluated at step 55); which checkpoint the rule selects is recorded in ../selection.json when the run ends",
+    "step": 55,
+    "total_steps": 55,
+    "trained_on": {
+     "candidates": {
+      "available": 678,
+      "equivalence_method": "evidence-reuse-v2",
+      "manifest_sha256": "0586c7ca6982fbc1d9a15a952d483fbecb9f4589779d86bbb99bfba62b065284",
+      "validator_version": "sec-qcheck-v3",
+      "version": "train_candidates_v3"
+     },
+     "corpus": {
+      "passages": 10137,
+      "path": "data/processed/corpus_v1.jsonl",
+      "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+      "version": "corpus_v1@1.2"
+     },
+     "pairs": {
+      "count": 678,
+      "pair_ids_sha256": "58df5d9db8340bd1eca094b04049d596da73fb992c03a36334fc823de3eb1d35",
+      "subset": {
+       "max_pairs": null,
+       "seed": 0
+      }
+     },
+     "preparation": {
+      "data_prep_config": {
+       "path": "configs/train/data_prep_v3.yaml",
+       "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+      },
+      "manifest_sha256": "21c2293a42d0429a8ecbb82b4e96464788a0e20b3b51a059edfa09b9fa91b02c",
+      "version": "bge_base_ft_v3"
+     }
+    },
+    "trainer_environment": {
+     "device": "cuda",
+     "python": "3.13.16",
+     "safetensors": "0.7.0",
+     "tokenizers": "0.22.2",
+     "torch": "2.11.0+cu130",
+     "transformers": "5.3.0"
+    },
+    "trainer_state_present_not_loaded": false
+   },
+   "device": "cpu",
+   "embedding_dim": 768,
+   "embeddings_sha256": "607375c80974a38d67916ba785338e85a74baf3e110bf5cfdc26abb88663fb46",
+   "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+   "max_seq_length": 512,
+   "model": {
+    "libraries": {
+     "huggingface-hub": "1.7.1",
+     "numpy": "1.26.4",
+     "sentence-transformers": "5.2.3",
+     "tokenizers": "0.22.2",
+     "torch": "2.10.0",
+     "transformers": "5.3.0"
+    },
+    "model_normalize_module": true,
+    "model_prompts_not_applied": {
+     "document": "",
+     "query": ""
+    },
+    "modules": [
+     "Transformer",
+     "Pooling",
+     "Normalize"
+    ],
+    "pooling": "cls",
+    "similarity_fn": "cosine",
+    "tokenizer": {
+     "class": "BertTokenizer",
+     "do_lower_case": true,
+     "model_max_length": 512,
+     "truncation_side": "right",
+     "vocab_size": 30522
+    },
+    "torch_threads": 4
+   },
+   "model_name": "local:bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+   "model_revision": "sha256:24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9",
+   "name": "a1_seed42:a1_enriched",
+   "normalization": "L2 to unit length after the model's own modules (float32)",
+   "passage_prefix": "",
+   "passage_truncation": {
+    "max_seq_length": 512,
+    "texts": 10137,
+    "tokens_beyond_limit_share": 0.3047,
+    "tokens_max": 1198,
+    "tokens_mean": 711.8,
+    "tokens_median": 715,
+    "truncated": 9271,
+    "truncated_share": 0.9146
+   },
+   "passage_view": "header_v1",
+   "query_encoding": "one query per forward pass",
+   "query_prefix": "Represent this sentence for searching relevant passages: ",
+   "query_truncation": null,
+   "role": "final",
+   "similarity": "dot product of unit vectors (cosine), computed in float64",
+   "source": "local_checkpoint",
+   "type": "dense",
+   "validation_selection": {
+    "base_model": false,
+    "config_sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf",
+    "digest": "24c2aaae977ce319110a7dd979cb365fccfdac6cc89d63b1ba566e31a678beb9",
+    "notice": "Chosen by the fixed rule on synthetic validation questions accepted by an AI review (not human-validated, not gold labels), only among this run's checkpoints. No development or evaluation metric was computed or consulted.",
+    "record": {
+     "path": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/selection.json",
+     "sha256": "19cca1cbaebe15ed8ea78950a2e9e1415424b89da42b7b9ea222df8599fd3556"
+    },
+    "rule": {
+     "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+     "candidates": "step 0 (the base model) and every 5 optimizer steps",
+     "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+     "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+     "metric": "mrr@10",
+     "mode": "global",
+     "ties": "the earlier step (values compared to 12 decimal places)"
+    },
+    "run": "bge_base_ft_v3_a1-seed42",
+    "seed": 42,
+    "seeds": [
+     42,
+     1337,
+     2026
+    ],
+    "selected_step": 55,
+    "stopped": {
+     "at_step": 55,
+     "early": false,
+     "planned_steps": 55
+    },
+    "validation": {
+     "isolation": "checked against the 678 pairs trained on (validation_set.isolation_problems): no shared passage or equivalent, no lexically overlapping question",
+     "manifest_sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e",
+     "notice": "Synthetic validation questions written by an LLM from validation passages only, accepted by an AI quality review and re-checked against this preparation. They are for choosing checkpoints: not human-validated, not gold labels, never training data and never evaluation data.",
+     "pair_ids_sha256": "b83abf1a13ccdbdd0add6d617e835566f4e3f5d9858c715b8f6ce448909a70d6",
+     "pairs": 93,
+     "rule": {
+      "after_stop": "training and evaluation continue to the planned last step; those evaluations are recorded as not selectable and never change the selection",
+      "candidates": "step 0 (the base model) and every 5 optimizer steps",
+      "early_stopping": "selection stops after 3 candidate evaluations in a row without improvement; no later checkpoint is selectable",
+      "final_step": "evaluated and reported when it is not a multiple of 5; never a candidate",
+      "metric": "mrr@10",
+      "mode": "global",
+      "ties": "the earlier step (values compared to 12 decimal places)"
+     },
+     "use": "checkpoint selection only",
+     "version": "validation_pairs_v4"
+    },
+    "value": 0.6690390851681174
+   }
+  },
+  "bm25": {
+   "b": 0.75,
+   "backend": "python",
+   "backend_version": null,
+   "idf": "log(1 + (N - df + 0.5) / (df + 0.5))",
+   "k1": 1.5,
+   "lowercase": true,
+   "name": "bm25",
+   "tokenizer": "word",
+   "type": "bm25"
+  }
+ },
+ "config": {
+  "name": "v2_1_year_roles",
+  "path": "configs/experiments/v2_1_year_roles.yaml",
+  "sha256": "787216321fc14f3ce02305bc0f65e8756b0a24971834aafbe878e2b549f09eb7",
+  "version": 1
+ },
+ "experiments": {
+  "E1_a1": {
+   "role": "baseline",
+   "seeds": [
+    "a1_seed42",
+    "a1_seed1337",
+    "a1_seed2026"
+   ],
+   "settings": {
+    "components": [
+     "a1"
+    ],
+    "fusion": {
+     "depth": 100,
+     "k": 60,
+     "method": "single",
+     "weights": {}
+    },
+    "metadata_weight": 1.0,
+    "name": "E1_a1",
+    "policy": {
+     "after": 2,
+     "before_explicit": 0,
+     "before_implicit": 1,
+     "cells": "off",
+     "company": "none",
+     "min_eligible": 20,
+     "source": "parsed",
+     "year": "none"
+    }
+   }
+  },
+  "E3_a1_year": {
+   "role": "primary",
+   "seeds": [
+    "a1_seed42",
+    "a1_seed1337",
+    "a1_seed2026"
+   ],
+   "settings": {
+    "components": [
+     "a1"
+    ],
+    "fusion": {
+     "depth": 100,
+     "k": 60,
+     "method": "single",
+     "weights": {}
+    },
+    "metadata_weight": 1.0,
+    "name": "E3_a1_year",
+    "policy": {
+     "after": 2,
+     "before_explicit": 0,
+     "before_implicit": 1,
+     "cells": "off",
+     "company": "none",
+     "min_eligible": 20,
+     "source": "parsed",
+     "year": "filter"
+    }
+   }
+  },
+  "E3b_a1_company_year": {
+   "role": "primary",
+   "seeds": [
+    "a1_seed42",
+    "a1_seed1337",
+    "a1_seed2026"
+   ],
+   "settings": {
+    "components": [
+     "a1"
+    ],
+    "fusion": {
+     "depth": 100,
+     "k": 60,
+     "method": "single",
+     "weights": {}
+    },
+    "metadata_weight": 1.0,
+    "name": "E3b_a1_company_year",
+    "policy": {
+     "after": 2,
+     "before_explicit": 0,
+     "before_implicit": 1,
+     "cells": "off",
+     "company": "filter",
+     "min_eligible": 20,
+     "source": "parsed",
+     "year": "filter"
+    }
+   }
+  },
+  "E5_hybrid_rrf_meta": {
+   "role": "primary",
+   "seeds": [
+    "a1_seed42",
+    "a1_seed1337",
+    "a1_seed2026"
+   ],
+   "settings": {
+    "components": [
+     "bm25",
+     "a1"
+    ],
+    "fusion": {
+     "depth": 100,
+     "k": 60,
+     "method": "rrf",
+     "weights": {}
+    },
+    "metadata_weight": 1.0,
+    "name": "E5_hybrid_rrf_meta",
+    "policy": {
+     "after": 2,
+     "before_explicit": 0,
+     "before_implicit": 1,
+     "cells": "off",
+     "company": "filter",
+     "min_eligible": 20,
+     "source": "parsed",
+     "year": "boost"
+    }
+   }
+  },
+  "E7_combined": {
+   "role": "primary",
+   "seeds": [
+    "a1_seed42",
+    "a1_seed1337",
+    "a1_seed2026"
+   ],
+   "settings": {
+    "components": [
+     "bm25",
+     "a1_enriched"
+    ],
+    "fusion": {
+     "depth": 100,
+     "k": 60,
+     "method": "rrf",
+     "weights": {}
+    },
+    "metadata_weight": 1.0,
+    "name": "E7_combined",
+    "policy": {
+     "after": 2,
+     "before_explicit": 0,
+     "before_implicit": 1,
+     "cells": "interleave",
+     "company": "filter",
+     "min_eligible": 20,
+     "source": "parsed",
+     "year": "filter"
+    }
+   }
+  },
+  "X_combined_boost": {
+   "role": "exploratory",
+   "seeds": [
+    "a1_seed42",
+    "a1_seed1337",
+    "a1_seed2026"
+   ],
+   "settings": {
+    "components": [
+     "bm25",
+     "a1_enriched"
+    ],
+    "fusion": {
+     "depth": 100,
+     "k": 60,
+     "method": "rrf",
+     "weights": {}
+    },
+    "metadata_weight": 1.0,
+    "name": "X_combined_boost",
+    "policy": {
+     "after": 2,
+     "before_explicit": 0,
+     "before_implicit": 1,
+     "cells": "interleave",
+     "company": "filter",
+     "min_eligible": 20,
+     "source": "parsed",
+     "year": "boost"
+    }
+   }
+  }
+ },
+ "git_commit": "1dc986717d0e7f21668c4cff8d3d02182b7a4e28",
+ "inputs": {
+  "corpus": {
+   "path": "data/processed/corpus_v1.jsonl",
+   "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004"
+  },
+  "dev_qrels": {
+   "path": "data/eval/dev_ai/pilot_v3/dev_qrels.jsonl",
+   "sha256": "32bdde22de08a23e4b4ce75d46c44cbabfe398c3ea7c726071b487a8c0232758"
+  },
+  "dev_queries": {
+   "path": "data/eval/dev_ai/pilot_v3/dev_queries.jsonl",
+   "sha256": "62cd64a2030dd954cfff080a66268dd713400caf79997d99f8e78faacb17af16"
+  },
+  "parser_aliases": {
+   "path": "configs/train/data_prep_v3.yaml",
+   "sha256": "aa273702753c657ee6cfa741f57ee15b18afa18ecf1f35a8db839c8014501687"
+  },
+  "real_questions": {
+   "path": "data/eval/gold_v1/questions_frozen_v2.jsonl",
+   "sha256": "fbcf2f5a124a17895ae465fb79f671372d5a2033a869ab4ab214e8676e270202"
+  },
+  "trainer_config": {
+   "path": "configs/train/biencoder_bge_base_ft_v3_a1.yaml",
+   "sha256": "7a4c4618f9e00ab3ac44cc87aacc5be926753b7b71acd9c9bec47941cc77d4cf"
+  },
+  "validation_manifest": {
+   "path": "data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v4/manifest.json",
+   "sha256": "40238cb06d73287821115dbe1b5c33a2dbbd294c7dd5b3c9fdc569c475e24b0e"
+  }
+ },
+ "kind": "finretriever_v2_experiments",
+ "notice": "Not a benchmark. Validation questions are synthetic and selected the A1 checkpoints; development labels are AI-written; the 100 real questions have no relevance labels and are scored for metadata alignment and parser accuracy only.",
+ "parser": {
+  "aliases": {
+   "AAPL": [
+    "aapl",
+    "apple"
+   ],
+   "AMZN": [
+    "amazon",
+    "amzn"
+   ],
+   "JPM": [
+    "j.p. morgan",
+    "jp morgan",
+    "jpm",
+    "jpmorgan"
+   ],
+   "PFE": [
+    "pfe",
+    "pfizer"
+   ],
+   "TSLA": [
+    "tesla",
+    "tsla"
+   ],
+   "WMT": [
+    "walmart",
+    "wmt"
+   ],
+   "XOM": [
+    "exxon",
+    "exxon mobil",
+    "xom"
+   ]
+  },
+  "parser_version": "qu-v2"
+ },
+ "reference_results": {
+  "manifest_sha256": "e8198b2ffad1d515503d89417bf23b52b2387daac2fc3a4f9ff322706fd294b9",
+  "parser_version": "qu-v1",
+  "path": "results/experiments/v2_metadata_hybrid"
+ },
+ "software": {
+  "PyYAML": "6.0.3",
+  "numpy": "1.26.4",
+  "pydantic": "2.12.5",
+  "python": "3.11.5",
+  "sentence-transformers": "5.2.3",
+  "tokenizers": "0.22.2",
+  "torch": "2.10.0",
+  "transformers": "5.3.0"
+ },
+ "source_sha256": {
+  "scripts/11_v2_experiments.py": "9984694c6260bedb774878dce14245f24beb79e5c486f8f4d605b83169371841",
+  "src/finretriever/retrieval/biencoder.py": "8055cf96a5accde240127af4ced0e57c74b78bd116f30b9ab8cb1ea50481c897",
+  "src/finretriever/retrieval/bm25.py": "5baad7ef08d8dad3eeb6193ece808003142ca780bf2f2f710e86f8395e0e6ca5",
+  "src/finretriever/retrieval/checkpoint.py": "d60ae12248fa253eb663d89b3ee878525f9b014497c6ef9e5b988e3489084209",
+  "src/finretriever/retrieval/enrichment.py": "54172807162164e3ec3b186f65873f15220cbd55ee87d48bdf2cc79c029f023a",
+  "src/finretriever/retrieval/fusion.py": "e549c06e251f51a7a6f35738f0de50e925cd0c27c7031d830bed918253afc63e",
+  "src/finretriever/retrieval/hybrid.py": "f2b83221ef750d247d56055ab27706bd39ffc1ab25fd0ad8e8ae47413cfdc58c",
+  "src/finretriever/retrieval/metadata_scope.py": "13f96c1c7c695de39f554d5df7047aa43002162ca169ec96d4df0924a2603266",
+  "src/finretriever/retrieval/pipeline.py": "f85c86c82194bbe9c65cf379da9e71a1b2d23ee4889ee305b10fe806d78b861a",
+  "src/finretriever/retrieval/query_understanding.py": "976f0451a373bbc3372f15d8ebb652bf6a09930d4dcc027b0e30b225d6ad213b",
+  "src/finretriever/retrieval/windows.py": "c1e2f8a07411e1dca07652966e38c2439db32a6eb7e89202887f9e961291d9c4"
+ }
+}

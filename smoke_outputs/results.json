@@ -1,0 +1,200 @@
+{
+  "checkpoints": [
+    {
+      "checkpoint": "checkpoint-step-000005",
+      "metadata_step_matches": true,
+      "missing_files": [],
+      "reload": {
+        "dimension": 768,
+        "finite": true,
+        "sentence_transformers": "loads",
+        "sentence_transformers_max_abs_diff": 0.0
+      },
+      "resumable_state": false
+    },
+    {
+      "checkpoint": "checkpoint-step-000010",
+      "metadata_step_matches": true,
+      "missing_files": [],
+      "reload": {
+        "dimension": 768,
+        "finite": true,
+        "sentence_transformers": "loads",
+        "sentence_transformers_max_abs_diff": 0.0
+      },
+      "resumable_state": false
+    },
+    {
+      "checkpoint": "checkpoint-step-000015",
+      "metadata_step_matches": true,
+      "missing_files": [],
+      "reload": {
+        "dimension": 768,
+        "finite": true,
+        "sentence_transformers": "loads",
+        "sentence_transformers_max_abs_diff": 0.0
+      },
+      "resumable_state": true
+    }
+  ],
+  "collected_at": "2026-11-02T23:28:39+00:00",
+  "duration": {
+    "training_steps_seconds": 6.8,
+    "wall_seconds_run_start_to_last_checkpoint": 12.0
+  },
+  "environment": {
+    "device": "cuda",
+    "python": "3.13.15",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.3.0"
+  },
+  "gpu_memory": {
+    "device_name": "Tesla T4",
+    "max_allocated_gib": 4.997,
+    "measured": true
+  },
+  "gpu_memory_note": "measured by torch.cuda.max_memory_allocated over the run (tensors only, without the CUDA context or allocator cache); null when not trained on CUDA",
+  "gradients": {
+    "max_norm": 20.404148,
+    "non_finite_norms": 0
+  },
+  "kind": "finretriever_smoke_results",
+  "loss": {
+    "final": 0.038164,
+    "initial": 0.698487,
+    "max": 0.777606,
+    "min": 0.0001,
+    "non_finite": 0,
+    "note": "training loss on each step's own batch (in-batch InfoNCE); not a retrieval metric",
+    "per_step": [
+      0.698487,
+      0.641539,
+      0.777606,
+      0.188141,
+      0.150761,
+      0.498243,
+      0.000383,
+      0.028261,
+      0.060159,
+      0.265906,
+      0.0001,
+      0.031383,
+      0.069929,
+      0.075733,
+      0.038164
+    ]
+  },
+  "mechanics_ok": true,
+  "resume_state": {
+    "older_checkpoints_hold_state": false,
+    "schedule_matches": true,
+    "step": 15
+  },
+  "run": {
+    "base_model": "BAAI/bge-base-en-v1.5",
+    "batch_size": 16,
+    "candidates": "train_candidates_v1",
+    "candidates_manifest_sha256": "6fb3aa72bbe6fb388a1bb19f41cc83838b9fda7893bab49fb0bb212357ed07c4",
+    "config_sha256": "d8cfc4a00437e567369b5ccf3b3c367e84f51ec757663f15997cabfeb551095d",
+    "fp16": true,
+    "gradient_checkpointing": false,
+    "name": "bge_base_ft_v2_smoke-seed42",
+    "pairs": 48,
+    "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a",
+    "schedule_sha256": "5a5a5cacb52ba9d291447fe7eb19a78969356dc683c7ab4798b4511c596dbca7",
+    "seed": 42
+  },
+  "statement": "Mechanics check only: no retrieval evaluation was run and no retrieval improvement is claimed. The training data are 48 synthetic queries accepted by an AI quality review (not human-validated, not gold labels), and no checkpoint was selected by any metric.",
+  "steps": {
+    "checkpoints_expected": [
+      5,
+      10,
+      15
+    ],
+    "checkpoints_found": [
+      5,
+      10,
+      15
+    ],
+    "complete": true,
+    "completed": 15,
+    "planned": 15
+  },
+  "warnings": {
+    "distinct": 7,
+    "known_benign": 6,
+    "lines": [
+      {
+        "category": "tokenizer",
+        "count": 1,
+        "known_benign": false,
+        "line": "Token indices sequence length is longer than the specified maximum sequence length for this model (739 > 512). Running this sequence through the model will result in indexing errors"
+      },
+      {
+        "category": "model_load",
+        "count": 1,
+        "known_benign": true,
+        "line": "BertModel LOAD REPORT from: BAAI/bge-base-en-v1.5"
+      },
+      {
+        "category": "model_load",
+        "count": 1,
+        "known_benign": true,
+        "line": "Key                     | Status     |  |"
+      },
+      {
+        "category": "model_load",
+        "count": 1,
+        "known_benign": true,
+        "line": "------------------------+------------+--+-"
+      },
+      {
+        "category": "model_load",
+        "count": 1,
+        "known_benign": true,
+        "line": "embeddings.position_ids | UNEXPECTED |  |"
+      },
+      {
+        "category": "model_load",
+        "count": 1,
+        "known_benign": true,
+        "line": "Notes:"
+      },
+      {
+        "category": "model_load",
+        "count": 1,
+        "known_benign": true,
+        "line": "- UNEXPECTED\t:can be ignored when loading from different task/architecture; not ok if you expect identical arch."
+      }
+    ],
+    "load_reports": [
+      [
+        {
+          "key": "embeddings.position_ids",
+          "known_benign": "BERT's position-id buffer: stored in the checkpoint, rebuilt by the model class; not a weight",
+          "status": "UNEXPECTED"
+        }
+      ]
+    ],
+    "log": "smoke_outputs/train_console.log",
+    "needs_review": 1,
+    "needs_review_by_category": {
+      "tokenizer": 1
+    },
+    "omitted": 0
+  },
+  "weights_vs_base": {
+    "mean_abs_change": 4.6195549473250544e-05,
+    "missing_from_checkpoint": [
+      "embeddings.LayerNorm.bias",
+      "embeddings.LayerNorm.weight",
+      "embeddings.position_ids",
+      "encoder.layer.0.attention.output.LayerNorm.bias",
+      "encoder.layer.0.attention.output.LayerNorm.weight"
+    ],
+    "tensors": 149,
+    "tensors_changed": 147
+  }
+}

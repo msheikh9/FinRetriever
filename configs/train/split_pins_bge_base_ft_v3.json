@@ -1,0 +1,7162 @@
+{
+ "corpus": {
+  "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+  "version": "corpus_v1@1.2"
+ },
+ "counts": {
+  "train": 334,
+  "validation": 633
+ },
+ "format_version": 1,
+ "kind": "split_pins",
+ "notice": "Passages whose split units a new preparation keeps where they are: training examples and every train passage that may answer one stay train, and every earlier validation passage stays validation. Built from passage IDs and corpus text only; no evaluation label was read.",
+ "pins": [
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000000_6d650e241868",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000000_ca2f7cbd00c4",
+   "reasons": [
+    "holds_evidence:pairs:train_000002"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000007_d2a9e715571f",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005",
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000001",
+    "positive:train_candidates_v1:pilot_v3:train_000001"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000000_cb41a3d6f324",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000001_6c87b6d4c7c2",
+   "reasons": [
+    "holds_evidence:pairs:train_000011",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000002_c8650bd8a78c",
+   "reasons": [
+    "holds_evidence:pairs:train_000005",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000004_a332dff77e5f",
+   "reasons": [
+    "holds_evidence:pairs:train_000002"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000005_aaaf5a91ff07",
+   "reasons": [
+    "holds_evidence:pairs:train_000002",
+    "holds_evidence:pairs:train_000003",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000003"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000016_aec0f75be46f",
+   "reasons": [
+    "holds_evidence:pairs:train_000001",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000001"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000017_a8b575173dbc",
+   "reasons": [
+    "holds_evidence:pairs:train_000001",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000001"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000026_1c02d66b53c5",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000027_3ad2d706d8e6",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_e661452013bc_000041_49b5d5fd532b",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000000_26ea72130389",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000000_4340f8363efa",
+   "reasons": [
+    "holds_evidence:pairs:train_000002"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000006_8b057e1f4035",
+   "reasons": [
+    "holds_evidence:pairs:train_000001",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000001"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000000_9b53a4793ed2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000001_97ee6f299a34",
+   "reasons": [
+    "holds_evidence:pairs:train_000004",
+    "holds_evidence:pairs:train_000011",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000002_0789500dd814",
+   "reasons": [
+    "holds_evidence:pairs:train_000004",
+    "holds_evidence:pairs:train_000005",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000004_0616222709d1",
+   "reasons": [
+    "holds_evidence:pairs:train_000002"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000005_2ae27cd8bb3f",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000002",
+    "positive:pairs:train_000003",
+    "positive:train_candidates_v1:pilot_v3:train_000003"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000016_d2a45f2140a7",
+   "reasons": [
+    "holds_evidence:pairs:train_000001",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000001"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000023_a30ab3fdd601",
+   "reasons": [
+    "holds_evidence:pairs:train_000007"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000024_a51782b89fe0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000026_0fd5b446fcae",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_80635be04296_000038_34fcfb3464a6",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000000_4f8e96d30585",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000004_7dddac9c16c3",
+   "reasons": [
+    "holds_evidence:pairs:train_000007"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000000_a5b196dda828",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000001_331fe3cbfd8b",
+   "reasons": [
+    "holds_evidence:pairs:train_000004",
+    "holds_evidence:pairs:train_000011",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000002_9d9a62ab4527",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000004",
+    "positive:pairs:train_000005",
+    "positive:train_candidates_v1:pilot_v3:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000004_1e36cdeeb19a",
+   "reasons": [
+    "holds_evidence:pairs:train_000002"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000005_29a03f8c0d36",
+   "reasons": [
+    "holds_evidence:pairs:train_000002",
+    "holds_evidence:pairs:train_000003",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000003"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000013_67d7c7abb44b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000014_06deedd9bfe4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000018_5ccefc500ba2",
+   "reasons": [
+    "holds_evidence:pairs:train_000006",
+    "holds_evidence:pairs:train_000007"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000019_67b2da6836c8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000021_1bfe33fcc41d",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000022_a2520c893a2f",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000004",
+    "positive:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000000_4efd108224aa",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000004_c1953e51e821",
+   "reasons": [
+    "holds_evidence:pairs:train_000007"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000000_f72e24a150cc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000001_f19b40af2baf",
+   "reasons": [
+    "holds_evidence:pairs:train_000004",
+    "holds_evidence:pairs:train_000011",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000002_0fceab68f371",
+   "reasons": [
+    "holds_evidence:pairs:train_000004",
+    "holds_evidence:pairs:train_000005",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000004_280d1d80f66c",
+   "reasons": [
+    "holds_evidence:pairs:train_000002"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000005_21f6b207f703",
+   "reasons": [
+    "holds_evidence:pairs:train_000002",
+    "holds_evidence:pairs:train_000003",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000003"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000015_15f6bd56ff09",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000019_6e39b17d7c27",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000006",
+    "positive:pairs:train_000007"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000022_56fcf3194472",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000004",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_1607397b0c82_000023_7793bf357064",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_891845b64301_000000_ab5422471838",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_891845b64301_000000_d3517de40c0f",
+   "reasons": [
+    "holds_evidence:pairs:train_000011",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_891845b64301_000011_f5bcdba327ee",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000008",
+    "positive:pairs:train_000009",
+    "positive:train_candidates_v1:pilot_v3:train_000008",
+    "positive:train_candidates_v1:pilot_v3:train_000009"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_891845b64301_000015_5fa59df9dcac",
+   "reasons": [
+    "holds_evidence:pairs:train_000006"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_891845b64301_000016_e71f7c86318c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_891845b64301_000019_cab257699da4",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000005"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000000_a3e65b6356e9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000000_a67ef331874c",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000010",
+    "positive:pairs:train_000011",
+    "positive:train_candidates_v1:pilot_v3:train_000010",
+    "positive:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000012_376ef960dc24",
+   "reasons": [
+    "holds_evidence:pairs:train_000008",
+    "holds_evidence:pairs:train_000009",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000008",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000009"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_613784335fcd_000000_166b2db33b6f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_613784335fcd_000000_368bc77ff8fb",
+   "reasons": [
+    "holds_evidence:pairs:train_000010",
+    "holds_evidence:pairs:train_000011",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000010",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000011"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_613784335fcd_000003_ff707a0a7599",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000012",
+    "positive:train_candidates_v1:pilot_v3:train_000012"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_613784335fcd_000020_915aa0055f2a",
+   "reasons": [
+    "holds_evidence:pairs:train_000012",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000012"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_613784335fcd_000021_78b57159f32b",
+   "reasons": [
+    "holds_evidence:pairs:train_000012",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000012"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_aapl_10-k_613784335fcd_000022_135db597c3d0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000000_47fd34b63d5a",
+   "reasons": [
+    "holds_evidence:pairs:train_000014",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000002_4f3a2d838e5d",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000004_a8d332a7d518",
+   "reasons": [
+    "plan:train.pilot_v3"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000024_470683329d62",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000043_f3504c859a0f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000046_fef688edd429",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_00bc8a4b228f_000000_d6bbae63296e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000020_5ad0f24d5912",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000000_ba0fe0c533a2",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000013",
+    "positive:pairs:train_000014",
+    "positive:train_candidates_v1:pilot_v3:train_000013",
+    "positive:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000001_0807152c05b4",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000002_d1c2b59dea4a",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000027_c984330fe9c2",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000029_393c074f4b9d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000038_560fffb1bfc7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_15387490d71b_000000_6138c49b97f5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000006_48b202d00017",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:pairs:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000017"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000000_38fc396177c1",
+   "reasons": [
+    "holds_evidence:pairs:train_000014",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000001_a9e0aeaff843",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000002_8e92ab0ebbb0",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000015",
+    "positive:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000028_607bdcb12ef1",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000030_156185c370da",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000033_ba24af0a1b16",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000040_752e2ff1f684",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_1017f21733d3_000000_fc9fd5a19304",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000000_58e202a28ac9",
+   "reasons": [
+    "holds_evidence:pairs:train_000014",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000001_fef452d55cae",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000002_5939deca9ea4",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000015_24c31777b3dd",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000029_1130b6ba26fa",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000031_9e639d31aa94",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000016",
+    "positive:train_candidates_v1:pilot_v3:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000043_c62aeb658b49",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_bc8a50f33814_000000_8a219819311f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000006_873e41c0a536",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000017",
+    "positive:train_candidates_v1:pilot_v3:train_000017"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000000_a7326914b304",
+   "reasons": [
+    "holds_evidence:pairs:train_000014",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000001_b313521ca0e4",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000002_7f72db9cbae6",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000027_cc1be1df7595",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000045_41091cf76fca",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000000_22ed52a07bdc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000000_98c524adfd26",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000018",
+    "positive:pairs:train_000019",
+    "positive:train_candidates_v1:pilot_v3:train_000018",
+    "positive:train_candidates_v1:pilot_v3:train_000019"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000006_ae0b42d7d581",
+   "reasons": [
+    "holds_evidence:pairs:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000017"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000000_fa8f28078cc4",
+   "reasons": [
+    "holds_evidence:pairs:train_000014",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000001_9800235ba9b0",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000002_fd74d487fe93",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000011_1b68f3ae4925",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000027_778ffe222409",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000028_84d4356a33da",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000044_1c4c595a51bd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_6399596360b3_000000_a0807a65e6dc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000000_3de2f00cc133",
+   "reasons": [
+    "holds_evidence:pairs:train_000014",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000001_f45293cb9c04",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000010_d6b42a7a3f77",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000017_f8da96b02727",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000023_e767b06adb3f",
+   "reasons": [
+    "holds_evidence:pairs:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000028_b7ac1e3c31c2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000037_e20836dda2a4",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000020",
+    "positive:train_candidates_v1:pilot_v3:train_000020"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000043_96d497849290",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000044_726e551f1479",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000045_3f0d5912d8e4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_amzn_10-k_5189ed2271af_000000_eb91ed1a16ab",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_4ebb42702e9e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000032_55079cccdc84",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000033_a0fe0cf21732",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000034_0be473c0f68f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000035_ce8b2afa9f84",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000036_a7c98e293576",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000037_730a9888836b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000038_3ae09cea78f6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_4c4708066c0e",
+   "reasons": [
+    "holds_evidence:pairs:train_000028"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_c52f1adc3491",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000001_d4eab7684f68",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000003_26ebec20bcff",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000002_2c3607ee65a7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000002_eb18704738c6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_a598e459206b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000019_df26ef7fb982",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000023_0d99fc253ec7",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:pairs:train_000024",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000025_bb418c69bcdd",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000021",
+    "positive:pairs:train_000022",
+    "positive:train_candidates_v1:pilot_v3:train_000021",
+    "positive:train_candidates_v1:pilot_v3:train_000022"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000003_f6a4b7f268ac",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000005_dc5254053ae1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000006_574f66887c2f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000002_80519aaa09f8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000029_0c4fde2f60d1",
+   "reasons": [
+    "holds_evidence:pairs:train_000022",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000022"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_2931bb3e1bc3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000001_bc5927e3ea45",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000031_6e6c7b324bb2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_16b01545f830",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000007_b89cd2c39285",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000014_6e4a432ba7c2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000015_a5440f57f170",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000016_d4c278dcfe4b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000017_b62f7d93070a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000018_89d68582f443",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000009_4969acad8608",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000010_e7d79564e424",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000002_c3f56ec394f7",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000010_33520b36b496",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000013_e23b748111c4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_4079d40510dd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000002_1828d528cfa1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000013_96d953f8e8a0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000014_e3b3babc642c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000015_ef8f34d971bb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000004_79f60b3e64f3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_5c2b68279a40",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000001_70d7c9fed5bb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000002_236e26b8fa00",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000003_0f4c4c385a48",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000004_40e74cf4ee10",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000005_cc58a5455d40",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000006_5f374230bb52",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000001_19ac8c83c6a8",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000001_58ebf3be202a",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000003_49c059434b06",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000004_80a7af1cc291",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000000_063a29463670",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_4c0a4d07e229_000001_9eeb9b4e49e0",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000000_29ee8eb5c70b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000021_d58a355975b9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000037_0905847c8d47",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000038_1768c91baab0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000039_b75da8033762",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000040_7a5b0a17c030",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000041_f90e9a379d36",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000042_2fc0cf2bfb74",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000043_b1cf2223a66c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000000_2a459e666f74",
+   "reasons": [
+    "holds_evidence:pairs:train_000028"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000000_b8c78633f4fb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000004_8474d1c2c5a8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000006_fb88e8fe6ad2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000008_abccc05eea17",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000001_541ee11829aa",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000000_99d0fed34478",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000005_0d8973dd9f66",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000018_b516f62c3077",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000019_f12d81db21f3",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000026_0cf8c06e2f43",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000027_8a16662c1d53",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000023",
+    "positive:pairs:train_000024",
+    "positive:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000028_3c12598f6fad",
+   "reasons": [
+    "holds_evidence:pairs:train_000021",
+    "holds_evidence:pairs:train_000022",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000021",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000022"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000003_b72d9751fe1e",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000004_9956d1e55000",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000008_4cb41c1f590f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000007_e226369fe3db",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000002_459f102ab3d5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000003_24f50fe00dc5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000006_b748422637ce",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000016_54f13a4dfebd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000006_86257dd6bf67",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000000_7741f63cdf2a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000007_59a76b05344c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000014_2dde39980e0b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000015_f46ca21b5d36",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000016_a174b8a5a646",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000017_d99e1bc638e3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000018_50f08ca6b2e3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000001_b56171036585",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000003_396dc5dee2ca",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000002_2663251154bc",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000010_31c968c54a3d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000011_049d6f42d060",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000010_9b7f66f78993",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000011_1302ef91cb48",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000013_2cd577ab694f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000014_eaa01e076e64",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000015_adf3651e46aa",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000004_c2194e347bad",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000000_f69668b1094e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000001_b76e95807087",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000002_d43255dfd7fd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000003_a5f6315c3dd3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000004_374a6ff0f549",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000006_e3fd0570e66c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000001_21300531bc5b",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000014"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000002_7385dc192efc",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000003_65de494cdefe",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000004_f62c64a42347",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000005_9cb7161a9aed",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000001_87f7b634d23b",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_9047c6aa2394_000011_9210082d9c60",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_612d5862f191",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000002_84dc23dc0f61",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000036_0949b4bb2d66",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000037_d77865670cf7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000038_8469cc783541",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000039_0dd12516e150",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000040_8dc11560d5e6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000041_af7d7e3a1fc4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000042_de679334d092",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_0fb5d647cf71",
+   "reasons": [
+    "holds_evidence:pairs:train_000028"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_49a173ab577e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_f596560b18bb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_99dac57b1803",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000003_8c60496c3667",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000009_9b5b5e0f1092",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000016_c8403b394afb",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000024_7181da4c1ba2",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:pairs:train_000024",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000025_9f8fea674c18",
+   "reasons": [
+    "holds_evidence:pairs:train_000021",
+    "holds_evidence:pairs:train_000022",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000021",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000022"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000007_7d2604d08ee9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000008_38e687a5fa49",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000002_8cda26d1bcbf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000038_e6c92a19082e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000005_4a8f9c16b645",
+   "reasons": [
+    "plan:train.pilot_v3"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000012_74dd7d47a95e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_dfa54af21b0d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_73328e04c0b1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000007_35350b3af4dc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000010_cf3232a27840",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000014_5f7d1219767c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000015_9bbb168211be",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000016_e57523bfe4c7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000017_ffb3ee99a678",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000018_b1d8e93d9ca4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_7b080a8284bc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000002_deb2b98e9c79",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000006_15f6b73cf4fa",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000010_8b86588fe07a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000011_a377c342e4a7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000010_3c47d1b9c7ed",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000013_4bc4f6d9bd73",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000014_8549e769f027",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000015_019ad9afd448",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000004_8ac0b3c13041",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_bb38a2358f31",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_a65c01cd36b3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_93ffcc5730e5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000002_a58397dfcf49",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000003_46fb547a1caf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000004_d259c918a5d8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000005_203d5961020d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000002_1075af554750",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000004_4ec226f57beb",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000005_c3054aa7d84a",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000000_b3fb4508cd3c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000002_365a416e1163",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000003_fd22fe92e1ed",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000025"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000034_2fee7d34bf62",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000035_ecc1dfa601df",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000036_71ae00d757ad",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000037_4474a3164ea5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000038_3173f149567e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000039_eb85941e3869",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000040_f52f85dda948",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000000_d20fa0f8238f",
+   "reasons": [
+    "holds_evidence:pairs:train_000028"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000000_6c23152a1a66",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000003_fecba7af0cfb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000004_e169a94711fb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000020_16be851cbb00",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000024_688779716293",
+   "reasons": [
+    "holds_evidence:pairs:train_000023",
+    "holds_evidence:pairs:train_000024",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000023"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000008_d427f0b35238",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000006_06abaf1752a1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000008_880d31cb747f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000002_b06de16182e7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000036_f8c155f119c7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000007_6702dd5ffa2e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000028_c193584c6fb1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000000_5ad65125689c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000001_8cf7116c90c7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000007_f3464d71b903",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000010_a925d564bd35",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000014_67bdad9d30b5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000015_914f22f62420",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000016_abfd0618e590",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000017_7793b87d8511",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000018_48bcb612ca06",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000001_76499032beaf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000003_87f2dec2f646",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000002_089f249af728",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000005_f0ac3d976ea9",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000006_d8c748c589f8",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027",
+    "positive:train_candidates_v1:pilot_v2:train_000015",
+    "positive:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000010_f57fd99af686",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000023_52933f136485",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000013_20105e2fe55c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000014_ad1f086cef17",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000004_66436575c28d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000001_6a9ebee30949",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000000_c4e6f93634be",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000001_9a102635133b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000002_84d93bde9757",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000003_22dbbb2b252b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000004_40c988871007",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000005_c34e18eabc96",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000002_26e9d8d882e3",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000003_cc80cf777bd5",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000004_0b53546fbb98",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000003_1d46f760fb38",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000000_a29d1d3a09cf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000002_40eb0d7e1d09",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_afdaba1c8e77",
+   "reasons": [
+    "holds_evidence:pairs:train_000025"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000030_fd75e328fc44",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000036_c44ea91fd509",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000037_3e1c890c9837",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000038_934d212898f8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000039_811d4e6f5642",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000040_41c348ddf69b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000041_2e2450f2e813",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000042_7cd17015334d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000043_c23460e6a42f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000000_0daf3cc54853",
+   "reasons": [
+    "holds_evidence:pairs:train_000028"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000001_7fa451bee707",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000000_ff6bb985aeae",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_d9ef54f4b45e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_add503cefebc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000005_1167b030e7d1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_e20e7c1a73ae",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000020"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000009_4a140861f959",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000013_653afbc940bb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000024_6e8eb1446fe6",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000025_039625fbe3d3",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000028_bf498d4722c9",
+   "reasons": [
+    "holds_evidence:pairs:train_000029",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000029_42ad498f17e1",
+   "reasons": [
+    "holds_evidence:pairs:train_000029",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000008_eee5f05c6522",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000009_254fdffefe50",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000002_8de52decd19c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000020_9e4fc7ab5c03",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000023_41903f827fca",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000036_d2722da2cf29",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000030_ba85c3e7e883",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000000_2120192e41d2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000001_99defb419930",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000007_c4e28f2c5570",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000010_327db85cd98d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000014_d4b3537aeb63",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000015_b685828eac87",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000016_1a9dc0cfdaac",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000017_2ee129ca9e42",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000018_a19ecef57f5d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000001_9eb4f4c0d67f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_3abfbfa9e5ba",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_f8877481b631",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000002_d7244a48a3a9",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000017",
+    "positive:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000006_4ef7a6d79dfa",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000015",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000007_73cbc0b6cb45",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000010_1d967a419fdb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000011_280aae81467c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000024_d717881e78eb",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000005_be7cbaafd561",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000013_aa1abab1794e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000014_f34919906307",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_178dceea383b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000001_67da93374ca3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000000_4fe8c6a44424",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000001_1b6c4c7811fc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000002_308a7cb8ba65",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_ac02c37c2d14",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_1925749ce2d0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000005_4644f4ed52c4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000002_157aa8fc5f0f",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_4bc235d700c3",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_170518ecc1d6",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000005_714a540c795c",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_4adbbaf9b3f4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000004_9eaf92649141",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000003_55f8ff5c0d3f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000000_0a2389b7ceb7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000011_d5e5e1391a8f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000012_d9e1128af69f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000030_44727403b553",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000036_c8a91078bc04",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000037_765e8993d0b0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000038_8cd14ca6e609",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000039_0fbe0cb69553",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000040_e1bfe04cc09a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000041_9b677c396311",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000042_fbf940718f61",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000043_76becca00d0c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000000_cb75ac563e2f",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000027",
+    "positive:pairs:train_000028",
+    "positive:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000000_6fbf27995d7d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000001_d5ce10aa189f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000004_f9a5b0e94afc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000004_60d775c78e0c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000005_99f1f74c423f",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000019",
+    "positive:train_candidates_v1:pilot_v2:train_000020"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000010_c3c087f57540",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000017_7e9a45567e0e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000020_67888990610c",
+   "reasons": [
+    "holds_evidence:pairs:train_000029",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000021_1af14b895507",
+   "reasons": [
+    "holds_evidence:pairs:train_000029",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000008_2c241068ca5d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000009_8ae5b97e4671",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000002_a2a484aab4e4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000019_8754c2062434",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000034_b01b81a85f99",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000015_c857324afc47",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000000_57ae40b39025",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000001_8775c784caaf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000007_69b9a6a5b5cf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000010_b908b06dcaff",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000014_3e57959d4a81",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000015_f533ac324656",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000016_d8c6d368d5dd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000017_05c3910ea04e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000018_b27b11563357",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000003_4c9d2756c9c1",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000002_bf44ac112652",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000005_f1e528af720a",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000006_54efb41133ad",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000015"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000007_6c3fecd093d8",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000010_a6795216a54e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000004_ff4ca568f48d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000014_a36778397d05",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000015_28a1ee2e717a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000004_d0f12896ba7a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000001_719132dda2eb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000000_1224f8a0311f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000001_7b6ff1f7ae73",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000002_35ee90e5b1c9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000003_9fc6dd847cd2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000004_7adbccd284b3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000005_84123128b9c1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000002_7952734a1e46",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000003_738b9cb29137",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000003_73a26f5a563b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000004_9690ba9d9bea",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_5e42de5ef639_000003_d4ba65d214a1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000000_a14d82f2ee60",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000011_db9b857b3a84",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000012_739d64e854ed",
+   "reasons": [
+    "holds_evidence:pairs:train_000025"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_0eb31b849571",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000004_344aa9e608d9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000026_dbf82c7ef386",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000033_498274b2e08c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000034_28e792704130",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000035_481ed0285762",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000000_5dba3ef9f540",
+   "reasons": [
+    "holds_evidence:pairs:train_000028"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000001_1fd842d723f5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000000_bf9608b40e82",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_ab11dd54f8b2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000004_bfa3cd0995a2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_bc8161979916",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000005_3dc0d63dccce",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000015_09b56950973d",
+   "reasons": [
+    "holds_evidence:pairs:train_000030",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000030"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000016_41af399436f9",
+   "reasons": [
+    "holds_evidence:pairs:train_000030",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000030"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000019_c648f2627ddc",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000029",
+    "positive:pairs:train_000030",
+    "positive:train_candidates_v1:pilot_v3:train_000029",
+    "positive:train_candidates_v1:pilot_v3:train_000030"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000020_1f46f223cee6",
+   "reasons": [
+    "holds_evidence:pairs:train_000029",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000010_263700bfbe8b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000008_3041dfaf1fa8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000009_fed5793f356c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_35b465ef1e4f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000000_43b28af87e2d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000008_2233a6fdf0f5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000009_5bf81dcb5486",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000003_fd374941ce46",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000001_efa79dd2a147",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000007_454280024406",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000000_7358f6ae113a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000007_2bf426528df2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000010_41c6fa1d5e4d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000014_26a17f29c8ec",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000015_44db40ae2315",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000016_78eb61b66eda",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000017_c8baa03cf667",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000018_0cbeacfd9a38",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000006_b03fe6aac88f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000003_f130e7e472c0",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_2740bcf70176",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000017",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000018"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000005_57e2655c4d96",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000006_ac65de3dfa04",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000016"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000010_7c92cb89d903",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000004_232b4b193e36",
+   "reasons": [
+    "holds_evidence:pairs:train_000027",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000027"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000014_d975beb0a746",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000015_e3762e9e4fa7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000016_5fb3f18d4fc0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000004_2b895d90f3fa",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000001_22e56e491eea",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000000_fc9863499c21",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000001_e6c61dcfbf36",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_105ad06b9188",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000003_980be5e20e3b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000004_1a09718c7fd5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000005_83830928ee0d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000001_eea8a0febf87",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000005_333200acc02c",
+   "reasons": [
+    "holds_evidence:pairs:train_000024"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000006_437dd6d855ab",
+   "reasons": [
+    "holds_evidence:pairs:train_000024"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000002_69fdb1872a48",
+   "reasons": [
+    "holds_evidence:pairs:train_000026"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000003_bdec460b42c5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000004_6f63c6f5b3b8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_jpm_10-k_49e5f06d4c01_000003_fef64364a3ec",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000003_f902f6b0a458",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000004_c8376224d781",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000007_d04fe97487e5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000013_883ec15a1367",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000022_43fea11aaa4f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000029_32eddd992867",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000033_2a568e32456c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000001_679ff581c5ea",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000008_75b0bdb1a4f9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000019_5b0af15285fb",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000031",
+    "positive:pairs:train_000032",
+    "positive:train_candidates_v1:pilot_v3:train_000031",
+    "positive:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000024_0d92b36f4192",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_ed19abba9266_000000_b39b26bdf9dc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000009_80376c83ceb5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000019_95f2a7a310d3",
+   "reasons": [
+    "plan:train.pilot_v3"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000023_5eda41e3fc21",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000024_5c1127bf4caf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000011_abd89eedf0fd",
+   "reasons": [
+    "holds_evidence:pairs:train_000031",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000012_b7404f78ded1",
+   "reasons": [
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000019_234221d7e2e0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000033_1b5d656c5402",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000038_c62fb3177736",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000040_ea446c510c22",
+   "reasons": [
+    "holds_evidence:pairs:train_000033",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000033"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000010_67cbeb2b4864",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000011_1ca1b5af0345",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000037_7772b7c4bf85",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000038_78c3a58eb8e2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000049_573cd3431b4f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000102_b3a997d8e774",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000107_dd38ec485d53",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000111_222407f30076",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000114_b8d35c4c4e06",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000117_53a39830eef5",
+   "reasons": [
+    "holds_evidence:pairs:train_000034",
+    "holds_evidence:pairs:train_000035"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_888d378fcf4f_000118_091678bee013",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000009_cd1c1e2a2d45",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000012_39d3b8a7bee3",
+   "reasons": [
+    "holds_evidence:pairs:train_000031",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000013_d9bdf34aaa3f",
+   "reasons": [
+    "holds_evidence:pairs:train_000031",
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000031",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000015_cd1f7ee2ef21",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000019_73728e60720f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000024_6852a88a4894",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000032_40c64bb66883",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000033_5ff2f58ac5ef",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000034_356ac796d69a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000038_a5c9fa035943",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000040_61901d58bc55",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000033",
+    "positive:train_candidates_v1:pilot_v3:train_000033"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000007_8924237130f2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000008_89ac16010e86",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000009_5400a7ce1a03",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000010_b7294a66ed2c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000018_f7b6d432df2f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000036_feeb2efc6606",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000037_ae3881a00b13",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000038_25fffecf1097",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000039_0c7a3f70f1ed",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000051_7e32446d027e",
+   "reasons": [
+    "holds_evidence:pairs:train_000038",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000038"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000056_de0662ad3648",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000065_3eb185fec922",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000078_4caa6d033254",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000106_48eb57a9c61b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000113_a7716dca79c8",
+   "reasons": [
+    "holds_evidence:pairs:train_000034",
+    "holds_evidence:pairs:train_000035"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_63094865163d_000114_f2ab88dbff12",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000008_c48664fd26b7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000013_2c3fbe6c2022",
+   "reasons": [
+    "holds_evidence:pairs:train_000031",
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000031",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000014_8b5b7af3caa5",
+   "reasons": [
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000031_dfad89d9cf5e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000032_0e81079e04c8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000034_7e962dd59d8a",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000008_0e45788bb41d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000009_f64b9d5be857",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000030_4be35b9e101c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000031_e543c5eed748",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000036_4ac5380c722e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000037_f1137655d7cf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000051_36cac0385025",
+   "reasons": [
+    "holds_evidence:pairs:train_000038",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000038"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000077_8f3b0b527e94",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000105_44c87f272d41",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000112_76a6385ead80",
+   "reasons": [
+    "holds_evidence:pairs:train_000034",
+    "holds_evidence:pairs:train_000035"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_082250b975af_000113_9d6dde84c42b",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000034",
+    "positive:pairs:train_000035"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000009_ab38c6e437a7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000014_00270b752835",
+   "reasons": [
+    "holds_evidence:pairs:train_000031",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000015_0e09f380f334",
+   "reasons": [
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000001_3de04d1db13d",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000036",
+    "positive:train_candidates_v1:pilot_v3:train_000036"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000017_7b3870d06598",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000032_0342af4364cd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000034_8335b77d3af8",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000009_9a05542504a1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000012_0181a34aae8c",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000033_1d5a25f984ad",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000034_895ce6307145",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000035_a111dc0b467f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000037_e90477ec2e63",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000038_5d3996aca973",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000051_a43f714df7c0",
+   "reasons": [
+    "holds_evidence:pairs:train_000038",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000038"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000052_2066d4b8afc5",
+   "reasons": [
+    "holds_evidence:pairs:train_000038",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000038"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000071_bab17c8ab4cc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000079_ba5572227926",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000080_7c726ccd179b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000106_b261d70d8289",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000115_b18b0af9b68f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000009_65dc0f0f1057",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000027_0177b6c53518",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000016_4083b8e24a14",
+   "reasons": [
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000001_8cb3ca49a82b",
+   "reasons": [
+    "holds_evidence:pairs:train_000036",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000036"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000022_befa868d116d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000025_c04c5f7b917c",
+   "reasons": [
+    "plan:train.pilot_v3"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000036_5650f8433c39",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000038_20ebf9724b96",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000024"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000041_7f58536a4ca5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000013_3a64ded17dd9",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000014_95f156fbe33d",
+   "reasons": [
+    "holds_evidence:pairs:train_000037",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000037"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000015_2321bb4e8519",
+   "reasons": [
+    "holds_evidence:pairs:train_000037",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000037"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000034_b32ed8cb4e15",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000035_cd6d89cfe1de",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000036_9b10a14c3ca3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000037_b14b5a18ce26",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000023",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000024"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000049_68ca82c50ca9",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000037",
+    "positive:pairs:train_000038",
+    "positive:train_candidates_v1:pilot_v3:train_000037",
+    "positive:train_candidates_v1:pilot_v3:train_000038"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000068_a3d30838665c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000077_f67b3c9df9d7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000078_bb5d8e199710",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000103_47814fc958fc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000112_141df2c4c9b4",
+   "reasons": [
+    "holds_evidence:pairs:train_000035"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000009_38bac6be97c4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000010_b576c541bcea",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000029_f8a34c851fea",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000018_07394b74eba3",
+   "reasons": [
+    "holds_evidence:pairs:train_000032",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000032"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000001_1ce5b506960b",
+   "reasons": [
+    "holds_evidence:pairs:train_000036",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000036"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000036_aee4b52e3046",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000038_e45dd4038e7a",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000024"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000041_9471cee8e418",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000011_63c754a50a78",
+   "reasons": [
+    "holds_evidence:pairs:train_000039"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000013_c8c68a9d4292",
+   "reasons": [
+    "holds_evidence:pairs:train_000037",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000037"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000031_352ee9c22c5e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000032_a89b744463c0",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000023",
+    "positive:train_candidates_v1:pilot_v2:train_000024"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000043_224b5a160e02",
+   "reasons": [
+    "holds_evidence:pairs:train_000037",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000037"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000044_08a83a4b363c",
+   "reasons": [
+    "holds_evidence:pairs:train_000037",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000037"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000065_3a13dd8e9fd4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000074_85826616e263",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000098_0e5540a3f79b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000104_842db0b95e70",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000008_5c8e7647acaf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000006_0f7597e97e41",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000011_65381689fafa",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000012_5f99af5680fd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000016_ce3c64534111",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000000_1cba0752b981",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000025_c0fb438c0a85",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000000_7bb76188eb99",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000002_48052225f988",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000049_456fe94fdc9a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000050_2b88dab8a6e3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000052_445fc5fc7a8a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000077_75628eecf2d4",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000040",
+    "positive:train_candidates_v1:pilot_v3:train_000040"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000078_53752c798eb5",
+   "reasons": [
+    "holds_evidence:pairs:train_000040",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000040"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000079_603e420de85b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000004_0511fe41a16b",
+   "reasons": [
+    "holds_evidence:pairs:train_000048",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000048"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000000_270d4b922798",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000000_b83853171868",
+   "reasons": [
+    "holds_evidence:pairs:train_000046",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000046"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000001_33f3565d7149",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000000_2cb158c0c2ef",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000002_2a4dfef76df9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000047_15a855a63486",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000048_428bf7867ecf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000049_eaf9dff9488b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000071_80051c0fec88",
+   "reasons": [
+    "holds_evidence:pairs:train_000041",
+    "holds_evidence:pairs:train_000042",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000041",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000042"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000072_70d3079a747b",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000041",
+    "positive:pairs:train_000042",
+    "positive:train_candidates_v1:pilot_v3:train_000041",
+    "positive:train_candidates_v1:pilot_v3:train_000042"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000096_28e1f7acbae7",
+   "reasons": [
+    "holds_evidence:pairs:train_000044",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000044"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000004_595d8fd2c1a9",
+   "reasons": [
+    "holds_evidence:pairs:train_000048",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000048"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000000_f0cbef3bbfbf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000000_908c8647af9b",
+   "reasons": [
+    "holds_evidence:pairs:train_000046",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000046"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000017_7443460bce8b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000000_c8ee88268932",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000043_17607f453d1f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000044_983c5e7e07ec",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000045_48604ca1ab37",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000061_0d12ffdbbdf9",
+   "reasons": [
+    "holds_evidence:pairs:train_000042",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000042"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000082_ac4678d413d3",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000043",
+    "positive:pairs:train_000044",
+    "positive:train_candidates_v1:pilot_v3:train_000043",
+    "positive:train_candidates_v1:pilot_v3:train_000044"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000002_747e2fd755fa",
+   "reasons": [
+    "holds_evidence:pairs:train_000048",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000048"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000000_2ed7ae51a5b2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000000_06d41d71c68d",
+   "reasons": [
+    "holds_evidence:pairs:train_000046",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000046"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000002_27ee5e582b79",
+   "reasons": [
+    "holds_evidence:pairs:train_000050"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000015_a79369ebdff1",
+   "reasons": [
+    "plan:train.pilot_v3"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000000_24e679e199fc",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000004_a3881340f866",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000041_87cb1c6e6132",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000042_18cc3f94d37a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000043_7b6bfde15156",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_615485ed6438_000055_5029ccffa49d",
+   "reasons": [
+    "holds_evidence:pairs:train_000042",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000042"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000013_3b5657639bb6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000001_ab1068db4243",
+   "reasons": [
+    "holds_evidence:pairs:train_000048",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000048"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000000_d4fbd6b9884c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000000_27060e06dd61",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000045",
+    "positive:pairs:train_000046",
+    "positive:train_candidates_v1:pilot_v3:train_000045",
+    "positive:train_candidates_v1:pilot_v3:train_000046"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000002_5645fc6cce0b",
+   "reasons": [
+    "holds_evidence:pairs:train_000050"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000000_22735880eaf8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000004_ed7b2e627a9e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000011_f6e92af2b7f4",
+   "reasons": [
+    "holds_evidence:pairs:train_000041",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000041"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000037_e7a017c40725",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000039_0324140521a3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000040_27f07fd8d95b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_ef7146204982_000042_e4d32ca4647d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000000_2095c4e701b8",
+   "reasons": [
+    "holds_evidence:pairs:train_000047",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000047"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000001_b236892887ca",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000047",
+    "positive:pairs:train_000048",
+    "positive:train_candidates_v1:pilot_v3:train_000047",
+    "positive:train_candidates_v1:pilot_v3:train_000048"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000000_23a608fd7a0c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000000_6e2cb456cfff",
+   "reasons": [
+    "holds_evidence:pairs:train_000046",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000046"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000002_4a80cd848c4a",
+   "reasons": [
+    "holds_evidence:pairs:train_000050"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000000_ed8862ca5252",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000029_58c6d7f67047",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000035_b4d1070e325e",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000036_e23185eecba0",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000039_a47f45e94748",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000000_a12b9589aa88",
+   "reasons": [
+    "holds_evidence:pairs:train_000047",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000047"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000001_93b3626d3fa9",
+   "reasons": [
+    "holds_evidence:pairs:train_000047",
+    "holds_evidence:pairs:train_000048",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000047",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000048"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000000_b0d629d30166",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000002_a0a1c3f6fb2b",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000049",
+    "positive:pairs:train_000050",
+    "positive:train_candidates_v1:pilot_v3:train_000049"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000020_05d8b67282ef",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000000_90d454337267",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000004_6a779565db50",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000031_f0f014f856d5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000037_2a225f34c390",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000038_d83859ca3e4a",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000029"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000040_7487d3fa170b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000054_7f7b3d91193a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000004_9baee5ae3ae5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000005_7ecb38b3e2c1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000002_5ca16b7cc20f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000008_320e895503f4",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000030",
+    "positive:train_candidates_v1:pilot_v2:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000018_e600fe480cb5",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000024_4ceb1fb7e08b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000025_ea1a0619b891",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000051",
+    "positive:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000026_67ae8248f5e1",
+   "reasons": [
+    "holds_evidence:pairs:train_000054",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000054"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000016_b2f9efac4368",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000033_48d8f68995ec",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000043_a1de98193cb9",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000044_29432a696152",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000054_7354406a2ae0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_81a64cd1921f_000000_9c12e48bac87",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000004_db91fd13a955",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000005_752ea1e7875a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000008_45de0649d0fc",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000030",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000009_7a0883f323cc",
+   "reasons": [
+    "holds_evidence:pairs:train_000052",
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000017_b739e08b7f24",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000018_b0224b017fa6",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000031"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000020_65b10159316b",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051",
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000052",
+    "positive:pairs:train_000053",
+    "positive:train_candidates_v1:pilot_v3:train_000053"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000025_7de856a525ea",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000007_8e5e5069573b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000012_25b94c7f501c",
+   "reasons": [
+    "holds_evidence:pairs:train_000052"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000015_694c4fa4d7b6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000041_3e71bb1956aa",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000042_ff2f48188810",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_bec7cdfffc08_000000_265172b26ae0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000011_b4379ea69f7e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000004_0485431ae9a8",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000007_651d604a564a",
+   "reasons": [
+    "holds_evidence:train_candidates_v1:pilot_v2:train_000030"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000008_1182c5d5c57f",
+   "reasons": [
+    "holds_evidence:pairs:train_000052"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000016_057d051f0a42",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000018_42e774db346f",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:pairs:train_000052",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000024_7b3ad1eb6a74",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000054",
+    "positive:train_candidates_v1:pilot_v3:train_000054"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000012_2028860d64d5",
+   "reasons": [
+    "holds_evidence:pairs:train_000052"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000015_09fdbdef5a45",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000040_1f035fcd0327",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_c228e1a6171a_000000_55ea9f40597e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000011_ba5dfc3605ef",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000004_d5604cb109d6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000008_1ecd3ed22ff3",
+   "reasons": [
+    "holds_evidence:pairs:train_000052"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000018_df6b94a71f22",
+   "reasons": [
+    "holds_evidence:pairs:train_000052"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000001_f43b3b6de5a7",
+   "reasons": [
+    "plan:train.pilot_v3"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000012_f9dfd2d20297",
+   "reasons": [
+    "holds_evidence:pairs:train_000052"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000015_851b11b7770f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000040_8f6d771116ca",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000041_52e49b743cc2",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_3bd870054668_000000_d5bb1da4894e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000011_2460f773430c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000007_99c79a0fe2ac",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000055"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000000_4b50ef7e0ad9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000001_a6fa9e57df73",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000002_14369b443b56",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000006_a2579e88a73d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000007_91d5bc6b92a2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000015_c6f456e4476c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000019_fcf2979c1d5c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000000_62a7f26aef00",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000008_2a8f974ba72a",
+   "reasons": [
+    "holds_evidence:pairs:train_000055"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000000_e8e00d109d2d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000001_af4b2d632093",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000002_640233b936bf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000003_f45383edaa56",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000056",
+    "positive:train_candidates_v1:pilot_v3:train_000056"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000006_9cad2118a274",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000015_7e50841264dc",
+   "reasons": [
+    "holds_evidence:pairs:train_000051",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000051"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000014_09cd090db01f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000018_478ba6d7a682",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000038_b1d8b9284eed",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000000_b48007698267",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000007_f220ce04af86",
+   "reasons": [
+    "holds_evidence:pairs:train_000055"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000008_62f090a9449f",
+   "reasons": [
+    "holds_evidence:pairs:train_000055"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000000_98476af45462",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000001_54adf814b6dd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000002_74b5dfbf47b4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000001_29e32b9803e0",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000057",
+    "positive:train_candidates_v1:pilot_v3:train_000057"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000002_118deeeb9518",
+   "reasons": [
+    "holds_evidence:pairs:train_000056",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000056"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000005_5f885cb9ed1d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000009_3a75ee0175c6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000014_9c454c3273ee",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000018_8dec784b6a2c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000000_9fa006eba532",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000009_361e470f84b2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000010_b1733e7d41b0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000011_78452d7efe63",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000012_d8ba6e8c95e5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000013_27d75accca8c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000014_0c8a75961dc1",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_34cf71d19c60",
+   "reasons": [
+    "holds_evidence:pairs:train_000063"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_f5df21495183",
+   "reasons": [
+    "positive:train_candidates_v1:pilot_v2:train_000036"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_7e8d7551ce0f",
+   "reasons": [
+    "holds_evidence:pairs:train_000068",
+    "holds_evidence:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_2e4a57edaceb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_5f9e12d2e2b6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_ce802735de5d",
+   "reasons": [
+    "holds_evidence:pairs:train_000061",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000061"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000001_7c73e38c91ca",
+   "reasons": [
+    "holds_evidence:pairs:train_000061",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000061"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_bd288b58b0f3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000001_9c00eb24ccbe",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000001_c1656f57d569",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_2572085b5866",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000006_d17b0391ede4",
+   "reasons": [
+    "holds_evidence:pairs:train_000058",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000058"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000007_56c971e642dd",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000058",
+    "positive:pairs:train_000059",
+    "positive:train_candidates_v1:pilot_v3:train_000058",
+    "positive:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000011_5451c9773891",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000014_fd05ca01cec7",
+   "reasons": [
+    "holds_evidence:pairs:train_000066"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000019_409f631e08a5",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_29c663ae4a72_000000_fa70d2eea8ad",
+   "reasons": [
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000009_8d9c891d8198",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000011_b3be5f8bae67",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000012_cc06d70a45d0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000013_d2db75390251",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000014_acd2ddb7ff8f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000015_3d0212e6aa7a",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_dcf48a6a4abc",
+   "reasons": [
+    "holds_evidence:pairs:train_000062",
+    "holds_evidence:pairs:train_000063",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000062"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_8ca63c58388e",
+   "reasons": [
+    "holds_evidence:pairs:train_000068",
+    "holds_evidence:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_a5c3066685dd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000004_288dc2cecbac",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000006_7cd2507338b0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000003_3d69a2de398b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_d0b9827a79a3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_f9264431791e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_2e9aaf832a6e",
+   "reasons": [
+    "holds_evidence:pairs:train_000060"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_fe1fb91eb018",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000060",
+    "positive:pairs:train_000061",
+    "positive:train_candidates_v1:pilot_v3:train_000061"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_a7e3e5d2e7ad",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000002_179488922b01",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_ee52c708f09e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_e8016573904c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_44726947f19f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_fd7560ccde11",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000006_f2c9eaabd77d",
+   "reasons": [
+    "holds_evidence:pairs:train_000058",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000058"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000007_f0aaebf3c41d",
+   "reasons": [
+    "holds_evidence:pairs:train_000058",
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000058",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000008_58f0cdf4e798",
+   "reasons": [
+    "holds_evidence:pairs:train_000058",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000058"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000014_4fe6d063563f",
+   "reasons": [
+    "holds_evidence:pairs:train_000066"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000020_a2d7403a75e0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_45a5bb713d54",
+   "reasons": [
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000008_b5c5497c197f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000012_2162391fa797",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000013_16e96f719c3b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000014_27b75ff93197",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_dcf8aa774042",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000062",
+    "positive:pairs:train_000063",
+    "positive:train_candidates_v1:pilot_v3:train_000062"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_b1545d1d375e",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_9ae99c86fd05",
+   "reasons": [
+    "holds_evidence:pairs:train_000068",
+    "holds_evidence:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_6d7a03a1a7b3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000006_5811a22cbc8f",
+   "reasons": [
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_3f16b2cae6e3",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_8fc7c1ebc2c0",
+   "reasons": [
+    "holds_evidence:pairs:train_000060"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_464e08184b5f",
+   "reasons": [
+    "holds_evidence:pairs:train_000060",
+    "holds_evidence:pairs:train_000061",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000061"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_5db8fcc20a53",
+   "reasons": [
+    "holds_evidence:pairs:train_000065",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000065"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_91946a5e2249",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_50c1ba9885c7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_b94cf3fa8794",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_9103bb4043a6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000000_0c078ec443c7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000001_9a41f4c410dd",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000008_692a0e2e9a1c",
+   "reasons": [
+    "holds_evidence:pairs:train_000058",
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000058",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_477c09ec7e46_000021_ca5ded27a818",
+   "reasons": [
+    "holds_evidence:pairs:train_000066"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000011_3b8beb23d1cf",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000012_9a8ac02a06a7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_94f9e5ac4743",
+   "reasons": [
+    "holds_evidence:pairs:train_000062",
+    "holds_evidence:pairs:train_000063",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000062"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_9e5465eb9d25",
+   "reasons": [
+    "holds_evidence:pairs:train_000068",
+    "holds_evidence:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000005_c51c41561a52",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_4fb4da0b646b",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_af7e5246f2ce",
+   "reasons": [
+    "holds_evidence:pairs:train_000060",
+    "holds_evidence:pairs:train_000061",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000061"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000001_c1a55a04a96e",
+   "reasons": [
+    "holds_evidence:pairs:train_000061",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000061"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_f0687d463319",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000064",
+    "positive:pairs:train_000065",
+    "positive:train_candidates_v1:pilot_v3:train_000064",
+    "positive:train_candidates_v1:pilot_v3:train_000065"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000002_7ee32a5a253d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000001_85473fa8acc0",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000001_e19dec8721c4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_359e8de2bfb9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_4af8038e101f_000020_ed91131e58d2",
+   "reasons": [
+    "holds_evidence:pairs:train_000066"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_fa1e650f7c39",
+   "reasons": [
+    "holds_evidence:pairs:train_000066"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000001_fde533cf4c92",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000066",
+    "positive:pairs:train_000067",
+    "positive:train_candidates_v1:pilot_v3:train_000067"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000011_7600c2203756",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_350265e8b806",
+   "reasons": [
+    "holds_evidence:pairs:train_000062",
+    "holds_evidence:pairs:train_000063",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000062"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_cf01cf5704dc",
+   "reasons": [
+    "holds_evidence:pairs:train_000068",
+    "holds_evidence:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_c9f8bebef6d7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_258997bec736",
+   "reasons": [
+    "holds_evidence:pairs:train_000064",
+    "holds_evidence:pairs:train_000065",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000064",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000065"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000001_9f97b1e4908c",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000001_219d60655cec",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_3055ad8d04cb",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000008_43e05c0379f6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000003_9bfbb3783d1d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000019_e010590d2955",
+   "reasons": [
+    "holds_evidence:pairs:train_000066"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000011_817cc883ae34",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_9c90059422fd",
+   "reasons": [
+    "holds_evidence:pairs:train_000062",
+    "holds_evidence:pairs:train_000063",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000062"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_39e96e515189",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000068",
+    "positive:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_1dac6f8441a6",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_2277ae42e0ac",
+   "reasons": [
+    "holds_evidence:pairs:train_000070",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000070"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_340c227aa322",
+   "reasons": [
+    "holds_evidence:pairs:train_000064",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000064"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000001_f40b0594509d",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_843d130bdca9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000008_6cb1e36843f4",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000004_9cda935548db",
+   "reasons": [
+    "holds_evidence:pairs:train_000064",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000064"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000004_a10bb3b2fc6c",
+   "reasons": [
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000005_561cc0edbaf1",
+   "reasons": [
+    "holds_evidence:pairs:train_000065",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000065"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000022_690df393d6f2",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000011_cb4307e2344f",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000000_96905f46c969",
+   "reasons": [
+    "holds_evidence:pairs:train_000062",
+    "holds_evidence:pairs:train_000063",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000062"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000000_588254d7b988",
+   "reasons": [
+    "holds_evidence:pairs:train_000068",
+    "holds_evidence:pairs:train_000069"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000002_46913d784cf9",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000000_c0798ec8ba76",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000000_6dd01a895280",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000000_ce5e1075a698",
+   "reasons": [
+    "plan:train.pilot_v3",
+    "positive:pairs:train_000070",
+    "positive:train_candidates_v1:pilot_v3:train_000070"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000001_d5f5b6221ed7",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000001_3d588978d6ed",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000002_a09c87598291",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000005_9b4bd300d24f",
+   "reasons": [
+    "holds_evidence:pairs:train_000059",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000059"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000006_8b004b97b44f",
+   "reasons": [
+    "holds_evidence:pairs:train_000065",
+    "holds_evidence:train_candidates_v1:pilot_v3:train_000065"
+   ],
+   "side": "train"
+  },
+  {
+   "passage_id": "passage_filing_xom_10-k_f28c680b97d1_000021_f59d3ccb9d46",
+   "reasons": [
+    "validation:bge_base_ft_v2"
+   ],
+   "side": "validation"
+  }
+ ],
+ "source": {
+  "candidates": [
+   {
+    "manifest_sha256": "6fb3aa72bbe6fb388a1bb19f41cc83838b9fda7893bab49fb0bb212357ed07c4",
+    "pairs": 66,
+    "version": "train_candidates_v1"
+   }
+  ],
+  "data_prep_config": {
+   "path": "configs/train/data_prep_v2.yaml",
+   "sha256": "75f8059cfd1bfe6af9013da685c567248ff223df70d75077184dc3a1c3492f9f"
+  },
+  "evidence_method": "evidence-reuse-v2",
+  "pairs": {
+   "pairs": 70,
+   "pairs_meta_sha256": "20271bbee50fa061cedafc6368ab7aa1a13fae0af45d5cadfebbe149bfecc181"
+  },
+  "plans": [
+   {
+    "name": "pilot_v3",
+    "passages": 50,
+    "sha256": "55b33c985be0ef24b6dbfcc581fda6fd5da4e07dd09fa07545766b26a480c407",
+    "split": "train"
+   }
+  ],
+  "preparation": {
+   "manifest_sha256": "c9b8998e1bf77865f9b76b312d6c988dae9b8ef5a56e0daf57dde8b1e4937e15",
+   "version": "bge_base_ft_v2"
+  },
+  "validation": "all"
+ }
+}

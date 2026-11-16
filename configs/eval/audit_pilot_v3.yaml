@@ -1,0 +1,21 @@
+# Blind priority audit of the pilot_v3 AI proposals (the 117 passages the expanded pool added).
+# Create with:
+#   python3 scripts/03_annotate_gold_set.py audit-init-pool --spec configs/eval/audit_pilot_v3.yaml --annotator <creator>
+# Grade with (a person, without AI assistance, before reading docs/pool_review_pilot_v3.md or
+# docs/flag_review_pilot_v3.md, which show AI grades):
+#   python3 scripts/03_annotate_gold_set.py audit --audit-dir data/eval/audit/pilot_v3 --annotator <initials>
+# Compare once every item is graded or skipped:
+#   python3 scripts/03_annotate_gold_set.py audit-report --audit-dir data/eval/audit/pilot_v3
+# The sample is purposive (see finretriever.eval_set.pool_audit): its agreement describes the
+# reviewed cases, not the whole proposal set.
+
+audit_version: pilot_v3
+labels_dir: data/eval/dev_ai/pilot_v3
+pool_dir: data/eval/dev_ai/pilot_v3/pool
+proposals_dir: data/eval/dev_ai/pilot_v3/proposals
+output_dir: data/eval/audit/pilot_v3
+size: 20
+seed: 20261029
+in_scope_only: true                       # other-company passages are 0 by the company rule
+lexical_run: {run: bm25, mode: company}   # the run closest to how the original pools were built
+lexical_disagreement_rank: 100            # dense top 10 but not in this run's stored top 100

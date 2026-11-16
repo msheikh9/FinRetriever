@@ -1,0 +1,19 @@
+# Validation pairs v3 (bge_base_ft_v3): the 16 questions of validation_pairs_v2, carried, and batch 1 of val_pilot_v2e
+# (plan positions 1-50, the only ones generated under that plan before val_pilot_v2f replaced it).
+#
+# Built offline by:
+#   python3 scripts/02_generate_queries.py build-validation --config configs/train/data_prep_v3.yaml \
+#       --validation configs/train/validation_v3.yaml
+# Written once to data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v3/, a step towards
+# validation_pairs_v4, which carries it. Every check of validation_v2.yaml applies again. The decisions are an AI review:
+# not human-validated, not gold labels. Audit: docs/validation_pilot_v2e_batch1_audit.md.
+
+version: validation_pairs_v3
+data_prep_config: configs/train/data_prep_v3.yaml
+plan: val_pilot_v2e
+plan_positions: 50                # batch 1; later positions were never generated under this plan
+decisions: data/validation_review/val_pilot_v2e_batch1_quality_decisions.jsonl
+carry_over:
+  - data_prep_config: configs/train/data_prep_v3.yaml
+    version: validation_pairs_v2
+training_candidates: [train_candidates_v2]   # the 66 training candidates

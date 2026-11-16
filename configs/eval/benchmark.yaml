@@ -1,0 +1,205 @@
+# Retrieval benchmark configuration for FinRetriever v1.
+
+name: benchmark_v1
+
+# Gold evaluation set (~100 hand-annotated queries).
+gold_queries_path: data/eval/gold_queries.jsonl
+gold_qrels_path: data/eval/gold_qrels.jsonl
+
+# Corpus to retrieve over.
+corpus_path: data/processed/corpus_v1.jsonl
+
+# Headline metric is nDCG@10. The others are reported for context.
+metrics:
+  - ndcg@10
+  - mrr@10
+  - recall@100
+
+# Retrievers to score. BM25 settings are pinned so a run does not depend on the environment.
+# Dense models are pinned to a Hugging Face commit; their input format (query/passage prefixes) is
+# built into finretriever.retrieval.biencoder per model, and a prefix written here must match it.
+baselines:
+  - name: bm25
+    type: bm25
+    tokenizer: word     # word-character tokens, numbers like 1,200 kept whole: the candidate pools' analyzer
+    backend: python     # pure-Python BM25 (Lucene-style IDF): same ranking with or without rank_bm25
+  - name: bge_zero_shot
+    type: dense
+    model_name: BAAI/bge-base-en-v1.5
+    model_revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+    query_prefix: "Represent this sentence for searching relevant passages: "   # queries only (model card)
+    embedding_dim: 768
+    max_seq_length: 512   # the model's limit; longer passages are truncated (most of this corpus)
+    batch_size: 32
+    device: auto          # CUDA when available, else CPU; MPS only if set explicitly
+  - name: e5_zero_shot
+    type: dense
+    model_name: intfloat/e5-base-v2
+    model_revision: f52bf8ec8c7124536f0efb74aca902b2995e5bcd
+    query_prefix: "query: "
+    passage_prefix: "passage: "
+    embedding_dim: 768
+    max_seq_length: 512
+    batch_size: 32
+    device: auto
+
+# Optional fine-tuned model (filled in after training).
+finretriever:
+  name: finretriever_v1
+  type: dense
+  model_path: models/finretriever-bge-base-v1
+
+# Where to write benchmark outputs.
+output_dir: results
+top_k: 100
+
+# Named evaluation sets for `scripts/04_run_baselines.py --eval-set NAME`: corpus provenance is verified
+# against metadata_path before scoring, and every query gets its own record. Development sets must write
+# under results/dev/ and are reported as provisional development metrics.
+#
+# retrieval_modes: global ranks the whole corpus; company ranks only the passages of the companies a
+# question names (its tickers), for every retriever alike. Passage embeddings are cached under
+# embedding_cache_dir (gitignored), keyed by corpus SHA-256, model, revision and encoding settings.
+retrieval_modes: [global, company]
+embedding_cache_dir: data/cache/embeddings
+judged_k: 10
+coverage_thresholds:      # a question is flagged as insufficiently covered below either threshold
+  min_positives: 1
+  min_judged_at_10: 0.7
+evaluation_sets:
+  dev_pilot_v2:
+    status: provisional_development
+    queries_path: data/eval/dev_ai/pilot_v2/dev_queries.jsonl
+    qrels_path: data/eval/dev_ai/pilot_v2/dev_qrels.jsonl
+    metadata_path: data/eval/dev_ai/pilot_v2/dev_eval.metadata.json
+    report_path: data/eval/dev_ai/pilot_v2/dev_eval.report.json
+    candidate_pool_path: data/eval/annotation/pool.jsonl   # to report which source proposed each judged passage
+    output_dir: results/dev/pilot_v2
+  # pilot_v3: the pilot_v2 labels plus AI labels for the passages the six stored runs ranked in their top 10.
+  # It runs no retriever: runs_from names the stored rankings it scores (SHA-256 checked, never re-ranked),
+  # and compare_with sets each run's pilot_v2 scores beside its pilot_v3 scores in the report.
+  dev_pilot_v3:
+    status: provisional_development
+    queries_path: data/eval/dev_ai/pilot_v3/dev_queries.jsonl
+    qrels_path: data/eval/dev_ai/pilot_v3/dev_qrels.jsonl
+    metadata_path: data/eval/dev_ai/pilot_v3/dev_eval.metadata.json
+    report_path: data/eval/dev_ai/pilot_v3/dev_eval.report.json
+    candidate_pool_path: data/eval/dev_ai/pilot_v3/pool/pool.jsonl
+    runs_from: results/dev/pilot_v2
+    compare_with: dev_pilot_v2
+    output_dir: results/dev/pilot_v3
+  # The three checkpoints of the 15-step trainer smoke test (bge_base_ft_v2_smoke-seed42), scored on the frozen
+  # pilot_v3 development labels. Each checkpoint is inspected (files hashed, safetensors only, no custom code) and must
+  # show from its training records that it never trained on a judged passage or question before it is loaded
+  # (finretriever.evaluation.isolation). The stored zero-shot rankings of dev_pilot_v2 are scored beside them with the
+  # same labels (never re-run, re-encoded or written again), and every run is compared with bge_zero_shot question by
+  # question. All three checkpoints are reported; none is selected. A mechanics check: no improvement is claimed.
+  # Each checkpoint encodes the corpus once (about 25 min on CPU); embeddings are cached by the checkpoint's file digest.
+  dev_pilot_v3_smoke_checkpoints:
+    status: provisional_development
+    queries_path: data/eval/dev_ai/pilot_v3/dev_queries.jsonl
+    qrels_path: data/eval/dev_ai/pilot_v3/dev_qrels.jsonl
+    metadata_path: data/eval/dev_ai/pilot_v3/dev_eval.metadata.json
+    report_path: data/eval/dev_ai/pilot_v3/dev_eval.report.json
+    candidate_pool_path: data/eval/dev_ai/pilot_v3/pool/pool.jsonl
+    reference_runs_from: results/dev/pilot_v2
+    paired_reference: bge_zero_shot
+    retrievers:
+      - name: bge_ft_v2_smoke_step05
+        type: dense_checkpoint
+        checkpoint_path: models/bge_base_ft_v2_smoke/bge_base_ft_v2_smoke-seed42/checkpoint-step-000005
+        batch_size: 32
+        device: auto      # CUDA when available, else CPU (as the stored zero-shot runs); MPS only if set explicitly
+      - name: bge_ft_v2_smoke_step10
+        type: dense_checkpoint
+        checkpoint_path: models/bge_base_ft_v2_smoke/bge_base_ft_v2_smoke-seed42/checkpoint-step-000010
+        batch_size: 32
+        device: auto
+      - name: bge_ft_v2_smoke_step15
+        type: dense_checkpoint
+        checkpoint_path: models/bge_base_ft_v2_smoke/bge_base_ft_v2_smoke-seed42/checkpoint-step-000015
+        batch_size: 32
+        device: auto
+    output_dir: results/dev/pilot_v3_smoke_checkpoints
+  # Gold set v1 (docs/gold_set_v1_protocol.md), frozen 2026-11-12 before any gold label existed. Each set is scored
+  # once, after the export is frozen; scripts/08_decide_gold_a1_vs_a0.py then reads their global-mode runs.
+  # - A0 is the step-0 checkpoint (the base weights, the start of every A1 run), scored through the same checkpoint
+  #   pipeline as A1 (D9). A1 is the three official selected checkpoints, every seed listed once (role: final).
+  # - BM25, zero-shot BGE and zero-shot E5 are references; they never decide.
+  # - gold_v1 is the primary analysis (D8): the eligible corpus. The 1,745 passages the A1 runs used as training or
+  #   validation positives or equivalents (exclusion a1_training_and_validation, SHA-256 9c408e00...) are removed
+  #   before ranking for every retriever, and their judgments are dropped.
+  # - gold_v1_full_corpus is the sensitivity analysis on the whole corpus, labelled potentially contaminated.
+  # - Pools are model-free (BM25, manual, stratified, random), so unjudged passages count as non-relevant and A1 can
+  #   be biased downwards (D6).
+  gold_v1:
+    status: final
+    queries_path: data/eval/gold_queries.jsonl
+    qrels_path: data/eval/gold_qrels.jsonl
+    metadata_path: data/eval/gold_eval.metadata.json
+    candidate_pool_path: data/eval/annotation/pool.jsonl
+    exclude_passages: a1_training_and_validation
+    isolation: post_training_eligible
+    paired_reference: a0_step0
+    retrievers: &gold_v1_retrievers
+      - name: a0_step0
+        type: dense_checkpoint
+        role: diagnostic
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000000
+        batch_size: 32
+        device: auto
+      - name: a1_seed42
+        type: dense_checkpoint
+        role: final
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055
+        selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/selection.json
+        batch_size: 32
+        device: auto
+      - name: a1_seed1337
+        type: dense_checkpoint
+        role: final
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/checkpoint-step-000040
+        selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed1337/selection.json
+        batch_size: 32
+        device: auto
+      - name: a1_seed2026
+        type: dense_checkpoint
+        role: final
+        checkpoint_path: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/checkpoint-step-000040
+        selection_record: models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed2026/selection.json
+        batch_size: 32
+        device: auto
+      - name: bm25
+        type: bm25
+        tokenizer: word
+        backend: python
+      - name: bge_zero_shot
+        type: dense
+        model_name: BAAI/bge-base-en-v1.5
+        model_revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+        query_prefix: "Represent this sentence for searching relevant passages: "
+        embedding_dim: 768
+        max_seq_length: 512
+        batch_size: 32
+        device: auto
+      - name: e5_zero_shot
+        type: dense
+        model_name: intfloat/e5-base-v2
+        model_revision: f52bf8ec8c7124536f0efb74aca902b2995e5bcd
+        query_prefix: "query: "
+        passage_prefix: "passage: "
+        embedding_dim: 768
+        max_seq_length: 512
+        batch_size: 32
+        device: auto
+    output_dir: results/gold_v1
+  gold_v1_full_corpus:
+    status: final
+    queries_path: data/eval/gold_queries.jsonl
+    qrels_path: data/eval/gold_qrels.jsonl
+    metadata_path: data/eval/gold_eval.metadata.json
+    candidate_pool_path: data/eval/annotation/pool.jsonl
+    isolation: post_training_full_corpus
+    paired_reference: a0_step0
+    retrievers: *gold_v1_retrievers
+    output_dir: results/gold_v1_full_corpus

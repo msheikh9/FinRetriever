@@ -1,0 +1,595 @@
+{
+ "kind": "finretriever_retrieval_analysis_supplement",
+ "version": 1,
+ "inputs": {
+  "corpus": {
+   "path": "data/processed/corpus_v1.jsonl",
+   "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004"
+  },
+  "validation_pairs": {
+   "path": "data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v4/validation_pairs.jsonl",
+   "sha256": "f72e63706498fe606a0ec12556dab6b0e0ae4ade35fe9ee34d8746eb68e6d98f"
+  },
+  "results.json": {
+   "path": "results/analysis/retrieval_analysis_v1/results.json",
+   "sha256": "9a418fdae91f8f06cd8688b958f8b724ba48a8425d10762392ddc867b604a5f7"
+  },
+  "validation_per_question.jsonl": {
+   "path": "results/analysis/retrieval_analysis_v1/validation_per_question.jsonl",
+   "sha256": "47144bd58b90615ff35cf608f4545121209e811cfbd8a7e22e9f316bb376b9e5"
+  },
+  "alignment_per_question.jsonl": {
+   "path": "results/analysis/retrieval_analysis_v1/alignment_per_question.jsonl",
+   "sha256": "cd4d7346cea640b94e58d6acd9f5f5ce4f87a9fc5d06f829b7a29f9ab8d8fbdd"
+  },
+  "top10.jsonl": {
+   "path": "results/analysis/retrieval_analysis_v1/top10.jsonl",
+   "sha256": "296e0c57d9e4e1df073263c1a8601fa8a137d3953c40e1953a7ce4294915ea30"
+  }
+ },
+ "company_names": {
+  "patterns": {
+   "AAPL": "\\bapple\\b",
+   "AMZN": "\\bamazon",
+   "JPM": "\\bjpmorgan|\\bjp morgan",
+   "PFE": "\\bpfizer",
+   "TSLA": "\\btesla",
+   "WMT": "\\bwalmart|\\bwal-mart",
+   "XOM": "\\bexxon"
+  },
+  "a1_training_pairs": {
+   "path": "data/processed/train/bge_base_ft_v3/candidates/train_candidates_v3/train_candidates.jsonl",
+   "sha256": "7ee3a255b95fe07f1a34c6cdcca62ff4441508a32180db5465dfe2e4ced8c58f",
+   "pairs": 678,
+   "question_names_company": 677,
+   "positive_names_company": 273,
+   "question_names_it_positive_does_not": 405
+  },
+  "passages": 10137,
+  "naming_their_company": 4140,
+  "share": 0.4084048535069547,
+  "table_passages": 5668,
+  "table_share": 0.36167960479887085,
+  "by_ticker": {
+   "AAPL": {
+    "passages": 618,
+    "share": 0.2313915857605178
+   },
+   "AMZN": {
+    "passages": 776,
+    "share": 0.37242268041237114
+   },
+   "JPM": {
+    "passages": 3629,
+    "share": 0.3449986222099752
+   },
+   "PFE": {
+    "passages": 1505,
+    "share": 0.6073089700996678
+   },
+   "TSLA": {
+    "passages": 1241,
+    "share": 0.273972602739726
+   },
+   "WMT": {
+    "passages": 1010,
+    "share": 0.5544554455445545
+   },
+   "XOM": {
+    "passages": 1358,
+    "share": 0.4727540500736377
+   }
+  },
+  "real_question_top10": {
+   "bm25": {
+    "global": {
+     "correct_company": {
+      "passages": 787,
+      "naming_share": 0.8449809402795425
+     },
+     "wrong_company": {
+      "passages": 213,
+      "naming_share": 0.5586854460093896
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.803
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   },
+   "bge_zero_shot": {
+    "global": {
+     "correct_company": {
+      "passages": 946,
+      "naming_share": 0.8594080338266384
+     },
+     "wrong_company": {
+      "passages": 54,
+      "naming_share": 0.2222222222222222
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.856
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   },
+   "e5_zero_shot": {
+    "global": {
+     "correct_company": {
+      "passages": 941,
+      "naming_share": 0.8034006376195537
+     },
+     "wrong_company": {
+      "passages": 59,
+      "naming_share": 0.22033898305084745
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.795
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   },
+   "a0_step0": {
+    "global": {
+     "correct_company": {
+      "passages": 946,
+      "naming_share": 0.8594080338266384
+     },
+     "wrong_company": {
+      "passages": 54,
+      "naming_share": 0.2222222222222222
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.856
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   },
+   "a1_seed42": {
+    "global": {
+     "correct_company": {
+      "passages": 829,
+      "naming_share": 0.6344993968636912
+     },
+     "wrong_company": {
+      "passages": 171,
+      "naming_share": 0.4152046783625731
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.616
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   },
+   "a1_seed1337": {
+    "global": {
+     "correct_company": {
+      "passages": 830,
+      "naming_share": 0.6481927710843374
+     },
+     "wrong_company": {
+      "passages": 170,
+      "naming_share": 0.4
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.622
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   },
+   "a1_seed2026": {
+    "global": {
+     "correct_company": {
+      "passages": 822,
+      "naming_share": 0.6508515815085159
+     },
+     "wrong_company": {
+      "passages": 178,
+      "naming_share": 0.39325842696629215
+     }
+    },
+    "company": {
+     "correct_company": {
+      "passages": 1000,
+      "naming_share": 0.628
+     },
+     "wrong_company": {
+      "passages": 0,
+      "naming_share": null
+     }
+    }
+   }
+  }
+ },
+ "evidence_position": {
+  "tokenizer": "models/bge_base_ft_v3_a1/bge_base_ft_v3_a1-seed42/checkpoint-step-000055",
+  "questions": 93,
+  "evidence_located": 92,
+  "start_quartiles": [
+   141.25,
+   273.0,
+   382.75
+  ],
+  "start_median": 273.0,
+  "evidence_ending_beyond_window": 0,
+  "window_tokens": 510,
+  "mrr@10_by_band": {
+   "bm25": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.5302154195011338
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.6336805555555556
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.6741725768321513
+    }
+   },
+   "bge_zero_shot": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.44365079365079363
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.2507440476190476
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.1888297872340426
+    }
+   },
+   "e5_zero_shot": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.4761904761904763
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.38673941798941797
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.36400709219858157
+    }
+   },
+   "a0_step0": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.44365079365079363
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.2507440476190476
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.1888297872340426
+    }
+   },
+   "a1_seed42": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.708994708994709
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.7979166666666666
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.5772711921648093
+    }
+   },
+   "a1_seed1337": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.7131519274376418
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.7873677248677248
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.5801418439716312
+    }
+   },
+   "a1_seed2026": {
+    "0-127": {
+     "n": 21,
+     "mrr@10": 0.6589191232048375
+    },
+    "128-255": {
+     "n": 24,
+     "mrr@10": 0.8003472222222222
+    },
+    "256+": {
+     "n": 47,
+     "mrr@10": 0.5779213103681189
+    }
+   }
+  }
+ },
+ "real_questions_mostly_other_companies": {
+  "bm25": {
+   "global": 15,
+   "company": 0
+  },
+  "bge_zero_shot": {
+   "global": 1,
+   "company": 0
+  },
+  "e5_zero_shot": {
+   "global": 2,
+   "company": 0
+  },
+  "a0_step0": {
+   "global": 1,
+   "company": 0
+  },
+  "a1_seed42": {
+   "global": 15,
+   "company": 0
+  },
+  "a1_seed1337": {
+   "global": 14,
+   "company": 0
+  },
+  "a1_seed2026": {
+   "global": 14,
+   "company": 0
+  }
+ },
+ "real_questions_cross_company_share_by_ticker": {
+  "bm25": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.3384615384615385
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.43076923076923074
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.14615384615384616
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.20769230769230768
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.22307692307692306
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.03333333333333333
+   }
+  },
+  "bge_zero_shot": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.19230769230769235
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.05384615384615384
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.07692307692307693
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.038461538461538464
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.0
+   }
+  },
+  "e5_zero_shot": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.28461538461538466
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.038461538461538464
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.03076923076923077
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.015384615384615385
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.015384615384615385
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.0
+   }
+  },
+  "a0_step0": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.19230769230769235
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.05384615384615384
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.07692307692307693
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.038461538461538464
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.0
+   }
+  },
+  "a1_seed42": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.3846153846153847
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.29230769230769227
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.007692307692307693
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.061538461538461535
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.038461538461538464
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.3153846153846154
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.025000000000000005
+   }
+  },
+  "a1_seed1337": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.4
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.2846153846153846
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.0
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.0846153846153846
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.061538461538461535
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.2846153846153846
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.041666666666666664
+   }
+  },
+  "a1_seed2026": {
+   "AAPL": {
+    "questions": 13,
+    "cross_company_share": 0.40769230769230774
+   },
+   "AMZN": {
+    "questions": 13,
+    "cross_company_share": 0.30769230769230765
+   },
+   "JPM": {
+    "questions": 13,
+    "cross_company_share": 0.007692307692307693
+   },
+   "PFE": {
+    "questions": 13,
+    "cross_company_share": 0.08461538461538462
+   },
+   "TSLA": {
+    "questions": 13,
+    "cross_company_share": 0.04615384615384615
+   },
+   "WMT": {
+    "questions": 13,
+    "cross_company_share": 0.3076923076923077
+   },
+   "XOM": {
+    "questions": 12,
+    "cross_company_share": 0.03333333333333333
+   }
+  }
+ }
+}

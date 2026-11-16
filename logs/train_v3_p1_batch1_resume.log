@@ -1,0 +1,9 @@
+[02_generate_queries] plan train_v3_p1_batch1: 100 passages; companies: AAPL 14, AMZN 14, JPM 14, PFE 15, TSLA 14, WMT 15, XOM 14; fiscal years: 2019 13, 2020 14, 2021 15, 2022 14, 2023 14, 2024 14, 2025 14, 2026 2
+[02_generate_queries] train: 100 approved passages, 39 done, 0 failed; 61 to request from groq (qwen/qwen3.8-27b), about 61 min at 1 requests/min
+[02_generate_queries] requests: 61 if every reply is usable, at most 610 with every retry; request budget 61
+[02_generate_queries] request settings: temperature 0.7, max_completion_tokens 768, json_mode True, reasoning_format parsed, reasoning_effort none, prompt sec-qgen-v2 (f42bdc5426c7)
+[02_generate_queries] pacing: 20 requests/min and 1000 output tokens/min, each request reserving 768; 1/min if every reply used it all, more with shorter replies; rate-limit waits up to 180s
+[02_generate_queries] requests sent: 61; tokens: {'completion_tokens': 17028, 'prompt_tokens': 74903, 'total_tokens': 91931}
+[02_generate_queries] HTTP 429 responses: 0; waited 2703s for pacing and rate limits
+[02_generate_queries] rate limits after the last response: {'x-ratelimit-limit-requests': '1000', 'x-ratelimit-limit-tokens': '8000', 'x-ratelimit-remaining-requests': '939', 'x-ratelimit-remaining-tokens': '5355', 'x-ratelimit-reset-requests': '1h27m50.4s', 'x-ratelimit-reset-tokens': '49.919s'}
+[02_generate_queries] train: {'skipped_done': 39, 'skipped_failed': 0, 'done': 60, 'failed': 1, 'stopped_by_budget': 0, 'stopped_by_rate_limit': 0}

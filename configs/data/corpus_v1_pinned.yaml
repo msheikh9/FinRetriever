@@ -1,0 +1,62 @@
+# Corpus configuration for FinRetriever v1, PINNED to the exact 49 filings of the published corpus
+# (corpus_v1@1.2, SHA-256 ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004).
+#
+# configs/data/corpus_v1.yaml selects each company's newest 7 10-Ks, so once a company files a new 10-K a
+# fresh download gives a different corpus. This file is identical to it except for `accessions`, which names
+# the filings (from data/processed/corpus_v1.manifest.json). Start from an empty data/raw:
+#   SEC_USER_AGENT="<name> <contact email>" make download CORPUS_CONFIG=configs/data/corpus_v1_pinned.yaml
+#   make corpus CORPUS_CONFIG=configs/data/corpus_v1_pinned.yaml
+#   shasum -a 256 data/processed/corpus_v1.jsonl   # must print ff9dadf3...
+#
+
+name: corpus_v1
+form_type: 10-K
+filings_per_ticker: 7
+
+# Mixed-sector ticker sample. Each ticker contributes up to `filings_per_ticker`
+# of its most recent 10-Ks: 7 tickers x 7 filings = 49 filings.
+tickers:
+  - AAPL   # Tech
+  - JPM    # Financials
+  - TSLA   # Auto
+  - PFE    # Healthcare
+  - AMZN   # Retail / cloud
+  - XOM    # Energy
+  - WMT    # Consumer staples / retail
+
+# SEC EDGAR download (scripts/01_download_filings.py).
+# SEC_USER_AGENT ("<name> <contact email>") is read from the environment.
+# 0.2s between requests keeps us well under the SEC's 10 requests/second cap.
+output_dir: data/raw
+request_delay_seconds: 0.2
+timeout_seconds: 30
+max_retries: 3
+
+# Registrant CIKs to use instead of the SEC ticker map's current one. In 2026
+# Exxon Mobil reorganised under a new parent, "ExxonMobil Holdings Corp"
+# (CIK 0002115436), which now carries the XOM ticker but has no 10-K yet; the
+# 10-K history is filed by EXXON MOBIL CORP (CIK 0000034088). Quote the CIKs.
+cik_overrides:
+  XOM: "0000034088"
+
+# Chunking parameters for finretriever.data.chunker (whitespace tokens), applied
+# by scripts/01_build_corpus.py; the downloader ignores them.
+chunk_size_tokens: 512
+chunk_overlap_tokens: 80
+
+# Filesystem layout for corpus stages. Raw filings live under output_dir; the
+# corpus build writes corpus_jsonl plus corpus_v1.manifest.json next to it.
+paths:
+  interim_dir: data/interim/sec
+  processed_dir: data/processed
+  corpus_jsonl: data/processed/corpus_v1.jsonl
+
+# The filings of corpus_v1@1.2, oldest first (quoted: they are strings, not numbers).
+accessions:
+  AAPL: ["0000320193-19-000119", "0000320193-20-000096", "0000320193-21-000105", "0000320193-22-000108", "0000320193-23-000106", "0000320193-24-000123", "0000320193-25-000079"]
+  JPM: ["0000019617-20-000257", "0000019617-21-000236", "0000019617-22-000272", "0000019617-23-000231", "0000019617-24-000225", "0000019617-25-000270", "0001628280-26-008131"]
+  TSLA: ["0001564590-20-004475", "0001564590-21-004599", "0000950170-22-000796", "0000950170-23-001409", "0001628280-24-002390", "0001628280-25-003063", "0001628280-26-003952"]
+  PFE: ["0000078003-20-000014", "0000078003-21-000038", "0000078003-22-000027", "0000078003-23-000024", "0000078003-24-000039", "0000078003-25-000054", "0000078003-26-000026"]
+  AMZN: ["0001018724-20-000004", "0001018724-21-000004", "0001018724-22-000005", "0001018724-23-000004", "0001018724-24-000008", "0001018724-25-000004", "0001018724-26-000004"]
+  XOM: ["0000034088-20-000016", "0000034088-21-000012", "0000034088-22-000011", "0000034088-23-000020", "0000034088-24-000018", "0000034088-25-000010", "0000034088-26-000045"]
+  WMT: ["0000104169-20-000011", "0000104169-21-000033", "0000104169-22-000012", "0000104169-23-000020", "0000104169-24-000056", "0000104169-25-000021", "0000104169-26-000055"]

@@ -1,0 +1,29 @@
+# The training-candidate dataset of P1 in the bge_base_ft_v3 preparation (finretriever.training.candidates): the two
+# sources of train_candidates_v2 (configs/train/candidates_v2.yaml), re-checked, plus the pairs this preparation built
+# from P1's six generation batches (plans train_v3_p1_batch1 to train_v3_p1_batch5 and train_v3_p1_batch6_n60).
+#
+# Built offline (docs/train_candidates_v3_build_report.md), after build-pairs over the 560 train records:
+#   python3 scripts/02_generate_queries.py screen-questions --config configs/train/data_prep_v3.yaml \
+#       --name train_candidates_v3 --pairs --candidates train_candidates_v2
+#   python3 scripts/02_generate_queries.py build-candidates --config configs/train/data_prep_v3.yaml \
+#       --candidates configs/train/candidates_v3.yaml
+# Written once to data/processed/train/bge_base_ft_v3/candidates/train_candidates_v3/. A pair is included only if its
+# AI quality decision is "accept" (revise and reject are excluded) and it passes every current check against
+# bge_base_ft_v3 (provenance, candidate validator, evidence leakage under evidence-reuse-v2, evaluation overlap,
+# duplicates) and the semantic screen (a flagged or unscreened question is excluded). The P1 decisions are the six
+# batch files (data/train_review/train_v3_p1_batch*_quality_decisions.jsonl), merged unchanged except for the pair ID,
+# which is re-keyed by passage and question SHA-256 to the built pairs. Not human-validated, not gold.
+
+version: train_candidates_v3
+data_prep_config: configs/train/data_prep_v3.yaml
+semantic_screening: train_candidates_v3   # screening/train_candidates_v3/: questions at cosine >= 0.90 are excluded
+
+sources:
+  - name: pilot_v3            # the 70 pairs bge_base_ft_v2 built from the second Qwen pilot
+    data_prep_config: configs/train/data_prep_v2.yaml
+    decisions: data/train_review/pilot_v3_quality_decisions.jsonl
+  - name: pilot_v2            # the 37 pairs of the first pilot (bge_base_ft_v1)
+    data_prep_config: configs/train/data_prep_v1.yaml
+    decisions: data/train_review/pilot_v2_quality_decisions.jsonl
+  - name: p1                  # the 699 train pairs this preparation built from P1's 560 planned passages
+    decisions: data/train_review/train_v3_p1_quality_decisions.jsonl

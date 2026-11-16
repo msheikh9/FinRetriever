@@ -1,0 +1,18 @@
+# The 16 validation questions of validation_pairs_v1 (bge_base_ft_v2), carried into bge_base_ft_v3
+# (finretriever.training.validation_set).
+#
+# Built offline by:
+#   python3 scripts/02_generate_queries.py build-validation --config configs/train/data_prep_v3.yaml \
+#       --validation configs/train/validation_v2.yaml
+# Written once to data/processed/train/bge_base_ft_v3/validation_sets/validation_pairs_v2/. Every carried question is
+# re-checked against bge_base_ft_v3: a validation positive unused by the training data, evidence that no train or
+# blocked passage holds (exactly or possibly), the candidate validator, and no overlap with an evaluation or training
+# question. Their AI decisions come with them: not human-validated, not gold labels. The questions of the next
+# validation plan go into a later version that carries this one.
+
+version: validation_pairs_v2
+data_prep_config: configs/train/data_prep_v3.yaml
+carry_over:
+  - data_prep_config: configs/train/data_prep_v2.yaml
+    version: validation_pairs_v1
+training_candidates: [train_candidates_v2]   # the 66 training candidates, re-checked in bge_base_ft_v3

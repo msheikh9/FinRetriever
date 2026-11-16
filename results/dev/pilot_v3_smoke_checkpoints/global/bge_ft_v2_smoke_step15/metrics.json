@@ -1,0 +1,1268 @@
+{
+  "status": "provisional_development",
+  "notice": "PROVISIONAL DEVELOPMENT METRICS. Labels are AI-generated development labels (see the label provenance), checked only by an AI-assisted audit; these numbers are not benchmark results.",
+  "eval_set": "dev_pilot_v3_smoke_checkpoints",
+  "run": "bge_ft_v2_smoke_step15",
+  "mode": "global",
+  "mode_definition": "Each question ranks every passage in the corpus; no company restriction.",
+  "annotation_version": "dev_pilot_v3",
+  "label_version": "pilot_v3",
+  "corpus": {
+    "path": "data/processed/corpus_v1.jsonl",
+    "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+    "version": "corpus_v1@1.2",
+    "passages": 10137
+  },
+  "inputs": {
+    "queries": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_queries.jsonl",
+      "sha256": "62cd64a2030dd954cfff080a66268dd713400caf79997d99f8e78faacb17af16"
+    },
+    "qrels": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_qrels.jsonl",
+      "sha256": "32bdde22de08a23e4b4ce75d46c44cbabfe398c3ea7c726071b487a8c0232758"
+    },
+    "metadata": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_eval.metadata.json",
+      "sha256": "0b245d47df28c1426cde02b37c74aa530c22efa54946e70b1dac0c7a5461ac86"
+    },
+    "report": {
+      "path": "data/eval/dev_ai/pilot_v3/dev_eval.report.json",
+      "sha256": "ef3a643b06813acee841aa5b98b722acf703e7cc04ebde9cd7d199dc46822004"
+    },
+    "candidate_pool": {
+      "path": "data/eval/dev_ai/pilot_v3/pool/pool.jsonl",
+      "sha256": "bfa9c38715bab6b53567ba7731805dc307bf78457e13927951f99fe8c762141a"
+    }
+  },
+  "labels": {
+    "description": "pilot_v2 (579 labels for q_0001-q_0010) carried over unchanged, plus claude-opus-5-5 proposals under rubric v1.1 for the 117 passages the expanded pool pilot_v3 added from the top 10 of the six stored zero-shot runs.",
+    "summary": {
+      "qrels": 696,
+      "grades": {
+        "0": 596,
+        "1": 65,
+        "2": 35
+      },
+      "by_source": {
+        "ai_proposal": 692,
+        "human_judgment": 4
+      },
+      "ai_generated": 692,
+      "assistance": {
+        "not_applicable": 692,
+        "not_recorded": 4
+      },
+      "changed_by_rule": {
+        "P2": 3
+      },
+      "open_flags_by_rule": {
+        "P1": 11,
+        "P2": 2,
+        "P3": 1,
+        "P5": 2,
+        "low_confidence": 8
+      },
+      "by_introduced_in": {
+        "pilot_v2": 579,
+        "pilot_v3": 117
+      }
+    },
+    "audit_independence": "ai_assisted",
+    "exceptions": {
+      "no_positive": [],
+      "no_grade_2": []
+    }
+  },
+  "retriever": {
+    "name": "bge_ft_v2_smoke_step15",
+    "type": "dense",
+    "model_name": "local:bge_base_ft_v2_smoke-seed42/checkpoint-step-000015",
+    "model_revision": "sha256:007a8ef1c996d516ae30ae31b5dbc8f1df7c98bac00bacd43ebcb0ff3c250fc8",
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "passage_prefix": "",
+    "format_source": "BGE v1.5 model card: for short-query-to-passage retrieval add the instruction to queries only; passages take no instruction. v1.5 also works without it, slightly worse. The questions are short queries over long passages, so it is used. The checkpoint was trained with the same prefixes (its metadata.json).",
+    "embedding_dim": 768,
+    "normalization": "L2 to unit length after the model's own modules (float32)",
+    "similarity": "dot product of unit vectors (cosine), computed in float64",
+    "query_encoding": "one query per forward pass",
+    "batch_size": 32,
+    "device": "cpu",
+    "max_seq_length": 512,
+    "model": {
+      "modules": [
+        "Transformer",
+        "Pooling",
+        "Normalize"
+      ],
+      "pooling": "cls",
+      "model_normalize_module": true,
+      "similarity_fn": "cosine",
+      "model_prompts_not_applied": {
+        "query": "",
+        "document": ""
+      },
+      "tokenizer": {
+        "class": "BertTokenizer",
+        "do_lower_case": true,
+        "model_max_length": 512,
+        "vocab_size": 30522,
+        "truncation_side": "right"
+      },
+      "torch_threads": 4,
+      "libraries": {
+        "sentence-transformers": "5.2.3",
+        "transformers": "5.3.0",
+        "torch": "2.10.0",
+        "tokenizers": "0.22.2",
+        "huggingface-hub": "1.7.1",
+        "numpy": "1.26.4"
+      }
+    },
+    "passage_truncation": {
+      "max_seq_length": 512,
+      "texts": 10137,
+      "truncated": 9204,
+      "truncated_share": 0.908,
+      "tokens_median": 683,
+      "tokens_mean": 679.1,
+      "tokens_max": 1166,
+      "tokens_beyond_limit_share": 0.2755
+    },
+    "query_truncation": {
+      "max_seq_length": 512,
+      "texts": 10,
+      "truncated": 0,
+      "truncated_share": 0.0,
+      "tokens_median": 34.5,
+      "tokens_mean": 35.1,
+      "tokens_max": 42,
+      "tokens_beyond_limit_share": 0.0
+    },
+    "embeddings_sha256": "bcfcb9430a24d467624d61147a6bde45520bc1c1d92e93e8d82a9cfb838ff4f1",
+    "cache": {
+      "dir": "data/cache/embeddings/local_bge_base_ft_v2_smoke-seed42__checkpoint-step-000015/f9547e7d8994e9ce",
+      "key": {
+        "format_version": 1,
+        "corpus_sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+        "model_name": "local:bge_base_ft_v2_smoke-seed42/checkpoint-step-000015",
+        "model_revision": "sha256:007a8ef1c996d516ae30ae31b5dbc8f1df7c98bac00bacd43ebcb0ff3c250fc8",
+        "encoding": {
+          "batch_size": 32,
+          "device_type": "cpu",
+          "dtype": "float32",
+          "encoded_field": "passage.text",
+          "libraries": {
+            "sentence-transformers": "5.2.3",
+            "transformers": "5.3.0",
+            "torch": "2.10.0"
+          },
+          "max_seq_length": 512,
+          "normalization": "l2",
+          "passage_prefix": "",
+          "pooling": "cls"
+        }
+      },
+      "key_sha256": "f9547e7d8994e9ce02fd9f2f6c48d9ea9381b5ccfebf0a77c6d509bb6fbbf0f7"
+    },
+    "source": "local_checkpoint",
+    "checkpoint": {
+      "path": "models/bge_base_ft_v2_smoke/bge_base_ft_v2_smoke-seed42/checkpoint-step-000015",
+      "run": "bge_base_ft_v2_smoke-seed42",
+      "step": 15,
+      "total_steps": 15,
+      "epoch": 4,
+      "digest": "007a8ef1c996d516ae30ae31b5dbc8f1df7c98bac00bacd43ebcb0ff3c250fc8",
+      "files": {
+        "config.json": "d73cb22c2684f6844f7268f23ecaefb9872d33dd08e35e7fefe9c9820aa41bfe",
+        "model.safetensors": "957400077a22bf4d77184e9260b9166d67e8ad168ebc3beb9fc450ba5ce85e59",
+        "tokenizer.json": "91f1def9b9391fdabe028cd3f3fcc4efd34e5d1f08c3bf2de513ebb5911a1854",
+        "tokenizer_config.json": "c9c2e0ff3f3a98ae86f8f4a484a48a80d11d3a9453f39de7ab58b5de5f4006de",
+        "modules.json": "21ddb3037a55ebf4549eb5c1dc44c3f28f10b56ec7f1335c92fd90e5b30d88ac",
+        "sentence_bert_config.json": "ed20daeb5b882c3e1f116ce7b3d53e6643d11063aa9baaa31f5ae91770cfad8f",
+        "config_sentence_transformers.json": "76ee53d4d53776213e0ef24cccfc798fe733eda69aeb4692f2638ad989460cb3",
+        "1_Pooling/config.json": "4bf279dd9204db673304cab6e7db8448f427412a0d87f04c3e19f1de55dd98cd",
+        "metadata.json": "83b0a5ee89e53b3e9f76ad48a1115b859dc2ea31a9c5aa2332b647d051e5f4b2"
+      },
+      "run_record": {
+        "path": "models/bge_base_ft_v2_smoke/bge_base_ft_v2_smoke-seed42/run.json",
+        "sha256": "5912d5637f0a79a764bb3b5a5bf3687f6e6491ffde360462861f6a774069663f"
+      },
+      "base_model": {
+        "name": "BAAI/bge-base-en-v1.5",
+        "passage_prefix": "",
+        "pooling": "cls",
+        "query_prefix": "Represent this sentence for searching relevant passages: ",
+        "revision": "a5beb1e3e68b9ab74eb54cfd186867f64f240e1a"
+      },
+      "encoding": {
+        "normalize": true,
+        "passage_max_length": 512,
+        "passage_prefix": "",
+        "passages_truncated_to_visible_length": 28,
+        "pooling": "cls",
+        "query_max_length": 128,
+        "query_prefix": "Represent this sentence for searching relevant passages: "
+      },
+      "trained_on": {
+        "corpus": {
+          "passages": 10137,
+          "path": "data/processed/corpus_v1.jsonl",
+          "sha256": "ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004",
+          "version": "corpus_v1@1.2"
+        },
+        "preparation": {
+          "version": "bge_base_ft_v2",
+          "manifest_sha256": "c9b8998e1bf77865f9b76b312d6c988dae9b8ef5a56e0daf57dde8b1e4937e15",
+          "data_prep_config": {
+            "path": "configs/train/data_prep_v2.yaml",
+            "sha256": "75f8059cfd1bfe6af9013da685c567248ff223df70d75077184dc3a1c3492f9f"
+          }
+        },
+        "candidates": {
+          "available": 66,
+          "equivalence_method": "evidence-reuse-v2",
+          "manifest_sha256": "6fb3aa72bbe6fb388a1bb19f41cc83838b9fda7893bab49fb0bb212357ed07c4",
+          "validator_version": "sec-qcheck-v3",
+          "version": "train_candidates_v1"
+        },
+        "pairs": {
+          "count": 48,
+          "pair_ids_sha256": "8e9e2a03dbc7dc9644b5e4788ddd3bc904253e855d7927537f11af5a30836c9a",
+          "subset": {
+            "max_pairs": 48,
+            "seed": 13
+          }
+        }
+      },
+      "config_sha256": "d8cfc4a00437e567369b5ccf3b3c367e84f51ec757663f15997cabfeb551095d",
+      "schedule_sha256": "5a5a5cacb52ba9d291447fe7eb19a78969356dc683c7ab4798b4511c596dbca7",
+      "selection": "none: fixed-step checkpoint; no development or evaluation metric was computed",
+      "notice": "Fine-tuned on synthetic queries accepted by an AI quality review (not human-validated, not gold labels). Not evaluated by the trainer and not selected by any development metric; no retrieval improvement is claimed.",
+      "trainer_environment": {
+        "device": "cuda",
+        "python": "3.13.15",
+        "safetensors": "0.7.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.11.0+cu128",
+        "transformers": "5.3.0"
+      },
+      "trainer_state_present_not_loaded": true
+    },
+    "evaluation_isolation": {
+      "method": "From the checkpoint's recorded inputs, each checked against its recorded SHA-256: the training corpus is the evaluated corpus; every judged passage is on the preparation's evaluation blocklist; no candidate of the recorded training-candidate dataset uses a judged passage as positive or equivalent; no training question repeats an evaluation question (word-set Jaccard at the preparation's leakage threshold).",
+      "checkpoint": "local:bge_base_ft_v2_smoke-seed42/checkpoint-step-000015",
+      "judged_passages": 667,
+      "preparation": {
+        "version": "bge_base_ft_v2",
+        "config": {
+          "path": "configs/train/data_prep_v2.yaml",
+          "sha256": "75f8059cfd1bfe6af9013da685c567248ff223df70d75077184dc3a1c3492f9f"
+        },
+        "manifest": {
+          "path": "data/processed/train/bge_base_ft_v2/manifest.json",
+          "sha256": "c9b8998e1bf77865f9b76b312d6c988dae9b8ef5a56e0daf57dde8b1e4937e15"
+        },
+        "blocklist_sources": [
+          "data/eval/annotation",
+          "data/eval/dev_ai/pilot_v3/pool",
+          "data/eval/audit/pilot_v1",
+          "data/eval/audit/pilot_v3",
+          "data/eval/gold_qrels.jsonl"
+        ]
+      },
+      "blocklist": {
+        "path": "data/processed/train/bge_base_ft_v2/blocklist.jsonl",
+        "passages": 3950,
+        "judged_passages_blocked": 667
+      },
+      "candidates": {
+        "version": "train_candidates_v1",
+        "manifest": {
+          "path": "data/processed/train/bge_base_ft_v2/candidates/train_candidates_v1/manifest.json",
+          "sha256": "6fb3aa72bbe6fb388a1bb19f41cc83838b9fda7893bab49fb0bb212357ed07c4"
+        },
+        "pairs_available": 66,
+        "pairs_trained": 48,
+        "passages_used": 188,
+        "passages_used_and_judged": 0,
+        "max_question_similarity": 0.28,
+        "threshold": 0.8
+      },
+      "isolated": true
+    }
+  },
+  "diagnostic": false,
+  "settings": {
+    "benchmark_config": "configs/eval/benchmark.yaml",
+    "benchmark_config_sha256": "c9b4162e7bf23ec668223f463f2c5f9f725cdd2fffd53f9d74c0e38b790c8af7",
+    "metrics": [
+      "ndcg@10",
+      "mrr@10",
+      "recall@100"
+    ],
+    "top_k": 100,
+    "judged_k": 10,
+    "coverage_thresholds": {
+      "min_positives": 1,
+      "min_judged_at_10": 0.7
+    },
+    "retrieval_modes": [
+      "global",
+      "company"
+    ],
+    "embedding_cache_dir": "data/cache/embeddings",
+    "reference_runs_from": "results/dev/pilot_v2",
+    "paired_reference": "bge_zero_shot",
+    "uncertainty": "percentile bootstrap over questions (10000 resamples, seed 20261104); paired runs resample the same questions together; sign-flip randomization test of no difference (exact for up to 16 questions, else seeded Monte Carlo)"
+  },
+  "metric_definitions": {
+    "ndcg@10": "Graded nDCG over the top 10: gain 2^grade - 1, discount log2(rank + 1), ideal ranking from the query's judged grades. Unjudged passages earn gain 0.",
+    "mrr@10": "1 / rank of the first passage judged relevant (grade >= 1) in the top 10, else 0. Unjudged passages count as not relevant.",
+    "recall@100": "Judged-relevant passages (grade >= 1) in the top 100 / all judged-relevant passages of the query. The denominator counts known positives only: recall against the pooled judgments, not the corpus.",
+    "judged@10": "Share of the top 10 that carries a judgment of any grade (0, 1 or 2).",
+    "ndcg@10_judged_only": "nDCG@10 after removing unjudged passages from the ranking (condensed list). Sensitivity check: the score if every unjudged passage were set aside instead of counted as non-relevant.",
+    "mrr@10_judged_only": "MRR@10 on the same condensed ranking."
+  },
+  "unjudged_assumption": "Qrels hold judged passages only (grades 0, 1, 2). An unjudged passage is not a confirmed negative: the standard metrics count it as non-relevant (an assumption), so each query reports how much of its top 10 is judged, how much is a confirmed negative, and how much is unjudged, split into passages from the companies the question asks about (in scope) and from other companies (out of scope).",
+  "candidate_pools": {
+    "disclosure": "Only passages in a question's candidate pool were judged. The original pools were built mainly with BM25, plus seeded random and per-filing samples and a few passages found by hand. This set's pools add every passage the stored runs company/bge_zero_shot, company/bm25, company/e5_zero_shot, global/bge_zero_shot, global/bm25, global/e5_zero_shot ranked in their top 10, labelled by AI proposals, so the top 10 of those runs is judged. Below rank 10, passages BM25 did not pool are still unjudged and count as non-relevant, so Recall@100 still favours BM25-like rankings.",
+    "composition": {
+      "judged": 696,
+      "judged_proposed_by_bm25": 523,
+      "positives": 100,
+      "positives_proposed_by_bm25": 80,
+      "judged_by_source": {
+        "bge_zero_shot": 44,
+        "bge_zero_shot+bm25": 31,
+        "bge_zero_shot+bm25+e5_zero_shot": 24,
+        "bge_zero_shot+e5_zero_shot": 11,
+        "bge_zero_shot+e5_zero_shot+manual": 1,
+        "bm25": 442,
+        "bm25+e5_zero_shot": 25,
+        "bm25+stratified": 1,
+        "e5_zero_shot": 50,
+        "e5_zero_shot+manual": 1,
+        "e5_zero_shot+random": 1,
+        "manual": 3,
+        "random": 49,
+        "stratified": 13
+      },
+      "positives_by_source": {
+        "bge_zero_shot": 6,
+        "bge_zero_shot+bm25": 4,
+        "bge_zero_shot+bm25+e5_zero_shot": 12,
+        "bge_zero_shot+e5_zero_shot": 2,
+        "bge_zero_shot+e5_zero_shot+manual": 1,
+        "bm25": 57,
+        "bm25+e5_zero_shot": 7,
+        "e5_zero_shot": 7,
+        "e5_zero_shot+manual": 1,
+        "manual": 3
+      },
+      "sources": [
+        "bge_zero_shot",
+        "bm25",
+        "e5_zero_shot",
+        "manual",
+        "random",
+        "stratified"
+      ],
+      "run_sources": [
+        "company/bge_zero_shot",
+        "company/bm25",
+        "company/e5_zero_shot",
+        "global/bge_zero_shot",
+        "global/bm25",
+        "global/e5_zero_shot"
+      ],
+      "run_depth": 10
+    }
+  },
+  "comparison_caution": "Do not conclude that one retriever is better from these numbers. Labels are AI-generated development labels on 10 questions, the judged pools come mostly from BM25, and unjudged passages count as non-relevant. Read every score with its judged@10 and unjudged counts; a comparison needs pools that include the dense retrievers' results and human-judged labels.",
+  "aggregate": {
+    "ndcg@10": 0.30341198944972475,
+    "mrr@10": 0.6642857142857143,
+    "recall@100": 0.6461231884057971,
+    "ndcg@10_judged_only": 0.3222903459043039,
+    "mrr@10_judged_only": 0.6642857142857143,
+    "judged@10": 0.93,
+    "queries": 10,
+    "top10_unjudged_total": 7,
+    "top10_unjudged_in_scope_total": 7,
+    "top10_unjudged_out_of_scope_total": 0,
+    "top10_confirmed_negatives_total": 70,
+    "top10_relevant_total": 23,
+    "positives_total": 100,
+    "queries_with_insufficient_coverage": [],
+    "relevant_outside_top10_total": 77,
+    "relevant_not_retrieved_total": 34,
+    "queries_without_relevant_in_top10": [
+      "q_0006",
+      "q_0010"
+    ]
+  },
+  "uncertainty": {
+    "ndcg@10": {
+      "n": 10,
+      "mean": 0.30341198944972475,
+      "low": 0.16684646073774054,
+      "high": 0.4439621109443107,
+      "level": 0.95,
+      "standard_error": 0.07525532024939738
+    },
+    "mrr@10": {
+      "n": 10,
+      "mean": 0.6642857142857143,
+      "low": 0.37857142857142856,
+      "high": 0.9142857142857143,
+      "level": 0.95,
+      "standard_error": 0.1436683318242437
+    },
+    "recall@100": {
+      "n": 10,
+      "mean": 0.6461231884057971,
+      "low": 0.5,
+      "high": 0.776286231884058,
+      "level": 0.95,
+      "standard_error": 0.0742791680420086
+    },
+    "judged@10": {
+      "n": 10,
+      "mean": 0.93,
+      "low": 0.86,
+      "high": 0.9800000000000001,
+      "level": 0.95,
+      "standard_error": 0.0334995854037363
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "q_0001",
+      "text": "What risks does Apple's fiscal 2024 annual report associate with having most of its hardware built by a few third-party manufacturers abroad?",
+      "tickers": [
+        "AAPL"
+      ],
+      "metrics": {
+        "ndcg@10": 0.4568625914789285,
+        "mrr@10": 1.0,
+        "recall@100": 0.6666666666666666,
+        "ndcg@10_judged_only": 0.4568625914789285,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 79,
+        "positives": 6,
+        "grade_2": 2,
+        "grade_1": 4,
+        "confirmed_negatives": 73
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 1,
+        "grade_1": 0,
+        "confirmed_negatives": 9,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000006_e8e5ab3a8d1c",
+          "grade": 1,
+          "rank": 20
+        },
+        {
+          "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000021_a26cd5a80496",
+          "grade": 1,
+          "rank": 23
+        },
+        {
+          "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000024_6b67547c3337",
+          "grade": 1,
+          "rank": 28
+        },
+        {
+          "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000004_c696b46edc27",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_aapl_10-k_907129e41fcc_000023_10d2f9500967",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0002",
+      "text": "Which offerings did Apple credit for the growth in its services revenue in fiscal 2021?",
+      "tickers": [
+        "AAPL"
+      ],
+      "metrics": {
+        "ndcg@10": 0.5562983930884396,
+        "mrr@10": 1.0,
+        "recall@100": 0.6666666666666666,
+        "ndcg@10_judged_only": 0.5562983930884396,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 0.8,
+      "judgments": {
+        "judged": 55,
+        "positives": 3,
+        "grade_2": 2,
+        "grade_1": 1,
+        "confirmed_negatives": 52
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 1,
+        "grade_1": 0,
+        "confirmed_negatives": 7,
+        "unjudged": 2,
+        "unjudged_in_scope": 2,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000012_b1d65e0cb6f1",
+          "grade": 1,
+          "rank": 25
+        },
+        {
+          "passage_id": "passage_filing_aapl_10-k_0461e0c25c9a_000002_05b594316cdd",
+          "grade": 2,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0003",
+      "text": "What reasons did Amazon give for the change in profit from its AWS cloud segment in 2023?",
+      "tickers": [
+        "AMZN"
+      ],
+      "metrics": {
+        "ndcg@10": 0.24986026773628725,
+        "mrr@10": 0.14285714285714285,
+        "recall@100": 1.0,
+        "ndcg@10_judged_only": 0.24986026773628725,
+        "mrr@10_judged_only": 0.14285714285714285
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 66,
+        "positives": 5,
+        "grade_2": 1,
+        "grade_1": 4,
+        "confirmed_negatives": 61
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 2,
+        "grade_2": 1,
+        "grade_1": 1,
+        "confirmed_negatives": 8,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 7,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000012_7cc1bc1a911a",
+          "grade": 1,
+          "rank": 14
+        },
+        {
+          "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000009_312f26c291b1",
+          "grade": 1,
+          "rank": 32
+        },
+        {
+          "passage_id": "passage_filing_amzn_10-k_d3a00c1d8a74_000051_a48df330b27c",
+          "grade": 1,
+          "rank": 83
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0004",
+      "text": "What average liquidity coverage ratio did JPMorgan Chase report for the firm in the fourth quarter of 2021?",
+      "tickers": [
+        "JPM"
+      ],
+      "metrics": {
+        "ndcg@10": 0.1385939143935568,
+        "mrr@10": 1.0,
+        "recall@100": 0.5,
+        "ndcg@10_judged_only": 0.2637566907403966,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 0.7,
+      "judgments": {
+        "judged": 64,
+        "positives": 8,
+        "grade_2": 2,
+        "grade_1": 6,
+        "confirmed_negatives": 56
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 1,
+        "grade_2": 0,
+        "grade_1": 1,
+        "confirmed_negatives": 6,
+        "unjudged": 3,
+        "unjudged_in_scope": 3,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000002_7060c02d81c7",
+          "grade": 2,
+          "rank": 13
+        },
+        {
+          "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_f0816b5a63ca",
+          "grade": 1,
+          "rank": 37
+        },
+        {
+          "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000002_9813a3c460a7",
+          "grade": 2,
+          "rank": 55
+        },
+        {
+          "passage_id": "passage_filing_jpm_10-k_3679d53a57eb_000000_8f6aea788d19",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_jpm_10-k_573a45aab2b1_000000_b1cfcb2b8388",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000000_060fa1e5fc96",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_jpm_10-k_d8fd44172d2a_000001_47b5e2027351",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0005",
+      "text": "How much did weaker demand for Pfizer's COVID-19 vaccine and oral antiviral pill reduce its revenues in 2023 versus 2022?",
+      "tickers": [
+        "PFE"
+      ],
+      "metrics": {
+        "ndcg@10": 0.16247683196219595,
+        "mrr@10": 1.0,
+        "recall@100": 0.6875,
+        "ndcg@10_judged_only": 0.16247683196219595,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 75,
+        "positives": 16,
+        "grade_2": 3,
+        "grade_1": 13,
+        "confirmed_negatives": 59
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 2,
+        "grade_2": 0,
+        "grade_1": 2,
+        "confirmed_negatives": 8,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000007_008d5cb424de",
+          "grade": 1,
+          "rank": 16
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000105_03b0b6d1da44",
+          "grade": 1,
+          "rank": 18
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_082250b975af_000111_b3fe1611c701",
+          "grade": 1,
+          "rank": 20
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000111_0df47f6860e1",
+          "grade": 2,
+          "rank": 23
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000110_daff43d25b98",
+          "grade": 1,
+          "rank": 28
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_d0cb001f40ca_000106_8f32989f8a14",
+          "grade": 1,
+          "rank": 34
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_082250b975af_000016_312e5252e5a4",
+          "grade": 1,
+          "rank": 44
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000018_1c8bb2055b1d",
+          "grade": 1,
+          "rank": 49
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000019_22500d92724b",
+          "grade": 1,
+          "rank": 62
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_4932ebbf16d8_000016_6121e6694c71",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000015_f1a68ece9d9d",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000002_2af1ad3ac4c6",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000018_3dd6ecabdb82",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_pfe_10-k_cde2c92bc62c_000113_33b93fba7d53",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0006",
+      "text": "How much of Tesla's revolving credit facility was undrawn at the end of 2023?",
+      "tickers": [
+        "TSLA"
+      ],
+      "metrics": {
+        "ndcg@10": 0.0,
+        "mrr@10": 0.0,
+        "recall@100": 0.16666666666666666,
+        "ndcg@10_judged_only": 0.0,
+        "mrr@10_judged_only": 0.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 93,
+        "positives": 6,
+        "grade_2": 2,
+        "grade_1": 4,
+        "confirmed_negatives": 87
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 0,
+        "grade_2": 0,
+        "grade_1": 0,
+        "confirmed_negatives": 10,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 71,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_tsla_10-k_615485ed6438_000020_2380f6404a83",
+          "grade": 1,
+          "rank": 71
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000044_1824d9ef19d9",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000045_c49dd6574aaf",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000045_a7ab595f6fcc",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000046_53aa66dbeced",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000048_201bcf36ad6f",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0007",
+      "text": "How did Tesla's revenue from selling emissions credits to other automakers change each year from 2019 through 2023?",
+      "tickers": [
+        "TSLA"
+      ],
+      "metrics": {
+        "ndcg@10": 0.7253574779725617,
+        "mrr@10": 1.0,
+        "recall@100": 0.8695652173913043,
+        "ndcg@10_judged_only": 0.7889782661715135,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 0.9,
+      "judgments": {
+        "judged": 59,
+        "positives": 23,
+        "grade_2": 16,
+        "grade_1": 7,
+        "confirmed_negatives": 36
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 7,
+        "grade_2": 6,
+        "grade_1": 1,
+        "confirmed_negatives": 2,
+        "unjudged": 1,
+        "unjudged_in_scope": 1,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_tsla_10-k_615485ed6438_000010_3b4a1d866eeb",
+          "grade": 2,
+          "rank": 11
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000017_1a1f10b64456",
+          "grade": 1,
+          "rank": 12
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000018_019a44cbd166",
+          "grade": 1,
+          "rank": 14
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000009_46c10068b9a1",
+          "grade": 1,
+          "rank": 16
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000009_c2b52a2437d5",
+          "grade": 2,
+          "rank": 17
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_5a2b9655d6e3_000010_d87c6e2dd462",
+          "grade": 2,
+          "rank": 30
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000018_03106037423e",
+          "grade": 2,
+          "rank": 32
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000019_dc3bd3a89395",
+          "grade": 2,
+          "rank": 39
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_0e7be07d1f4a_000018_fca5c1daf6d5",
+          "grade": 2,
+          "rank": 40
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000016_d96b7fbc251c",
+          "grade": 1,
+          "rank": 48
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_382c8a521ac1_000022_4441b2610b17",
+          "grade": 2,
+          "rank": 61
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000017_6caa110a0b0e",
+          "grade": 1,
+          "rank": 85
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_ef7146204982_000008_273be026155f",
+          "grade": 2,
+          "rank": 99
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_146c1e0dfce9_000008_14fbe49db3bd",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_615485ed6438_000009_5993cdb9cf59",
+          "grade": 2,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_tsla_10-k_f8fb6d0238b9_000011_74a2ba06c9be",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0008",
+      "text": "How were Walmart's net sales for the fiscal year ended January 31, 2024 split among its three reportable segments?",
+      "tickers": [
+        "WMT"
+      ],
+      "metrics": {
+        "ndcg@10": 0.3903917894662091,
+        "mrr@10": 1.0,
+        "recall@100": 0.6666666666666666,
+        "ndcg@10_judged_only": 0.3903917894662091,
+        "mrr@10_judged_only": 1.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 76,
+        "positives": 12,
+        "grade_2": 2,
+        "grade_1": 10,
+        "confirmed_negatives": 64
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 5,
+        "grade_2": 1,
+        "grade_1": 4,
+        "confirmed_negatives": 5,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 1,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000011_118bd2535664",
+          "grade": 1,
+          "rank": 16
+        },
+        {
+          "passage_id": "passage_filing_wmt_10-k_40ceee83bdf8_000047_34d2dbadea5e",
+          "grade": 1,
+          "rank": 33
+        },
+        {
+          "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000050_670a38bb938b",
+          "grade": 2,
+          "rank": 63
+        },
+        {
+          "passage_id": "passage_filing_wmt_10-k_6fa57f3e89fa_000005_e08e9ed5b9c4",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000001_9bffc5700027",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000007_0688fe0e9785",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_wmt_10-k_8736c816bde6_000051_7ebfaf662682",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0009",
+      "text": "How did ExxonMobil's 2022 capital spending break down by business segment and between U.S. and non-U.S. operations?",
+      "tickers": [
+        "XOM"
+      ],
+      "metrics": {
+        "ndcg@10": 0.3542786283990686,
+        "mrr@10": 0.5,
+        "recall@100": 0.4375,
+        "ndcg@10_judged_only": 0.3542786283990686,
+        "mrr@10_judged_only": 0.5
+      },
+      "judged@10": 0.9,
+      "judgments": {
+        "judged": 67,
+        "positives": 16,
+        "grade_2": 2,
+        "grade_1": 14,
+        "confirmed_negatives": 51
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 4,
+        "grade_2": 1,
+        "grade_1": 3,
+        "confirmed_negatives": 5,
+        "unjudged": 1,
+        "unjudged_in_scope": 1,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 2,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_a2843d316ee9",
+          "grade": 1,
+          "rank": 13
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_9bf66dbec24e",
+          "grade": 2,
+          "rank": 15
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_0b1011c3a6a1",
+          "grade": 1,
+          "rank": 65
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_51a4281a9a18",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_4af8038e101f_000000_b291b2449880",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_4af8038e101f_000001_6cca6e44dc7d",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_4af8038e101f_000002_46b9c5fb674b",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_8f8fae4c1237_000000_5c3a79fbe2d2",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_e0e4eb83c5ce",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000000_e7e4d4e7da67",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000001_dfd405f8c44e",
+          "grade": 1,
+          "rank": null
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_b3a60886ead8_000002_38d75af870e0",
+          "grade": 1,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    },
+    {
+      "query_id": "q_0010",
+      "text": "How does ExxonMobil's 2020 annual report say that output decisions by oil-producing nations, such as OPEC members, can affect its business?",
+      "tickers": [
+        "XOM"
+      ],
+      "metrics": {
+        "ndcg@10": 0.0,
+        "mrr@10": 0.0,
+        "recall@100": 0.8,
+        "ndcg@10_judged_only": 0.0,
+        "mrr@10_judged_only": 0.0
+      },
+      "judged@10": 1.0,
+      "judgments": {
+        "judged": 62,
+        "positives": 5,
+        "grade_2": 3,
+        "grade_1": 2,
+        "confirmed_negatives": 57
+      },
+      "top10": {
+        "returned": 10,
+        "relevant": 0,
+        "grade_2": 0,
+        "grade_1": 0,
+        "confirmed_negatives": 10,
+        "unjudged": 0,
+        "unjudged_in_scope": 0,
+        "unjudged_out_of_scope": 0
+      },
+      "first_relevant_rank": 30,
+      "relevant_outside_top10": [
+        {
+          "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000001_77e23f951ad6",
+          "grade": 2,
+          "rank": 30
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000005_dd9c3b3209b4",
+          "grade": 2,
+          "rank": 47
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000002_b60e35c7bb4d",
+          "grade": 1,
+          "rank": 78
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000004_9664503f94fc",
+          "grade": 1,
+          "rank": 89
+        },
+        {
+          "passage_id": "passage_filing_xom_10-k_2376dbcd7dba_000000_c42f1d037928",
+          "grade": 2,
+          "rank": null
+        }
+      ],
+      "coverage_flags": []
+    }
+  ],
+  "run_file": {
+    "path": "run.jsonl",
+    "sha256": "f001fdc17b1364b5a05fb73d578726719321f0af68cfba26fd7542202a17adde"
+  },
+  "skipped_retrievers": [],
+  "paired_comparison": {
+    "reference": "global/bge_zero_shot",
+    "reference_source": {
+      "run": "bge_zero_shot",
+      "mode": "global",
+      "run_file": "results/dev/pilot_v2/global/bge_zero_shot/run.jsonl",
+      "run_sha256": "1c9c4fcf50c3b419c3383edb4b8699c533b06a3897b9d1d79fc59c6efc2560ac",
+      "metrics_file": "results/dev/pilot_v2/global/bge_zero_shot/metrics.json",
+      "metrics_sha256": "4c93ac7cf729574723aaf58f0deae92fe3cabbfdb4ad82bbbc0b90359bc36cbb",
+      "eval_set": "dev_pilot_v2",
+      "label_version": "pilot_v2",
+      "top_k": 100
+    },
+    "metrics": {
+      "ndcg@10": {
+        "n": 10,
+        "mean_a": 0.30341198944972475,
+        "mean_b": 0.28645964257938583,
+        "mean_difference": 0.01695234687033889,
+        "low": -0.04807187209804048,
+        "high": 0.08703116428060531,
+        "level": 0.95,
+        "wins": 4,
+        "ties": 4,
+        "losses": 2,
+        "p_value": 0.65625,
+        "test": "exact",
+        "interval_includes_zero": true
+      },
+      "mrr@10": {
+        "n": 10,
+        "mean_a": 0.6642857142857143,
+        "mean_b": 0.55,
+        "mean_difference": 0.11428571428571428,
+        "low": -0.07142857142857142,
+        "high": 0.3392857142857143,
+        "level": 0.95,
+        "wins": 2,
+        "ties": 7,
+        "losses": 1,
+        "p_value": 0.5,
+        "test": "exact",
+        "interval_includes_zero": true
+      },
+      "recall@100": {
+        "n": 10,
+        "mean_a": 0.6461231884057971,
+        "mean_b": 0.6267753623188407,
+        "mean_difference": 0.01934782608695651,
+        "low": -0.09149003623188405,
+        "high": 0.13268115942028985,
+        "level": 0.95,
+        "wins": 4,
+        "ties": 3,
+        "losses": 3,
+        "p_value": 0.75,
+        "test": "exact",
+        "interval_includes_zero": true
+      },
+      "judged@10": {
+        "n": 10,
+        "mean_a": 0.93,
+        "mean_b": 1.0,
+        "mean_difference": -0.06999999999999999,
+        "low": -0.13999999999999999,
+        "high": -0.019999999999999997,
+        "level": 0.95,
+        "wins": 0,
+        "ties": 6,
+        "losses": 4,
+        "p_value": 0.125,
+        "test": "exact",
+        "interval_includes_zero": false
+      }
+    }
+  },
+  "checkpoint_caution": "Every checkpoint is reported; none was selected, by this set or by any validation set. Checkpoints of a short run (the 15-step smoke test on 48 synthetic pairs) check the training mechanics: their scores are not evidence of a retrieval improvement, and none is claimed. Passages a checkpoint ranks in its top 10 that no stored run ranked there are unjudged and count as non-relevant, so read every score with its judged@10, its interval and the paired comparison."
+}

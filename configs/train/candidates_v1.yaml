@@ -1,0 +1,19 @@
+# First training-candidate dataset for the bge_base_ft_v2 preparation (finretriever.training.candidates).
+#
+# Built offline by:
+#   python scripts/02_generate_queries.py build-candidates --config configs/train/data_prep_v2.yaml \
+#       --candidates configs/train/candidates_v1.yaml
+# Written once to data/processed/train/bge_base_ft_v2/candidates/train_candidates_v1/. A pair is included only
+# if its AI quality decision is "accept" (revise and reject are excluded) and it passes every current check:
+# provenance, candidate validator, evidence leakage (evidence-reuse-v2), evaluation overlap, duplicates.
+# The decisions are an AI review: the candidates are not human-validated and not gold labels.
+
+version: train_candidates_v1
+data_prep_config: configs/train/data_prep_v2.yaml
+
+sources:
+  - name: pilot_v3            # the 70 pairs this preparation built from the second Qwen pilot
+    decisions: data/train_review/pilot_v3_quality_decisions.jsonl
+  - name: pilot_v2            # the 37 pairs of the first pilot (bge_base_ft_v1), re-checked against bge_base_ft_v2
+    data_prep_config: configs/train/data_prep_v1.yaml
+    decisions: data/train_review/pilot_v2_quality_decisions.jsonl

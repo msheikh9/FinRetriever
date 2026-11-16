@@ -1,0 +1,78 @@
+# First domain-adapted bi-encoder experiment: BGE-base fine-tuned on synthetic SEC query-passage pairs.
+#
+# PROPOSED PLAN, NOT A TRAINER CONFIG. The trainer (scripts/05_train_biencoder.py) now exists and reads its own
+# schema (finretriever.training.trainer_setup.TrainerConfig; see configs/train/biencoder_bge_base_smoke.yaml and
+# docs/training_trainer_v1.md). It implements the in-batch loss without GradCache (no cached loss, so batch 128
+# does not fit a T4) and no hard negatives; the miner is still a stub. This file records the planned settings and
+# ablations; the rationale is in docs/training_plan_v1.md. Plain YAML: each ablation lists only what differs from
+# the shared settings.
+# Never train on data/eval/ (gold, development labels, audits).
+
+name: bge_base_ft_v1
+
+base_model:
+  name: BAAI/bge-base-en-v1.5
+  revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a   # the zero-shot baseline's pinned commit
+  query_prefix: "Represent this sentence for searching relevant passages: "   # as in evaluation
+  passage_prefix: ""
+
+data:
+  # Built by scripts/02_generate_queries.py from configs/train/data_prep_v1.yaml, which holds the overlap
+  # groups, evaluation blocklist, split, visible-text and generation settings (docs/training_data_v1.md).
+  data_prep_config: configs/train/data_prep_v1.yaml
+  prepared_dir: data/processed/train/bge_base_ft_v1
+  train_pairs_path: data/processed/train/bge_base_ft_v1/pairs/train_pairs.jsonl
+  validation_pairs_path: data/processed/train/bge_base_ft_v1/pairs/validation_pairs.jsonl
+  hard_negatives_path: data/processed/train/bge_base_ft_v1/hard_negatives.jsonl   # not built yet (A2)
+
+training:
+  loss: cached_multiple_negatives_ranking   # GradCache: a large in-batch-negative pool in T4 memory
+  temperature: 0.02                         # BGE's published fine-tuning setting (scale 50)
+  batch_size: 128                           # queries per step = in-batch negatives per query + 1
+  mini_batch_size: 16                       # forward/backward chunk; bounds GPU memory, not negatives
+  gradient_accumulation_steps: 1            # accumulation does not add in-batch negatives; keep 1
+  max_seq_length: 512                       # as in evaluation
+  learning_rate: 2.0e-5
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  epochs: 1                                 # raise to 2 only if validation is still improving
+  fp16: true                                # T4 has no bf16
+  gradient_checkpointing: false             # enable if the smoke run runs out of memory
+  seeds: [42, 1337]
+
+evaluation:
+  # Checkpoint selection uses the synthetic validation split only, never development labels.
+  validation_every_steps: 25
+  selection_metric: mrr@10
+  early_stopping_patience: 3                # evaluations without improvement
+  # The source passage is the only positive; other members of its overlap component are removed from the
+  # ranking before scoring (neither confirmed relevant nor non-relevant).
+  ignore_overlap_siblings: true
+  retrieval_modes: [global, company]
+  # Diagnostics after selection (scripts/04_run_baselines.py on dev_pilot_v3); never used to choose.
+  diagnostics_eval_set: dev_pilot_v3
+
+output_dir: models/bge_base_ft_v1   # gitignored; one subdirectory per ablation and seed, never overwritten
+
+ablations:
+  A0_zero_shot:
+    train: false                    # the baseline, re-encoded in the same environment as A1-A3
+  A1_in_batch:
+    hard_negatives_per_pair: 0
+  A2_hard_negatives:
+    hard_negatives_per_pair: 1
+    batch_size: 64                  # (query, positive, negative): 128 passages per step, as in A1
+    mining:
+      encoder: A0_zero_shot         # mined once, before any fine-tuning
+      retrieval_mode: company       # same-company negatives are the hard ones in 10-Ks
+      rank_window: [10, 50]         # skip the top 9: likely unlabelled positives
+      max_score_ratio: 0.95         # drop candidates scoring >= 95% of the positive
+      exclude: [positive_overlap_component, same_section_neighbours, blocklist]
+  A3_e5_optional:                   # only if compute remains after A1 and A2
+    base_model:
+      name: intfloat/e5-base-v2
+      revision: f52bf8ec8c7124536f0efb74aca902b2995e5bcd
+      query_prefix: "query: "
+      passage_prefix: "passage: "
+    temperature: 0.01               # E5's published fine-tuning setting; check before running
+    hard_negatives_per_pair: 0

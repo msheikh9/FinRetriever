@@ -1,0 +1,44 @@
+# Corpus configuration for FinRetriever v1.
+# Mixed-sector sample of 10-K filings. ~50 filings total.
+
+name: corpus_v1
+form_type: 10-K
+filings_per_ticker: 7
+
+# Mixed-sector ticker sample. Each ticker contributes up to `filings_per_ticker`
+# of its most recent 10-Ks: 7 tickers x 7 filings = 49 filings.
+tickers:
+  - AAPL   # Tech
+  - JPM    # Financials
+  - TSLA   # Auto
+  - PFE    # Healthcare
+  - AMZN   # Retail / cloud
+  - XOM    # Energy
+  - WMT    # Consumer staples / retail
+
+# SEC EDGAR download (scripts/01_download_filings.py).
+# SEC_USER_AGENT ("<name> <contact email>") is read from the environment.
+# 0.2s between requests keeps us well under the SEC's 10 requests/second cap.
+output_dir: data/raw
+request_delay_seconds: 0.2
+timeout_seconds: 30
+max_retries: 3
+
+# Registrant CIKs to use instead of the SEC ticker map's current one. In 2026
+# Exxon Mobil reorganised under a new parent, "ExxonMobil Holdings Corp"
+# (CIK 0002115436), which now carries the XOM ticker but has no 10-K yet; the
+# 10-K history is filed by EXXON MOBIL CORP (CIK 0000034088). Quote the CIKs.
+cik_overrides:
+  XOM: "0000034088"
+
+# Chunking parameters for finretriever.data.chunker (whitespace tokens), applied
+# by scripts/01_build_corpus.py; the downloader ignores them.
+chunk_size_tokens: 512
+chunk_overlap_tokens: 80
+
+# Filesystem layout for corpus stages. Raw filings live under output_dir; the
+# corpus build writes corpus_jsonl plus corpus_v1.manifest.json next to it.
+paths:
+  interim_dir: data/interim/sec
+  processed_dir: data/processed
+  corpus_jsonl: data/processed/corpus_v1.jsonl

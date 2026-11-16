@@ -1,0 +1,22 @@
+# What the trainer smoke test needs on a Kaggle GPU notebook (docs/kaggle_smoke_test.md).
+#
+# torch is NOT listed: keep the image's CUDA build. Install with the installed torch pinned as a constraint, so
+# pip refuses rather than replaces it:
+#   python -c "import torch; print('torch==' + torch.__version__)" > /tmp/torch.txt
+#   pip install -r requirements-kaggle.txt -c /tmp/torch.txt
+#
+# Pinned to the versions the bundle was built and tested with. tokenizers matters most: the trainer refuses a
+# tokenizer whose serialised state differs from the one that defined the preparation's visible text.
+transformers==5.3.0
+tokenizers==0.22.2
+safetensors==0.7.0
+huggingface-hub==1.7.1
+sentence-transformers==5.2.3   # results check only: loads the checkpoints the way evaluation would
+
+# finretriever's own imports (most are preinstalled on Kaggle)
+numpy
+pydantic>=2
+PyYAML>=6
+requests
+beautifulsoup4
+lxml

@@ -1,0 +1,6 @@
+{
+  "_note": "Placeholder. Populated by scripts/06_run_benchmark.py after training.",
+  "model": "finretriever-bge-base-v1",
+  "config": null,
+  "results": {}
+}

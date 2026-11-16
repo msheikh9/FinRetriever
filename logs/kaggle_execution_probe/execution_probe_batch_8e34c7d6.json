@@ -1,0 +1,47 @@
+{
+  "kind": "finretriever_kaggle_execution_probe",
+  "format_version": 1,
+  "probe_id": "8e34c7d6-c5f0-4e22-9dbd-eac426090206",
+  "recorded_utc": "2026-11-10T20:41:14+00:00",
+  "execution_code_sha256": "3cd0bc44ffd081f256c1dbe78c7f26d408894554976c1f7bc65b93f28eddff63",
+  "run_type_variable": "KAGGLE_KERNEL_RUN_TYPE",
+  "run_type_value": "Batch",
+  "execution_type": "batch",
+  "training_would_be_allowed": true,
+  "indicators": {
+    "kaggle_variable_names": [
+      "KAGGLE_API_V1_TOKEN",
+      "KAGGLE_CONTAINER_NAME",
+      "KAGGLE_DATA_PROXY_PROJECT",
+      "KAGGLE_DATA_PROXY_TOKEN",
+      "KAGGLE_DATA_PROXY_URL",
+      "KAGGLE_DOCKER_IMAGE",
+      "KAGGLE_GCP_ZONE",
+      "KAGGLE_GRPC_DATA_PROXY_URL",
+      "KAGGLE_KERNEL_INTEGRATIONS",
+      "KAGGLE_KERNEL_RUN_TYPE",
+      "KAGGLE_URL_BASE",
+      "KAGGLE_USER_SECRETS_TOKEN"
+    ],
+    "kaggle_src_files": [
+      "script.ipynb"
+    ],
+    "process_ancestry": [
+      {
+        "executable": "python3",
+        "papermill": false,
+        "nbconvert": false,
+        "ipykernel": false,
+        "jupyter": false
+      },
+      {
+        "executable": "python3",
+        "papermill": true,
+        "nbconvert": false,
+        "ipykernel": false,
+        "jupyter": false
+      }
+    ]
+  },
+  "python": "3.13.18"
+}

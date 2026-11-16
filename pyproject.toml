@@ -1,0 +1,101 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "finretriever"
+version = "0.1.0"
+description = "Evidence retrieval over SEC 10-K filings: fine-tuned dense retrieval, BM25 and metadata-aware hybrid search."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "mutwalli" },
+]
+keywords = ["information-retrieval", "sec", "10-k", "dense-retrieval", "bi-encoder", "hybrid-retrieval", "bm25"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# Compatible ranges. The lower bounds are the versions that produced the published results (Python 3.11.5);
+# the exact tested environment, with every transitive dependency, is in requirements/lock-*.txt
+# (docs/environment.md). Tested on Python 3.11 only.
+dependencies = [
+    "numpy>=1.26.4,<3",
+    "pydantic>=2.12.5,<3",
+    "PyYAML>=6.0.3,<7",
+    "requests>=2.32.3,<3",
+    "beautifulsoup4>=4.14.3,<5",
+    "lxml>=6.0.2,<7",
+    "rank-bm25>=0.2.2,<0.3",
+]
+
+[project.optional-dependencies]
+# Dense retrieval, fine-tuning, checkpoint verification and the v2 experiments. On Linux, PyPI's torch is the CUDA
+# build; use --extra-index-url https://download.pytorch.org/whl/cpu for CPU only.
+dense = [
+    "torch>=2.10,<3",
+    "transformers>=5.3,<6",
+    "sentence-transformers>=5.2.3,<6",
+    "tokenizers>=0.22.2,<0.23",
+    "safetensors>=0.7,<0.8",
+    "huggingface-hub>=1.7.1,<2",
+]
+dev = [
+    "pytest>=9.0.2,<10",
+    "pytest-cov>=7,<8",
+    "ruff==0.15.7",
+    "black>=26.5.1,<27",
+    "mypy>=1.19.1,<2",
+]
+
+[project.urls]
+Repository = "https://github.com/msheikh9/FinRetriever"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "scripts", "tests"]
+extend-exclude = [".venv", "data", "results"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # handled by black
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["finretriever"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+ignore_missing_imports = true
+mypy_path = "src"

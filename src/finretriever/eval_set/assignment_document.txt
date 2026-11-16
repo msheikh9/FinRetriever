@@ -1,0 +1,91 @@
+GOLD SET V1 - RELEVANCE GRADING - ASSIGNMENT __ASSIGNMENT_ID__ FOR __ANNOTATOR__
+__QUESTIONS__ questions, __CANDIDATES__ passages. Your response file: __RESPONSE_FILE__ (check code __CHECK__)
+
+THE TASK
+Each question below is a financial research question about one or more companies' annual reports (Form 10-K).
+Under each question are passages taken from those reports, in shuffled order; the order means nothing. For every
+passage, decide how relevant it is to the question as written, from the passage alone, using the rubric below, and
+write your grade on that passage's line in your response file. Grade alone: no AI tools or chatbots, no search
+summaries, and no one else's grades.
+
+THE RUBRIC (v1.1, P1-P6)
+  2  directly relevant    The passage answers the question, or the part of it the passage could answer for a
+                          multi-passage question. In a filing: it states the requested figure for the requested
+                          period and company (including as a prior-year comparative column), or explains the
+                          asked-about risk, policy or driver specifically.
+  1  partially relevant   Useful but incomplete: right company, period and topic, only part of the answer. For
+                          example a summary sentence without the requested figure, a table with the line item but
+                          not the requested breakdown, or context needed to interpret the answer. A note is required.
+  0  not relevant         Does not help answer the question: the same keywords in another context, a different
+                          company, boilerplate.
+  s  skip                 You looked but cannot decide: ambiguous scope, it needs knowledge you lack, or the passage
+                          is cut mid-table. A skip is never a 0. A note is required.
+
+  Rules
+  - A skip is not a 0: use it whenever you would otherwise guess.
+  - A cross-reference stub ("see Note 7") is 0 unless the question asks where the information is.
+  - Repeated text is not assumed relevant: the same paragraph in another year's 10-K is 0 unless the question makes
+    other years relevant.
+  - Another filing can still hold the requested period, for example a later 10-K's prior-year column: grade it on
+    that content.
+  - Information about other years is 0, unless the question asks about a change or comparison it helps answer.
+  - Multi-passage and cross-year questions: 2 if the passage supplies a required part (for example one requested
+    year's figure), 1 if it only supports or interprets, 0 otherwise.
+
+  Clarifications
+  - P1, open questions (a set of risks, reasons, offerings...): a passage that explicitly states one element of the
+    answer, for the requested company and period, is 2; it is 1 if it only names the topic, is cut off, or needs
+    outside information.
+  - P2, passage-alone evidence: for a figure, the requested period and basis must be identifiable from the passage
+    itself (text, table headers, footnotes inside it). If the period or basis is defined only outside it, grade 1.
+  - P3, comparatives: a later 10-K stating the requested figure for the requested period is graded on content: 2 if
+    complete under P2, 1 if partial. Start the note with P3 and say what it shows.
+  - P4, repeated text from another filing year: when the question names a report or year, another filing year's
+    copy of a qualitative disclosure is 0, even verbatim. Start the note with P4 and name the year.
+  - P5, closed multi-part questions: decide by the evidence. If no single filing can hold the whole answer, a
+    passage with a complete required unit (the requested figures for at least one requested period) may be 2; if
+    the full answer is normally in one table, a passage with only some of its elements is 1.
+  - P6, notes and help: a note for every 1, every skip, every P3 and every P4 0. Do not use AI tools. If any other
+    help was used for a grade (for example, you asked someone what a term means), start the note with ASSISTED and
+    describe it.
+
+YOUR RESPONSE FILE
+Open __RESPONSE_FILE__ in a plain text editor (Notepad on Windows; TextEdit on a Mac, after choosing
+Format > Make Plain Text). It already lists every passage ID of this assignment, question by question, in the same
+order as this document. First fill in the two lines at the top: your initials, and YES. YES confirms that you
+graded these passages yourself, following rubric v1.1, with no AI tools and without seeing anyone else's grades.
+Then complete each passage line as
+
+    ID | grade | note
+
+    c000000000a1 | 2 |
+    c000000000a2 | 1 | gives the FY2022 total but not the segment split asked for
+    c000000000a3 | 0 |
+    c000000000a4 | s | the table is cut off before the FY2023 column
+    c000000000a5 | 0 | P4 the same risk paragraph from the FY2021 report
+    c000000000a6 | 2 | P3 the FY2022 figure in the prior-year column of the FY2023 report
+
+  - Grades: 2, 1, 0, or s for skip.
+  - A note is required for every 1, every s, every P3, every P4 and every ASSISTED grade. Other notes are optional.
+    Keep each note short and on one line.
+  - P3, P4 or ASSISTED goes at the start of the note. P4 goes only with a 0, and a skip never takes P3 or P4.
+  - Do not change, add, delete or reorder IDs, and keep the lines that start with ==.
+  - Save the file often, and keep a copy.
+
+RETURNING YOUR GRADES
+  - Email __RESPONSE_FILE__ back as an attachment, with nothing changed except your answers. If you cannot attach
+    it, paste its whole content into the body of the email.
+  - When you have finished your first question, send the file once, so the reviewer can confirm the format is right.
+  - After that, send it whenever you have finished one or more questions, and always send the whole file. Every
+    question with all of its passages graded is recorded; questions you have not finished wait for a later email.
+  - Once a question is recorded, it cannot be changed by sending a new version: check a question before you send
+    it. If you need to change a grade that was already sent, tell the reviewer instead.
+  - Keep this document and your response file until the reviewer confirms that every question was received.
+  - Do not forward this assignment, and do not discuss the questions or passages with anyone else who grades this
+    set.
+
+THE QUESTIONS IN THIS ASSIGNMENT
+__QUESTION_LIST__
+
+Each passage below starts with a line giving its question, its number and its ID. That ID is the one to grade in
+your response file.

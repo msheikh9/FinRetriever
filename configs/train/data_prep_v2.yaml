@@ -1,0 +1,99 @@
+# Leakage-safe training-data preparation v2 (bge_base_ft_v2): v1 plus sentence- and fact-level evidence reuse.
+#   python3 scripts/02_generate_queries.py prepare --config configs/train/data_prep_v2.yaml
+#   python3 scripts/02_generate_queries.py carry-over --config configs/train/data_prep_v2.yaml \
+#       --from-config configs/train/data_prep_v1.yaml --decisions data/train_review/pilot_v2_quality_decisions.jsonl \
+#       --name pilot_v2        (re-checks the v1 pilot pairs; eligible ones become development training candidates)
+#   python3 scripts/02_generate_queries.py plan --config configs/train/data_prep_v2.yaml --split train --name pilot_v3 \
+#       --size 50 --method balanced --max-company-share 0.25 --exclude-carryover pilot_v2   (written once)
+#   python3 scripts/02_generate_queries.py generate --config configs/train/data_prep_v2.yaml --split train --plan pilot_v3 \
+#       --max-requests 50 [--confirm-api-use]      (dry run without the flag; the cap counts every attempt)
+#   python3 scripts/02_generate_queries.py revalidate / build-pairs / check --config configs/train/data_prep_v2.yaml
+# What changed from v1 and why: docs/training_data_v2.md. v1 (configs/train/data_prep_v1.yaml) and its pilot records stay
+# as they are; nothing built on v1 is rebound to this split.
+
+version: bge_base_ft_v2
+corpus_path: data/processed/corpus_v1.jsonl
+corpus_version: corpus_v1@1.2
+corpus_sha256: ff9dadf37bb9820e2c87df70a411fd189bb02776609e5ec06173dd03f2344004
+output_dir: data/processed/train/bge_base_ft_v2     # gitignored; never overwritten with different content
+min_source_words: 40                                # visible words a passage needs to give queries
+
+overlap:
+  shingle_words: 5
+  max_shingle_df: 50              # shingles in more passages are boilerplate and give no candidates
+  min_shared_shingles: 10         # candidate pairs share at least this many non-boilerplate shingles
+  containment_threshold: 0.5      # |A&B| / min(|A|,|B|): an edge, so the pair stays in one group
+  near_duplicate_threshold: 0.8   # Jaccard: reported as near-duplicate
+
+blocklist:                        # every listed source must exist and match the frozen corpus
+  annotation_workspaces: [data/eval/annotation]
+  dev_pools: [data/eval/dev_ai/pilot_v3/pool]
+  audit_workspaces: [data/eval/audit/pilot_v1, data/eval/audit/pilot_v3]
+  gold_qrels: data/eval/gold_qrels.jsonl
+  gold_metadata: data/eval/gold_eval.metadata.json  # required once gold qrels exist
+
+split:
+  seed: 20261029
+  validation_share: 0.10
+  stratify_by: [ticker, fiscal_year]
+
+visible_text:                     # the encoder that will be fine-tuned defines what it can read
+  tokenizer: BAAI/bge-base-en-v1.5
+  revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+  max_seq_length: 512
+  passage_prefix: ""
+
+generation:
+  provider: groq
+  model: qwen/qwen3.8-27b         # llama-3.3-70b-versatile returned 404 model_not_found for this key
+  prompt_version: sec-qgen-v2     # natural fiscal-year phrasing, substance over exhibit lookups, no calculations
+  api_base: https://api.groq.com/openai/v1
+  api_key_env: GROQ_API_KEY       # read from the environment only; never stored
+  temperature: 0.7                # top of Groq's recommended 0.5-0.7 range for Qwen
+  # The token limit, pacing and retry settings are request settings: they never shape an accepted reply, so a
+  # change continues the recorded run (generate --continue-run) instead of starting a new one.
+  max_completion_tokens: 768      # pilot replies 181-265 tokens, 399 for a numeric exhibit list; was 2048
+  output_tokens_per_minute: 1000  # the account's Groq OTPM limit for this model: each request reserves 768
+  max_rate_limit_wait_seconds: 180  # a longer wait (e.g. a daily limit) stops the run cleanly instead
+  json_mode: true                 # JSON object mode; refused together with reasoning_format raw
+  reasoning_format: parsed        # any reasoning goes to message.reasoning, which is ignored
+  reasoning_effort: none          # no reasoning tokens: the task is extraction, not problem solving
+  queries_per_passage: {train: 2, validation: 1}
+  requests_per_minute: 20
+  max_retries: 4
+  timeout_seconds: 60
+  backoff_seconds: 2.0
+  max_backoff_seconds: 60
+  max_response_attempts: 2
+  max_consecutive_failures: 3
+  company_aliases:                # names a question may use besides the ticker and the first word
+    JPM: ["j.p. morgan", "jp morgan"]
+    XOM: ["exxon mobil"]
+
+leakage:
+  evaluation_question_files: [data/eval/annotation/questions.jsonl, data/eval/gold_queries.jsonl]
+  lexical_overlap_threshold: 0.8  # word-set Jaccard with any evaluation question rejects a query
+
+source_quality:                   # which approved passages are worth generating from (sampling only; the split is unchanged)
+  enabled: true
+  exhibit_marker_density: 2.5     # exhibit-list markers per 100 words: exhibit index
+  cross_reference_share: 0.5      # share of prose words in sentences pointing elsewhere ...
+  cross_reference_max_figures: 2.0  # ... with fewer financial figures per 100 words: pure cross reference
+  administrative_marker_density: 1.5  # controls, certifications, officer rosters per 100 words ...
+  administrative_min_filings: 3   # ... repeated in at least this many filings (overlap group)
+  min_finance_term_share: 0.005   # low financial content: fewer finance terms than this share of words,
+  min_figures_per_100_words: 1.0  # fewer financial figures,
+  min_table_numbers_per_100_words: 3.0  # and fewer table numbers; never applied to the protected items
+  protected_items: ["1A", "7", "7A", "8"]  # risk factors, MD&A, market risk, financial statements
+
+reuse:                            # sentence- and fact-level evidence reuse (finretriever.training.evidence_reuse)
+  min_sentence_words: 12          # a prose sentence this long is a unit; shorter text (terminology) never is
+  span_words: 12                  # shared runs of 12 words measure reuse (catches sentences edited by a word or two)
+  max_text_companies: 1           # a span or sentence used by more companies is generic boilerplate and ignored
+  max_unit_passages: 50           # a unit in more passages than this is ignored (as max_shingle_df)
+  min_fact_digits: 4              # a figure needs 4 digits (years and percentages never count) ...
+  min_scaled_fact_digits: 2       # ... or 2 followed by thousand/million/billion/trillion
+  label_window_tokens: 40         # how far back a figure's label word may be (past other cells of its row)
+  substantial_word_share: 0.25    # shared spans covering a quarter of the visible words (an adjacent chunk's overlap not counted)
+  substantial_facts: 3            # or at least 3 shared figures ...
+  substantial_fact_share: 0.5     # ... that are at least half of the passage's figures (a comparative table's prior years)

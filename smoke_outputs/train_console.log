@@ -1,0 +1,33 @@
+[05_train_biencoder] run bge_base_ft_v2_smoke-seed42: 48 training candidates from train_candidates_v1 (66 available)
+[05_train_biencoder] 15 optimizer steps (warmup 2); batches per epoch [3, 4, 4, 3, 4]; 15 in-batch negatives per query; 1 single-pair batches dropped
+[05_train_biencoder] every batch verified: no known equivalent, overlap sibling, reuse link, blocked or other-split passage is an in-batch negative
+[05_train_biencoder] ESTIMATED peak GPU memory (not measured): {'weights_gradients_optimizer_gib': 1.63, 'activations_gib': 5.98, 'overhead_gib': 1.0, 'total_gib': 8.61}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2810.34it/s]
+[1mBertModel LOAD REPORT[0m from: BAAI/bge-base-en-v1.5
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+[3mNotes:
+- UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
+Token indices sequence length is longer than the specified maximum sequence length for this model (739 > 512). Running this sequence through the model will result in indexing errors
+[05_train_biencoder] step 1/15 epoch 0 loss 0.6985 lr 1.00e-05
+[05_train_biencoder] step 2/15 epoch 0 loss 0.6415 lr 2.00e-05
+[05_train_biencoder] step 3/15 epoch 0 loss 0.7776 lr 2.00e-05
+[05_train_biencoder] step 4/15 epoch 1 loss 0.1881 lr 1.85e-05
+[05_train_biencoder] step 5/15 epoch 1 loss 0.1508 lr 1.69e-05
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.29it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.29it/s]
+[05_train_biencoder] step 6/15 epoch 1 loss 0.4982 lr 1.54e-05
+[05_train_biencoder] step 7/15 epoch 1 loss 0.0004 lr 1.38e-05
+[05_train_biencoder] step 8/15 epoch 2 loss 0.0283 lr 1.23e-05
+[05_train_biencoder] step 9/15 epoch 2 loss 0.0602 lr 1.08e-05
+[05_train_biencoder] step 10/15 epoch 2 loss 0.2659 lr 9.23e-06
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.31it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.31it/s]
+[05_train_biencoder] step 11/15 epoch 2 loss 0.0001 lr 7.69e-06
+[05_train_biencoder] step 12/15 epoch 3 loss 0.0314 lr 6.15e-06
+[05_train_biencoder] step 13/15 epoch 3 loss 0.0699 lr 4.62e-06
+[05_train_biencoder] step 14/15 epoch 3 loss 0.0757 lr 3.08e-06
+[05_train_biencoder] step 15/15 epoch 4 loss 0.0382 lr 1.54e-06
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.31it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.31it/s]
+[05_train_biencoder] done: 15/15 steps; checkpoints ['checkpoint-step-000005', 'checkpoint-step-000010', 'checkpoint-step-000015']
+[05_train_biencoder] under models/bge_base_ft_v2_smoke/bge_base_ft_v2_smoke-seed42; not evaluated, no checkpoint selected by a metric, no improvement claimed
