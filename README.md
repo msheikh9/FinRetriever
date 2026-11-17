@@ -1,5 +1,9 @@
 # FinRetriever
 
+[![CI](https://github.com/msheikh9/FinRetriever/actions/workflows/ci.yml/badge.svg)](https://github.com/msheikh9/FinRetriever/actions/workflows/ci.yml)
+![Python 3.11](https://img.shields.io/badge/python-3.11-blue)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 **Evidence retrieval for financial research questions over SEC 10-K filings.**
 
 FinRetriever finds the passages in annual reports that answer an analyst's question, such as "How much long-term
@@ -12,6 +16,21 @@ from: company, filing, fiscal year, section and SEC accession number. It combine
 
 Every stage, from the EDGAR download to the result tables, records what it read and produced. The experiments
 re-run byte for byte.
+
+![FinRetriever search demo: parsed scope, decisions and traceable evidence](docs/assets/demo_terminal.svg)
+
+<sub>Actual output of `scripts/12_search_demo.py` with the release default (E5, which needs the A1 checkpoints),
+rendered to SVG. In the first question, 2030 is recognised as a debt-maturity year and is not used to choose
+filings. The second question asks for a year the corpus does not cover, and the demo says so instead of presenting
+other years as the answer. More in [docs/demo.md](docs/demo.md).</sub>
+
+**Contents:** [Highlights](#highlights) · [Why it's hard](#why-financial-document-retrieval-is-hard) ·
+[Architecture](#architecture) · [Fine-tuning](#three-seed-bge-fine-tuning) ·
+[Infrastructure](#reproducible-training-infrastructure) · [Hybrid retrieval](#bm25-and-dense-hybrid-retrieval) ·
+[Metadata-aware retrieval](#metadata-aware-retrieval-company-and-fiscal-year-grounding) ·
+[Results](#experimental-results) · [Demo](#working-demonstration) ·
+[Installation](#installation-and-reproducibility) · [License](#license) ·
+[Limitations](#limitations-and-future-work) · [Human evaluation](#human-relevance-evaluation)
 
 ## Highlights
 
@@ -47,12 +66,6 @@ re-run byte for byte.
    - 1,287 tests pass in a fresh clone.
    - CI runs in the pinned environment.
    - The corpus rebuilds from EDGAR to the exact published SHA-256.
-
-![FinRetriever search demo: parsed scope, decisions and traceable evidence](docs/assets/demo_terminal.svg)
-
-<sub>Actual output of `scripts/12_search_demo.py`, rendered to SVG. In the first question, 2030 is recognised as a
-debt-maturity year and is not used to choose filings. The second question asks for a year the corpus does not
-cover, and the demo says so instead of presenting other years as the answer. More in [docs/demo.md](docs/demo.md).</sub>
 
 ## Why financial document retrieval is hard
 
@@ -163,8 +176,8 @@ The [v1 analysis](docs/retrieval_analysis_v1.md) compared single retrievers and 
 - A1 is more year-aware but less company-aware than its base model.
 
 **Reciprocal Rank Fusion** combines the two rankings. Fusion alone is mixed: higher on validation (not
-significant), lower on development nDCG@10. Its value appears with the metadata scope below, where a fiscal-year ranking joins the fusion
-as one more voter (`finretriever.retrieval.fusion`, `hybrid`).
+significant), lower on development nDCG@10. Its value appears with the metadata scope below, where a fiscal-year
+ranking joins the fusion as one more voter (`finretriever.retrieval.fusion`, `hybrid`).
 
 ## Metadata-aware retrieval: company and fiscal-year grounding
 
